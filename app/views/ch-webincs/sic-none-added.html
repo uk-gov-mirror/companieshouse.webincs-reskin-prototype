@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<!--
+What I changed!
+# Heading is now a H1 with classes of .form-title .heading-large
+# Removed ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
+# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
+# De-capitalised content, eg BACK becomes Back
+# Wrapped some elements in a div with a GDS class of .form-group - this gives the large bottom margin space
+-->
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="sic-select" method="get" name="HPP">
+
+					<h1 class="form-title heading-xlarge" id="page-title">Principal business activities</h1>
+
+					<div class="panel panel-border-wide">
+						<p>It least one SIC code must be provided to proceed. A maximum of 4 codes can be provided.</p>
+					</div>
+
+					<div class="form-group">
+						<table>
+							<caption class="visuallyhidden">Principal business activities</caption> <!-- this hidden caption is needed for accessibility-->
+							<thead>
+								<tr>
+									<th>SIC Code</th>
+									<th>Description</th>
+                  <th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>None added yet</td>
+									<td></td>
+                  <td></td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div><!--end form-group-->
+
+					<div class="form-group">
+						<input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.SICDisplay.btnAddSic" textid="Incorporation.incorporationNavigation.sectionContent.SICDisplay.W0011112" value="Add new code" type="submit">
+					</div><!--end form-group-->
+
+					<div class="form-group">
+						<input type="submit" name="Incorporation.incorporationNavigation.next" class="button disabled" textid="Incorporation.incorporationNavigation.W0013674" value="Next">
+						<input type="submit" name="Incorporation.incorporationNavigation.previous" class="pseudo-link" textid="Incorporation.incorporationNavigation.W0013673" value="Previous">
+					</div><!--end form-group-->
+
+					<input type="hidden" name="__VIEWSTATE" value="da68eceJytlcmq9MYZho/zYwwHvPIqO2+yavhbs1oHTNA8S63W0JI2QVOrNatVmpe5gFyWl74kk+4TAjFZOCRZFEUVRVHvW9/zft9+9wPzLfP+/peka8eoaLOB+fL29vbd+y94mqAUmSlbvZGQmZe0a4nSKQo2o9mOubxanCcSSdQoFVQJTQJ4zagU7SFBTEttJpmTt0SOOa+eBUGg/D00o/poctgwV7nYJKFRinKh97xnKFczc132ISBmpsZEJ8ExQTrQxe/2+wD8G2SGJNBV7YKz5NVcZIyAiZh70ICmBwcRG4gnCdiwOMJAjgHknfaCUDoBbNwlpnWEyRK5MrWnpu/lNumGvhuiseja91+pKItT7CVw56DzU6DFNNzJ0mylIk1lhuiBvq5zopbiZipFSzdXa50YvsREDz3gcFh25ExXKXKc/HEKWWGyXNueVZGCmwVsNrnWS+OwV3fokcjNkiro8WWtt3JF74Gqd0u86x2Iz7qNI1H2qLTukV5c1L5n2hVU5TYmWHzaQpm1bbM4ltgdn5hLvZ2PXJqfNSmbDVNIQxJNAxkIZqgWGN2vdH5UIf7AWOxNn483KQHboQv8yGgpGo1FpjR5knc80/rpaQj2G0O+Fv+6MqK5yP+xD7LkNbPPAsna8X3AExwlqExZy/CSIkHrF1i3nrftqFLurDu+a4fHGEoQ3E4T8qy5pb5By0iBfNZcAgatpu16q9tktrHzFQK52nM2rmh8VTt3d6cXnZNXeqcdfqfNMy/H/Outf2K7po/aIgNSN4Hs40Mo6qLNPz5c+ePj1g2NPUZj9s3b2zcGhJHEDfr81wE2l512mYxhWRdNT/3E1G4qe67IXtbkLj+s6Z7W236Fh8rpLyTL1Oq+4Mqpos2Tjkr8jEp0Vtq0zZaRn1U3fKE8YkF24O1UutdJuIIWP2N5FvX+XQnr3gFDfeZPYuOOqXdJo/msuMWRUYDcnuvtBh10tYEMzKO6KEgDQfYPsBYq7Qw6avbQKeNFhoxuETjsl8DDugDv4JsrWeC68fAF885crLVdOk9XmAgqSSK0S5gYU5YVKXDw6tQYqK8d6lbMrh7shp7Yj12/n/ZkOpA1gh1PHnSlF1NWSlGXFUaiVXm53zl6aXTZ3U050SbZGiY57hjMvsYl/en9f1Qn778mEYaQz8LY0j0Gn4nBNOxJNlhMFI70ZWE5o7VAkUr87hQO1OOqTMY8vQvTWmToLGvceER8XRj2SjGrKkdlc8HOThmH/mOE1EOfEJim+iH+eBR1RT+KggmuUQVfhUsfmkta5z45MFS5HxJNBUASZ3CXEKYsTQ2EiV1WynjNL3Pl91KPLMzMdUzuiNwjgCkQB1TiBJs7oKSxOpQehmvvMMPdnwtcKrfb0VDogi2cGxyOZMKSiCCgzVofF/qGM3pm/fQy6s//DVBfbZnlCtDX0fb+NzyLUvTf2Nqru7EX2LT7fuFW+aq722rzxDry+a7z+aaXjDLG1qJrLDTyd8MZ9EV3lHMcKpsKDbpjo2ft9EBAPsCjpqmbvUzJk011a9X9xJdr8sKOllf+Bd5CK5p1R/NPSeb/KOkrKBK2SzOtACM7DvX7zyiG4bfo/yXxdXNZHfqdn/Xd3RHnAUNYL8tO0m3pHMJ7fjzrPgOlT3BsF0CJZbH9FigjofGo4TxDSwEqMVrONg05cCBYYYvVvICWUcETC73kOZ3RHd3SF3ZVF1rec6DSn9b88bfW9FGeOUOUVNnw1x+FIWqypRuqj49XYx26+jOf2H822d898GrCzzR7+8NzfPk7MYCalA==" data-postback="0">
+				</form>
+
+			</div><!--end column-two-thirds-->
+	</div><!--end row-->
+</main>
+
+{% endblock %}

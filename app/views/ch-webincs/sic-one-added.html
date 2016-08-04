@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<!--
+What I changed!
+# Heading is now a H1 with classes of .form-title .heading-large
+# Removed ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
+# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
+# De-capitalised content, eg BACK becomes Back
+# Wrapped some elements in a div with a GDS class of .form-group - this gives the large bottom margin space
+# Added thead and th tags to table, stripped out inline styles
+-->
+
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="add-person-as-an-officer" id="HPP" method="get" name="HPP">
+				<h1 class="form-title heading-xlarge" id="page-title">What will your company be doing?</h1>
+
+				<div class="form-group">
+					<table>
+						<caption class="visuallyhidden">Principal business activities</caption><!-- this hidden caption is needed for accessibility-->
+						<thead>
+							<tr>
+								<th>Code</th>
+								<th>Description</th>
+								<th>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>07100</td>
+								<td>Mining of iron ores</td>
+								<td><input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.SICDisplay.sicCodeListCtrl.displaySicCodeCtrl_1.removesic" textid="Incorporation.incorporationNavigation.sectionContent.SICDisplay.sicCodeListCtrl.displaySicCodeCtrl_1.WA000047" type="submit" value="Remove"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--end form-group-->
+
+				<div class="form-group">
+					<input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.SICDisplay.btnAddSic" textid="Incorporation.incorporationNavigation.sectionContent.SICDisplay.W0011112" type="submit" value="Add new code">
+				</div>
+				<!--end form-group-->
+
+				<div class="form-group">
+					<input class="button" name="Incorporation.incorporationNavigation.next" textid="Incorporation.incorporationNavigation.W0013674" type="submit" value="Next"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.previous" textid="Incorporation.incorporationNavigation.W0013673" type="submit" value="Previous">
+				</div>
+				<!--end form-group-->
+				<input data-postback="0" name="__VIEWSTATE" type="hidden" value="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">
+			</form>
+		</div>
+		<!--end column-two-thirds-->
+	</div>
+	<!--end row-->
+</main>
+{% endblock %}

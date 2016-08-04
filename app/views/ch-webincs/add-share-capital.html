@@ -1,0 +1,185 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<!--
+What I changed!
+# Heading is now a H1 with classes of .form-title .heading-large
+# Commented ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
+# Wrapped each form element in a div with a GDS class of .form-group
+# Gave each form label a GDS class of .form-label-bold
+# Gave each form input/select/text-area a GDS class of .form-control
+# Moved help under each label, all wrapped in spans with a GDS class of .form-hint
+# Cancel button has a (brand new) class of .pseudo-link to make it look like a GDS back link
+# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
+# De-capitalised content, eg BACK becomes Back
+# Added secondary class of .button-secondary to Select input
+-->
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="statement-of-capital" id="HPP" method="get" name="HPP">
+				<h1 class="form-title heading-large">
+					Add share capital
+				</h1>
+
+				<div class="form-group">
+					<fieldset id="addStatementOfCapital.statementOfCapital.editCurrencyControl.currencyCode_fieldset">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.editCurrencyControl.currencyCode">Currency</label> <select class="form-control" id="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.editCurrencyControl.currencyCode" name="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.editCurrencyControl.currencyCode" onchange="selectCurrency(this)">
+							<option value="C44.1">
+								GBP - Pound Sterling
+							</option>
+							<option value="C44.2">
+								EUR - Euro
+							</option>
+							<option value="C44.3">
+								USD - US Dollar
+							</option>
+							<option value="C44.4">
+								JPY - Yen
+							</option>
+							<option value="C44.5">
+								ARS - Peso
+							</option>
+							<option value="C44.6">
+								AUD - Australian Dollar
+							</option>
+							<option value="C44.7">
+								BRL - Real
+							</option>
+							<option value="C44.8">
+								CAD - Canadian Dollar
+							</option>
+							<option value="">
+								-----------------------------
+							</option>
+							<option value="201">
+								A
+							</option>
+							<option value="202">
+								B
+							</option>
+							<option value="203">
+								C
+							</option>
+							<option value="204">
+								D
+							</option>
+							<option value="205">
+								E
+							</option>
+							<option value="206">
+								F
+							</option>
+							<option value="207">
+								G
+							</option>
+							<option value="208">
+								H
+							</option>
+							<option value="209">
+								I
+							</option>
+							<option value="210">
+								J
+							</option>
+							<option value="211">
+								K
+							</option>
+							<option value="212">
+								L
+							</option>
+							<option value="213">
+								M
+							</option>
+							<option value="214">
+								N
+							</option>
+							<option value="215">
+								O
+							</option>
+							<option value="216">
+								P
+							</option>
+							<option value="217">
+								Q
+							</option>
+							<option value="218">
+								R
+							</option>
+							<option value="219">
+								S
+							</option>
+							<option value="220">
+								T
+							</option>
+							<option value="221">
+								U
+							</option>
+							<option value="222">
+								V
+							</option>
+							<option value="223">
+								W
+							</option>
+							<option value="224">
+								X
+							</option>
+							<option value="225">
+								Y
+							</option>
+							<option value="226">
+								Z
+							</option>
+						</select>
+					</fieldset>
+				</div>
+				<!--end form-group-->
+
+				<div class="form-group">
+					<fieldset id="addStatementOfCapital.statementOfCapital.capital.ShareClassCntrl.shareClass_fieldset">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.capital.ShareClassCntrl.shareClass" id="classOfShare_tooltip-src">Class of share</label> <span class="form-hint">The class can be selected from the list available. A class of share can only be selected once within each currency type.</span> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.capital.ShareClassCntrl.shareClass" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.capital.ShareClassCntrl.shareClass" size="25" type="text" value=""> &nbsp;<a class="button button-secondary" href="javascript:select('Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.capital.ShareClassCntrl.shareClass')">Select</a>
+					</fieldset>
+				</div>
+				<!--end form-group-->
+
+				<div class="form-group">
+					<fieldset>
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.capital.NumberOfShares" id="numberOfShares_tooltip-src">Number of shares</label> <span class="form-hint">This is the total number of issued shares in this class. Only whole numbers can be provided.</span> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.capital.NumberOfShares" maxlength="11" name="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.capital.NumberOfShares" type="text" value="">
+					</fieldset>
+				</div>
+
+				<div class="form-group">
+					<fieldset>
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.capital.AggregateNominalValue" id="aggregateNominalValue_tooltip-src">Aggregate nominal value</label> <span class="form-hint">This should be the number of shares multiplied by the nominal value of each share. A value up to 3 decimal places can be given.</span> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.capital.AggregateNominalValue" maxlength="16" name="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.capital.AggregateNominalValue" type="text" value="">
+					</fieldset>
+				</div>
+				<!--end form-group-->
+
+				<div class="form-group">
+					<fieldset>
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.capital.PrescribedParticulars" id="prescribedParticulars_tooltip-src">Prescribed particulars</label> <span class="form-hint" id="PrescribedParticularsIns2">You can choose to keep the statement shown if it is suitable for your company, or you can over-write with your own statement.</span> <span class="form-hint">A maximum of 4,000 characters can be entered.</span>
+
+						<textarea class="form-control form-control-long" cols="2000" id="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.capital.PrescribedParticulars" name="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.statementOfCapital.capital.PrescribedParticulars" rows="5">Each share has full rights in the company with respect to voting, dividends and distributions.</textarea>
+					</fieldset>
+				</div>
+				<!--end form-group-->
+
+				<div class="form-group">
+					<input class="button" name="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.submit" type="submit" value="Submit"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.cancel" type="submit" value="Cancel">
+				</div>
+				<!-- end form-group-->
+				<input name="" type="hidden" value=""> <input data-postback="0" name="__VIEWSTATE" type="hidden" value="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">
+			</form>
+		</div>
+		<!--end column-two-thirds-->
+	</div>
+	<!--end row-->
+</main>
+{% endblock %}

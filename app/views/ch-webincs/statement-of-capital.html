@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<!--
+What I changed!
+# Heading is now a H1 with classes of .form-title .heading-large
+# Commented ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
+# Removed this info from the table tag: border="0" cellpadding="0" cellspacing="0"
+# Added thead, tbody, th elements to tables
+# Put help in a GDS column-third div, with class of .form-hint (and new styling to reduce font-size)
+# Added new style for the ul/tabs
+# Gave some form inputs a GDS class of .form-control (this adds thick black border)
+# Added new  class of .button-secondary to some inputs (turns them blue)
+# Wrapped some inputs in a div with a GDS class of .form-group - gives them a large bottom margin
+# Cancel button has a (brand new) class of .pseudo-link to make it look like a GDS back link
+# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
+# De-capitalised content, eg BACK becomes Back
+# Added grey panel border to first paragraph "Only complete the..." (panel panel-border-wide)
+
+-->
+
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="amount-unpaid" id="HPP" method="get" name="HPP">
+				<h1 class="form-title heading-large">Statement of Capital for A TEST COMPANY LIMITED</h1>
+
+
+				<ul class="capital-progress">
+					<li class="active" id="statementOfCapitalTab">Statement of Capital</li>
+					<li id="amountUnpaidTab"><a href="amount-unpaid">Amount unpaid</a></li>
+				</ul>
+
+
+				<div class="panel panel-border-wide">
+					<p class="info">Only complete the Amount unpaid section when you've finished updating the Statement of Capital.</p>
+				</div>
+				<!--End panel panel-border-wide-->
+
+
+				<table>
+					<caption class="visuallyhidden">Statement of capital</caption><!-- needed for accessibility-->
+					<thead>
+						<tr>
+							<th>Currency</th>
+							<th>GBP - Pound Sterling</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Class of share</td>
+							<td>Ordinary</td>
+						</tr>
+						<tr>
+							<td>Number of shares</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Aggregate nominal value</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Prescribed particulars</td>
+							<td>Each share has full rights in the company with respect to voting, dividends and distributions.</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+				<div class="form-group">
+					<p><input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.DisplayCapital.StatementOfCapitalListPager.StatementOfCapitalList.statementOfCapital_1.capitalList.capital_1.btnAmendCapital" textid="Incorporation.incorporationNavigation.sectionContent.DisplayCapital.StatementOfCapitalListPager.StatementOfCapitalList.statementOfCapital_1.capitalList.capital_1.W0013632" type="submit" value="Edit"> <input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.DisplayCapital.StatementOfCapitalListPager.StatementOfCapitalList.statementOfCapital_1.capitalList.capital_1.btnRemoveCapital" textid="Incorporation.incorporationNavigation.sectionContent.DisplayCapital.StatementOfCapitalListPager.StatementOfCapitalList.statementOfCapital_1.capitalList.capital_1.WA000047" type="submit" value="Remove"></p>
+				</div>
+				<!--end form-group-->
+
+
+				<table>
+					<caption class="visuallyhidden">Needs a caption!</caption>
+					<thead>
+						<tr>
+							<th>Currency</th>
+							<th>GBP - Pound Sterling</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Total number of shares issued</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Total aggregate value of shares issued</td>
+							<td>1</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+				<div class="form-group">
+					<p><input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.DisplayCapital.StatementOfCapitalListPager.StatementOfCapitalList.statementOfCapital_1.btnAddCapital" type="submit" value="Add new share class to this currency">
+					</p>
+				</div>
+				<!--end form-group-->
+
+
+				<div class="form-group">
+					<p><input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.DisplayCapital.btnAddNewCurrencyAndClass" textid="Incorporation.incorporationNavigation.sectionContent.DisplayCapital.W0013672" type="submit" value="Add new currency and class">
+					</p>
+				</div>
+				<!--end form-group-->
+
+
+				<div class="form-group">
+					<input class="button" name="Incorporation.incorporationNavigation.next" textid="Incorporation.incorporationNavigation.W0013674" type="submit" value="Next"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.previous" textid="Incorporation.incorporationNavigation.W0013673" type="submit" value="Previous">
+				</div>
+				<!--end form-group-->
+			</form>
+		</div>
+		<!--end column-two-thirds-->
+	</div>
+	<!--end row-->
+</main>
+{% endblock %}

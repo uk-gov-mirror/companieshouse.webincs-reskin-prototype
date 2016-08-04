@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<!--
+What I changed!
+# Made company name p tag a H2 with a class of .heading-medium and movd it under the H1 ("Payment")
+# Main heading is now a H1 with classes of .form-title .heading-large
+# Commented ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
+# Put help in a GDS column-third div, with class of .form-hint (and new styling to reduce font-size)
+# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
+# De-capitalised content, eg BACK becomes Back
+# Restructured opening text, adding in heading tags and heading classes
+# Fixed radio buttons/checkboxes -  the input should be wrapped by the label like this  <label class="block-label"><input></label
+# Gave form labels a class of .form-label-bold (turns them bold)
+# Gave some form inputs/selects a class of .form-control - sorts width and adds solid black border
+# Added div class="panel panel-border-wide" to line about the £fee which gives grey left border styling-->
+
+<main id="content" role="main">{% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="" id="HPP" method="post" name="HPP"><input id="Incorporation.incorporationNavigation.sectionContent.paymentSelectIncorporationForm.hiddenSub" maxlength="11" name="Incorporation.incorporationNavigation.sectionContent.paymentSelectIncorporationForm.hiddenSub" size="20" style="display:none;" type="text" value="040-450177">
+
+        <h1 class="form-title heading-large">Payment</h1>
+        <h2 class="heading-medium"><span class="label">Company Name:</span> <span class="value">A TEST COMPANY LIMITED</span></h2>
+
+        <div class="panel panel-border-wide">
+          <p class="heading-small">The fee for the submission of your company incorporation is &pound;12.00</p>
+        </div>
+        <!--end panel panel-border-wide-->
+
+        <h3 class="heading-small">Payment</h3>
+
+        <p>Account payment will only be debited when you receive an email confirmation that your submission has been accepted. Card/PayPal payment is taken upon submission.</p>
+
+        <h3 class="heading-small">Submission Number 040-450177</h3>
+
+        <p>Please make a note of this number. If you have not received an email confirming receipt within 3 hours please contact the helpdesk.</p>
+
+        <fieldset>
+          <div class="form-group"><legend></legend>
+          <p class="checkbox heading-small">Please select</p>
+          <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.paymentSelectIncorporationForm.paytype_credit_debit">credit/debit card/PayPal <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.paymentSelectIncorporationForm.paytype_credit_debit" name="paytype" onclick="javascript:ghost()" type="radio" value="creditcard"></label> <legend></legend> <label class="block-label" data-target="by-account" for="paytype_account">by account (Companies House online filing account holders only) <input class="checkbox" id="paytype_account" name="paytype" type="radio" value="account"></label></div>
+          <!--end form-group-->
+        </fieldset>
+
+        <div class="panel panel-border-narrow js-hidden" id="by-account">
+          <fieldset>
+          <legend></legend>
+            <div class="form-group"><label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.presenterId">Presenter ID</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.paymentSelectIncorporationForm.presenterId" maxlength="11" name="Incorporation.incorporationNavigation.sectionContent.paymentSelectIncorporationForm.presenterId" size="20" type="text" value=""></div>
+            <!--end form-group-->
+
+            <div class="form-group"><label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.presenterCode">Presenter Authentication code</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.paymentSelectIncorporationForm.presenterCode" maxlength="11" name="Incorporation.incorporationNavigation.sectionContent.paymentSelectIncorporationForm.presenterAuth" size="20" type="text" value=""></div>
+            <!--end form-group-->
+
+            <div class="form-group"><label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.presenterCode">Customer reference</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.paymentSelectIncorporationForm.userRef" maxlength="25" name="Incorporation.incorporationNavigation.sectionContent.paymentSelectIncorporationForm.userRef" size="20" type="text" value=""></div>
+            <!--end form-group-->
+          </fieldset>
+        </div>
+        <!-- end js-hidden-->
+
+        <input name="" type="hidden" value="">
+        <div class="form-group"><input class="button" name="Incorporation.incorporationNavigation.next" textid="Incorporation.incorporationNavigation.W0013674" type="submit" value="Next"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.previous" textid="Incorporation.incorporationNavigation.W0013673" type="submit" value="Previous"></div>
+        <!--end form-group-->
+        <input data-postback="0" name="__VIEWSTATE" type="hidden" value="e57220eJydlbmu60YShs+1cW3gAI4mmsyJowNYFMVFPIAD7uJOiYsoJgaXJtXcl5a4hH4YP44faKLhucYAcycZw0Gj0NWNRlfV91d9/v4f3Gfu9fXXpG1QBBswcN++vLx89/oHmSYHhgbqUi00ZuUF653l0zG6LWa97HJlPgu+TCVRrZZYKdXJKOpmqer9CeMaZrHonM4SJRb86ilJEhOsoRVVO0sghmeZy3USmoWsQKMTfVO9WsDz+F7CLaDFVHvaxxTtYpegXe/DGGSYFdKjoekXkqev1qQQ1J6KhZ4dWXZwcbnGRJram2eBMvHdDfOPK6TUVhoX4RKzBs6BRCktfYvpB6VJ2qFrhwjBtnn915EmSeywBYhWF9Ongj1zD4ESbyOn7hg2I06iV/CM4fUzJEaqIiG4FucMF+4YEyZxd3vQ09GeT2NKqyqhKw+IeVXqoV3Ucd6hj6Vq9UF2XM28Cy9N3ejikaQKyxZRoFlwPPZFGgRD4lz2C1E7DZYVjmajiYEScztiYH9NxkzPvUqKtQimpo8TIrgEQ4zD6ZB2DZw4KcF3Bge4G/tcMNY+M6yNu+c3MB12eKe2FIw41sj34iSU+cQD5aCkYZzkv/yyJYP4Khk/w//emdET5n/6R5B8WH6DAzTodSAT8kAxQJ2L8JLityaARDvby7LTGO9puIHnhLsYS3DSSRPa1r3CWLAJMWP+1D1qPza6vhqN4dBg4Z9XbMy1TnBIVRfLyr17KzsZgjKzK+uKK7tlSonFj7/+xLd1FzUQjKf2MYL3dwlWsMnf3z3l/T1rh9pBEQKfXl4++QTOkPgXaNeSsfOVZbmAw4gqP+wIXPDpIy8o6zC6Zj3LTkDFdYfSMWod/+zqeVgcyP504KZ0ett1GtMd+nEndI29KNspqWSpb0wJBDC0RWB7zuxYhFQMT8moqI3oth5DFoLaLOfad/2kJwbfqPgDcaszNbGkYBdc2Edn2ldbe+DywiV4r3jdiIH7Ps/kR7rcL/djmiE5s1pGQwV6cheUAypA1SXeh8lEPK10yHjSi8OQyZBw3SUylzLj/goQNfgoKoOuPFJ73LepupIj+VoPWBXBnlK90zEzDROhnX6EjLA+OZG8c3KWT2ttKDdWFdWCF3g6F3t60yeZCw/xKfTpHLNfePnpL/HyUYNvUuaQgviLrvQ/G8e9Ph3PF96Ea5ar57tYyvR1NmCfXMnePt8veH9DLIUCuj4t3H0BpIuRzfw29t5bYV2MPVQzdL136KYjGw4PFmmwr+R01k9hVwX2Vgc1CYWl8JKc4t9u/D7j6RvqWQ407EnoAgFvSOfNL3j+5D5PgOEe3a4oMz+CRDzKQDIIJ6mbpGgIN3FKVdNC97I0QqApZRP6nc4L1OFxiiRzyg/oxIy6sNoyJc51z3ZHJBqccxeT2bnPl0Qb/Ku35cv5O/r6uYuWerMOqDb/Vy9IG+avvx9JItp6w//Iby3v5gqJxxoE0Cvz2fCW2RGpGYn5aoj5YhSciuLzZOg8hsS76Q7GZLiqnQIdFuVbt4pPY/VW3O332K3GnYRH2ipiaN1kjQZFY2Jn0cq74U5Y55SrNcOGW0aBndhCdEXBEIzzeDYmjbX8VDXbD1z++XX4XZQDd4iSEgy//SgNUQ2mdijf3z+GztBWX/TL/2cA/d8LHwNqI+3lm219+2++A0g6">
+      </form>
+    </div>
+    <!--end column-two-thirds-->
+  </div>
+  <!--end row-->
+</main>
+{% endblock %}

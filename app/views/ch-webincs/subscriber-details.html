@@ -1,0 +1,367 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<!--What I changed!
+# Main heading is now a H1 with classes of .form-title .heading-large
+# Subsequent headings are H2s with a class of .heading-large
+# Commented ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
+# Gave some form inputs a GDS class of .form-control (this adds thick black border)
+# Gave some form labels a GDS class of .form-label-bold (this makes them bold)
+# Wrapped a LOAD of form groups inside .form-control and removed fieldsets
+# Commented out a load of emmpty divs - not sure what they did, but they were adding space under form inputs?
+# Added new class of .button-secondary to some inputs (turns them blue)
+# Cancel button has a (brand new) class of .pseudo-link to make it look like a GDS back link
+# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
+# De-capitalised content, eg BACK becomes Back
+# Added grey panel border to "Only complete..." (panel panel-border-wide)
+# Added black exclamation styling to address warning
+# Fixed final radio button (which had a label inside a label for some reason)
+
+
+TO DO - sort our fieldsets
+-->
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="initial-shareholdings" id="HPP" method="get" name="HPP">
+
+
+				<h1 class="form-title heading-large">
+					Subscriber details
+				</h1>
+				<!--</div>-->
+
+				<p class="form-hint" id="Subscriber1">
+					Subscribers are the first <strong>shareholders</strong> of a limited company.
+				</p>
+
+				<fieldset>
+					<p class="checkbox">
+						Please select if the subscriber is a <strong>person</strong> or a <strong>company / firm</strong>:
+					</p>
+
+					<div class="form-group">
+						<legend></legend> <label class="block-label" data-target="subscriber-person" for="person">Person <input id="person" name="person-or-company" type="radio" value="Y"></label>
+
+
+					<div class="panel panel-border-narrow js-hidden" id="subscriber-person">
+						<div class="form-group">
+							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.forename">Forename</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.forename" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.forename" type="text" value="">
+						</div>
+						<!--form-group-->
+
+						<div class="form-group">
+							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.surname">Surname</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.surname" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.surname" type="text" value="">
+						</div>
+						<!--form-group-->
+					</div>
+					<!--end js-hidden-->
+
+						<legend></legend> <label class="block-label" data-target="subscriber-company-firm" for="subscriber-company">Company or Firm <input class="form-control" id="subscriber-company" name="person-or-company" type="radio" value="N"></label>
+					</div>
+					<!--form-group-->
+
+					<div class="panel panel-border-narrow js-hidden" id="subscriber-company-firm">
+						<div class="form-group">
+							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.corporateName">Company Name</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.corporateName" maxlength="160" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.corporateName" type="text" value="">
+						</div>
+						<!--end form-group-->
+
+						<div class="form-group">
+							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.authoriserForename">Authorising Forename</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.authoriserForename" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.authoriserForename" type="text" value="">
+						</div>
+						<!--end form-group-->
+
+						<div class="form-group">
+							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.authoriserSurname">Authorising Surname</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.authoriserSurname" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.authoriserSurname" type="text" value="">
+						</div>
+						<!--end form-group-->
+					</div>
+					<!--end js-hidden-->
+				</fieldset>
+
+				<h2 class="heading-large">
+					Address
+				</h2>
+
+				<fieldset>
+					<div class="notice form-group">
+						<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small">This address will appear on the public record. It does not have to be the usual residential address.</strong>
+					</div>
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.CountryList">Country</label> <select class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.CountryList" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.CountryList" onclick="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Country'])" onforminit="Y" onkeyup="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Country'])">
+							<option value="">
+								Please select
+							</option>
+							<option value="GBR">
+								United Kingdom
+							</option>
+							<option value="GB-ENG">
+								England
+							</option>
+							<option value="GB-WLS">
+								Wales
+							</option>
+							<option value="GB-SCT">
+								Scotland
+							</option>
+							<option value="GB-NIR">
+								Northern Ireland
+							</option>
+							<option value="GBR">
+								UK
+							</option>
+							<option value="GB-GBN">
+								Great Britain
+							</option>
+							<option value="">
+								-----------------
+							</option>
+							<option value="USA">
+								USA
+							</option>
+							<option value="IRL">
+								Ireland
+							</option>
+							<option value="DEU">
+								Germany
+							</option>
+							<option value="FRA">
+								France
+							</option>
+							<option value="ITA">
+								Italy
+							</option>
+							<option value="ESP">
+								Spain
+							</option>
+							<option value="PRT">
+								Portugal
+							</option>
+							<option value="NLD">
+								Netherlands
+							</option>
+							<option value="POL">
+								Poland
+							</option>
+							<option value="BEL">
+								Belgium
+							</option>
+							<option value="NOR">
+								Norway
+							</option>
+							<option value="SWE">
+								Sweden
+							</option>
+							<option value="DNK">
+								Denmark
+							</option>
+							<option value="AUS">
+								Australia
+							</option>
+							<option value="NZL">
+								New Zealand
+							</option>
+							<option value="CAN">
+								Canada
+							</option>
+							<option value="ZAF">
+								South Africa
+							</option>
+							<option value="AUT">
+								Austria
+							</option>
+							<option value="HRV">
+								Croatia
+							</option>
+							<option value="CYP">
+								Cyprus
+							</option>
+							<option value="CZE">
+								Czech Republic
+							</option>
+							<option value="EST">
+								Estonia
+							</option>
+							<option value="GRC">
+								Greece
+							</option>
+							<option value="HUN">
+								Hungary
+							</option>
+							<option value="LTU">
+								Lithuania
+							</option>
+							<option value="OTHER">
+								Other - enter below
+							</option>
+							<option value="NOTSPECIFIED">
+								Not specified
+							</option>
+						</select> <!--<div>
+                &nbsp;
+            </div>-->
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Country">Other Country</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Country" maxlength="20" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Country" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Postcode">Postcode</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Postcode" maxlength="15" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Postcode" type="text" value=""> <!-- AS:WA000032 --><input alt="Expand postcode" class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.PostcodeLookup" type="submit" value="Lookup"><!-- AS:WA000032 -->
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Premise">Building Name/No.</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Premise" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Premise" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Street">Address</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Street" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Street" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Thoroughfare"></label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Thoroughfare" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.Thoroughfare" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.PostTown">Post Town</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.PostTown" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.PostTown" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.County">County/Region</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.County" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.Address.County" type="text" value="">
+					</div>
+					<!--end form-group-->
+				</fieldset>
+
+				<h2 class="heading-large">
+					Shares / stock held
+				</h2>
+
+				<fieldset>
+					<div class="form-group">
+						<fieldset id="subscriberFormControl.Subscriber.AllottedCapital.SelectCapitalClassCurrency.classAndCurrency_fieldset">
+							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.AllottedCapital.SelectCapitalClassCurrency.classAndCurrency" id="currencyAndClass_tooltip-src">Currency and Class</label>
+							<p class="form-hint">
+								Please select the currency and class of share. The options displayed are the currencies and share classes that have been created on your Statement of Capital.
+							</p>
+							<select class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.AllottedCapital.SelectCapitalClassCurrency.classAndCurrency" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.AllottedCapital.SelectCapitalClassCurrency.classAndCurrency">
+								<option value="">
+									Please select
+								</option>
+								<option value="182:1">
+									GBP - Ordinary
+								</option>
+							</select>
+						</fieldset>
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.AllottedCapital.numberOfShares" id="numberOfShares_tooltip-src">Number of shares</label>
+						<p class="form-hint">
+							Please enter the number of shares being allocated to this subscriber (shareholder).
+						</p>
+						<input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.AllottedCapital.numberOfShares" maxlength="11" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.AllottedCapital.numberOfShares" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.AllottedCapital.amountPaidUpOnEachShare" id="amountPaidUpOnEachShare_tooltip-src">Amount paid up on each share</label>
+						<p class="form-hint">
+							This should be the amount the shareholder/subscriber owes for each share they hold in this share class.
+						</p>
+						<input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.AllottedCapital.amountPaidUpOnEachShare" maxlength="16" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.AllottedCapital.amountPaidUpOnEachShare" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.AllottedCapital.amountUnpaidOnEachShare" id="amountUnpaidOnEachShare_tooltip-src">Amount unpaid on each share</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.AllottedCapital.amountUnpaidOnEachShare" maxlength="16" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.AllottedCapital.amountUnpaidOnEachShare" type="text" value="">
+					</div>
+					<!--end form-group-->
+				</fieldset>
+
+				<h2 class="heading-large">
+					Authentication - Personal Information
+				</h2>
+
+				<p id="cta1">
+					To take the place of a signature, please provide 3 pieces of personal information relating to the individual above. Where this is a company these should relate to the individual authorising the subscriber.
+				</p>
+
+				<div class="panel panel-border-wide">
+					<p id="cta3">
+						Only complete <strong>3</strong> categories and enter <strong>3</strong> characters in each, then tick the box below to agree with the statement.
+					</p>
+				</div>
+				<!--end panel panel-border-wide-->
+
+				<fieldset>
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.birthTown">Town of Birth (first 3 letters only)</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.birthTown" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.birthTown" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.telephone">Last 3 digits of Telephone Number</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.telephone" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.telephone" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.nationalInsuranceNumber">Last 3 Characters of National Insurance Number</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.nationalInsuranceNumber" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.nationalInsuranceNumber" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.passportNumber">Last 3 digits of Passport Number</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.passportNumber" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.passportNumber" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.maidenName">Mothers Maiden Name (first 3 letters only)</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.maidenName" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.maidenName" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.eyeColour">Eye colour (first 3 letters only)</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.eyeColour" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.eyeColour" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.fatherName">Fathers First Name (first 3 letters only)</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.fatherName" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.fatherName" type="text" value="">
+					</div>
+					<!--end form-group-->
+				</fieldset>
+
+				<div class="form-group">
+					<legend></legend>
+					<p class="checkbox">
+						In supplying these personal details the subscriber authenticates:
+					</p>
+					<label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.complianceStatement_AGREE">1. the prescribed form memorandum of association; and<br>
+					2. (where this application is sent to Companies House by the subscriber) the statement of compliance. <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.complianceStatement_AGREE" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.complianceStatement" onclick="" onforminit="" type="checkbox" value="AGREE"></label>
+				</div>
+				<!--end form-group-->
+				<input class="button" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.submit" type="submit" value="Submit"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.cancel" type="submit" value="Cancel">
+        <input name="" type="hidden" value=""> 
+			</form>
+		</div>
+		<!--end column-two-thirds-->
+	</div>
+	<!--end row-->
+</main>
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<!--
+What I changed!
+# Heading is now a H1 with classes of .form-title .heading-large
+# Commented ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
+# Put help in a GDS column-third div, with class of .form-hint (and new styling to reduce font-size)
+# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
+# De-capitalised content, eg BACK becomes Back
+# Added secondary class of .button-secondary to some of the inputs
+# Gave a h2 class of .heading-medium to the two intro paragraphs
+# Added a class of .form-hint to some of the spans (gives them grey colour)
+# Wrapped some elements in a div with a GDS class of .form-group - this gives the large bottom margin space
+# Cheated - added <p>&nbsp;</p> to give some space between the two groups of content
+-->
+
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="add-person-as-psc" id="HPP" method="get" name="HPP">
+				<h1 class="form-title heading-large" id="page-title">Persons with Significant Control (PSC)</h1>
+
+
+				<h2 class="heading-medium">Initial statement of significant control:</h2>
+
+
+				<p id="initialDeclaration">There is a registrable person or registrable relevant legal entity in relation to the company.</p>
+
+
+				<div class="form-group">
+					<fieldset>
+						<legend></legend> <input class="button button-secondary" id="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.btnChangeDeclaration" name="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.btnChangeDeclaration" textid="W0018072" type="submit" value="Change the statement of control">
+					</fieldset>
+				</div>
+				<!--end form-group-->
+
+
+		
+
+
+				<h2 class="heading-medium">You must provide details of the persons with significant control (PSC):</h2>
+
+
+				<p>Select the type of PSC from one of the following:</p>
+
+
+				<div class="form-group">
+					<input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.btnAddIndividual" textid="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.W0018075" type="submit" value="Add a person as a PSC">
+				</div>
+				<!--end form-group-->
+
+
+				<div class="form-group">
+					<input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.btnAddLegalEntity" textid="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.W0018076" type="submit" value="Add a relevant legal entity as a PSC">
+					<p class="form-hint">Such as a corporate body (for example, a company or firm).</p>
+				</div>
+				<!--end form-group-->
+
+
+				<div class="form-group">
+					<input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.btnAddLegalPerson" textid="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.W0018078" type="submit" value="Add a legal person as a PSC">
+					<p class="form-hint">Such as a corporation sole, government department, international organisation or local authority (for example, the Archbishop of Canterbury or The City of Cardiff Council).</p>
+				</div>
+				<!--end form-group-->
+
+
+				<div class="form-group">
+					<input class="button" name="Incorporation.incorporationNavigation.next" type="submit" value="Next">
+				</div>
+				<!--end form-group-->
+				<input data-postback="0" name="__VIEWSTATE" type="hidden" value="55bfbeeJytVsmutMYZvbZlybpSVllll01WSG6gaYYrWRHzDM3UTXekRFDQzDPdUCz9MH4cP0geIat031+W4mwSJV6UqEIF+s75zjlV3373e+5b7v39b6Br56ho05H75u3t7bv3n7EoJZhbqsEaUqidlWzgyAodRbrVwF2mro5wkkkQNVqFVlIDJtGwKs0YFJRrGWhTGXUDaiyc6ockSUy4Xe2o3tkCMT6qTG7A1SpltTB78WRpZzsNAn6QcDvVY7JTsJikfNQNuy0fp/CG2ldqMnXDPfDU2V5UgsTIWBjYiWVHH5cbVKRIzHIE0sJ3F/REbwWpddIEBTdmTZxLwU60zSem36kt6Ma+G6O56Nr3f6QEyhywF8DNEPWlZB3uzg1jcmYrwvYJzuoMTvHlFRaFhIHVaANGH7m+qGfltDJgMNV7OdPgmGzM/s50N1YkwQ1mDy3aU05WHXwrgJRfyWnQZoZu2l6QF5LShOLZkGTHSWBmPOxqCfGC8g/n3HdPUTRUQRRd6jigOwVaKB2lfKAVUehdpWPSqWh8z0ZFiR6oLVkXCpCTe9FneLouXJlLLGNNMm1XPHKMESQlqHK2Id5fx8TbjmQ9IiJu1sEu+OFJBvErMr4v/nVlRY8i+/J+SsHryT/Fkbbz+0glGJ6iqbaWB5fDL21YEN16hHCnM8HD9MPAu+5iFOAHLwHU0QhKE6LLzEzZwwhIbGoNYzNb06NSyD/O6JTpveAdNEOsaj8PNnYxBXVlN9YXN9Z2UDVWX7X+ie+aPmqLdFK6+5R+fEhFXbTZx0egfnzcurHx5mhOv3p7++qvNwzDY/DZ0xI7LttnT1nec+8I2Jz6SjuRPjslPPCumCfsaNWtPI9VkruU5Ot5LxD7w+azYSRf9zlDt1PoZpUhX5rDXlXoSdpbUMavRQHjPaGAQoSNAJugoEMKlO0RrRv8oSGnUoQEZXXnmZ+AxW/ktfFNHVHYXUk4xuD67siwGxmv6+hi6u3qIJ2IJp6FttuO3C5+HKYJ4Nyi9PeIJrV3bPVVXLvgJ85ZsFL1Qb2xEM7pSFw0AeKPG6tQ9GWYcp0Sjv1oseTVHmrr4CH91W+aucenCF3qxB0elMyc5WS/U3ZF4ahZYaGlGHecGnaShue8eVY7QY46xUIzj3KluJctWB7YU5yBjPjsxX+lm/efiPQWx/G/C2WrcmsriPsWhkVQZasZwNUTyXUWs80UM2iWnDbHzmIaPDqLueWP5mL62jFOtG2b6NkzN8Pn9zjk6dkfzxBMDxM+rTlTqs7EHuSr3PQhDqdp1Az+sD6/GXUwHtWTeHj+SWCh6ZiLuJoLZ44b5z4B/eV/McL3R48XiqmvI/iaGsU0H6MsHX9ZvLaNXf2S5NdgHzEU/iVmplfMBE9JksM1ZQuKZDPK1jHzIvfPlFF5XQVbhfdbfLGGs5aR85HKK8klkgdSMEgMXQbe+rVqFDiZDD+V4sSulHV3DLvDi3vW8LmkxnlRgb0jrgJ0onUhDX1JRY3v3ambHiKmnfvlXPtb7+GSQdk1jbln8mYgjOueKS1vVSW59JpQpn2lG6mHeG0lzbux9KpBF8LoEdaRJOstwDod+KgKbgUiIUa7I5kV29k01zSe1FR+u3dVZjHZQ93sniz/+f9k+f3ve4rGoxeNCdw+0/ri2NJ5jFAOhNzCOMVTRPvDCvNiAYp0vzgVNnCW1+v8cKAAwYngOFNo1ayWSHRnI2aMXcuVPiPjyxCqEYyGqeBgvcwe5gSlWjtO2UoWGht1R508BL0YSGRcG1I7DQQWWvT5ekIve44aNPpym3yfXsbIoZpE0jLdIvUZ5ULuzrqtVXK4tWNpIUOk6nDD5WQ+MkjkuhLwWa2fxMlTtUOlEFwyWCLD/vBymfFbivL9J5DEMRr9VmZMUqMoK6TfxIe5BRvuDxh6aXAP8LO+iei8PU+DefxiSP1lyAXtvWqz16Ll4CSwC1uKviiYgulMTzfqrB12mjW9cP/h17j7Z/n+GIEqHX/8ozRGTbp0Y/XxAb7Y6zP2+V/uLf9xw+te83Tk29fP8c0/ARZtCx8=">
+			</form>
+		</div>
+		<!--end column-two-thirds-->
+	</div>
+	<!--end row-->
+</main>
+{% endblock %}

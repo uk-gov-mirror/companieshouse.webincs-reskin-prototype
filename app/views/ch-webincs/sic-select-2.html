@@ -1,0 +1,422 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<!--
+What I changed!
+# Heading is now a H1 with classes of .form-title .heading-large
+# Removed ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
+# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
+# De-capitalised content, eg BACK becomes Back
+# Wrapped some elements in a div with a GDS class of .form-group - this gives the large bottom margin space
+-->
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="sic-one-added" id="HPP" method="get" name="HPP">
+				<h1 class="form-title heading-xlarge" id="page-title">What will your company be doing?</h1>
+
+				<p>Choose at least one business activity from this list. You can choose a maximum of 4.</p>
+
+				<div class="form-group">
+					<details class="">
+						<summary>
+							<span class="summary">Need help choosing a business activity?</span>
+						</summary>
+
+
+						<div class="panel panel-border-narrow">
+							<p>Check this <a href="http://resources.companieshouse.gov.uk/sic/" target="blank">list of trade descriptions <span class="visuallyhidden">Link opens in a new tab/window</span></a>.</p>
+						</div>
+					</details>
+				</div>
+				<!--end form-group-->
+
+				<fieldset id="SICForm.SIC_fieldset">
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.sicClass">Step 1 - Select a group heading</label> <select class="form-control form-control-long" id="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.sicClass" name="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.sicClass" onchange="$(this.form).trigger(&#39;submit&#39;);">
+							<option value="501">
+								01xxx - Crop &amp; animal production, hunting &amp; related service activities
+							</option>
+
+							<option value="502">
+								02xxx - Forestry and logging
+							</option>
+
+							<option value="503">
+								03xxx - Fishing and aquaculture
+							</option>
+
+							<option value="505">
+								05xxx - Mining of coal and lignite
+							</option>
+
+							<option value="506">
+								06xxx - Extraction of crude petroleum and natural gas
+							</option>
+
+							<option selected value="507">
+								07xxx - Mining of metal ores
+							</option>
+
+							<option value="508">
+								08xxx - Other mining and quarrying
+							</option>
+
+							<option value="509">
+								09xxx - Mining support service activities
+							</option>
+
+							<option value="510">
+								10xxx - Manufacture of food products
+							</option>
+
+							<option value="511">
+								11xxx - Manufacture of beverages
+							</option>
+
+							<option value="512">
+								12xxx - Manufacture of tobacco products
+							</option>
+
+							<option value="513">
+								13xxx - Manufacture of textiles
+							</option>
+
+							<option value="514">
+								14xxx - Manufacture of wearing apparel
+							</option>
+
+							<option value="515">
+								15xxx - Manufacture of leather and related products
+							</option>
+
+							<option value="516">
+								16xxx - Manufacture of straw&amp;plaiting, wood&amp;cork products; not furniture
+							</option>
+
+							<option value="517">
+								17xxx - Manufacture of paper and paper products
+							</option>
+
+							<option value="518">
+								18xxx - Printing and reproduction of recorded media
+							</option>
+
+							<option value="519">
+								19xxx - Manufacture of coke and refined petroleum products
+							</option>
+
+							<option value="520">
+								20xxx - Manufacture of chemicals and chemical products
+							</option>
+
+							<option value="521">
+								21xxx - Manufacture of basic pharmaceutical products &amp; preparations
+							</option>
+
+							<option value="522">
+								22xxx - Manufacture of rubber and plastic products
+							</option>
+
+							<option value="523">
+								23xxx - Manufacture of other non-metallic mineral products
+							</option>
+
+							<option value="524">
+								24xxx - Manufacture of basic metals
+							</option>
+
+							<option value="525">
+								25xxx - Manufacture of fabricated metal products,not machinery&amp;equipment
+							</option>
+
+							<option value="526">
+								26xxx - Manufacture of computer, electronic and optical products
+							</option>
+
+							<option value="527">
+								27xxx - Manufacture of electrical equipment
+							</option>
+
+							<option value="528">
+								28xxx - Manufacture of machinery and equipment not elsewhere classified
+							</option>
+
+							<option value="529">
+								29xxx - Manufacture of motor vehicles, trailers and semi-trailers
+							</option>
+
+							<option value="530">
+								30xxx - Manufacture of other transport equipment
+							</option>
+
+							<option value="531">
+								31xxx - Manufacture of furniture
+							</option>
+
+							<option value="532">
+								32xxx - Other manufacturing
+							</option>
+
+							<option value="533">
+								33xxx - Repair and installation of machinery and equipment
+							</option>
+
+							<option value="535">
+								35xxx - Electricity, gas, steam and air conditioning supply
+							</option>
+
+							<option value="536">
+								36xxx - Water collection, treatment and supply
+							</option>
+
+							<option value="537">
+								37xxx - Sewerage
+							</option>
+
+							<option value="538">
+								38xxx - Waste collection, treatment, disposal &amp; material recovery
+							</option>
+
+							<option value="539">
+								39xxx - Remediation activities and other waste management services.
+							</option>
+
+							<option value="541">
+								41xxx - Construction of buildings
+							</option>
+
+							<option value="542">
+								42xxx - Civil engineering
+							</option>
+
+							<option value="543">
+								43xxx - Specialised construction activities
+							</option>
+
+							<option value="545">
+								45xxx - Wholesale, retail trade &amp; repair of motor vehicles &amp; motorcycles
+							</option>
+
+							<option value="546">
+								46xxx - Wholesale trade, except of motor vehicles and motorcycles
+							</option>
+
+							<option value="547">
+								47xxx - Retail trade, except of motor vehicles and motorcycles
+							</option>
+
+							<option value="549">
+								49xxx - Land transport and transport via pipelines
+							</option>
+
+							<option value="550">
+								50xxx - Water transport
+							</option>
+
+							<option value="551">
+								51xxx - Air transport
+							</option>
+
+							<option value="552">
+								52xxx - Warehousing and support activities for transportation
+							</option>
+
+							<option value="553">
+								53xxx - Postal and courier activities
+							</option>
+
+							<option value="555">
+								55xxx - Accommodation
+							</option>
+
+							<option value="556">
+								56xxx - Food and beverage service activities
+							</option>
+
+							<option value="558">
+								58xxx - Publishing activities
+							</option>
+
+							<option value="559">
+								59xxx - Film, video, tv production, sound recording &amp; music publishing
+							</option>
+
+							<option value="560">
+								60xxx - Programming and broadcasting activities
+							</option>
+
+							<option value="561">
+								61xxx - Telecommunications
+							</option>
+
+							<option value="562">
+								62xxx - Computer programming, consultancy and related activities
+							</option>
+
+							<option value="563">
+								63xxx - Information service activities
+							</option>
+
+							<option value="564">
+								64xxx - Financial service activities, except insurance &amp; pension funding
+							</option>
+
+							<option value="565">
+								65xxx - Insurance, reinsurance &amp; pension funding, not social security
+							</option>
+
+							<option value="566">
+								66xxx - Financial services &amp; insurance, auxiliary activities
+							</option>
+
+							<option value="568">
+								68xxx - Real estate activities
+							</option>
+
+							<option value="569">
+								69xxx - Legal and accounting activities
+							</option>
+
+							<option value="570">
+								70xxx - Activities of head offices; management consultancy activities
+							</option>
+
+							<option value="571">
+								71xxx - Architectural &amp; engineering; technical testing &amp; analysis
+							</option>
+
+							<option value="572">
+								72xxx - Scientific research and development
+							</option>
+
+							<option value="573">
+								73xxx - Advertising and market research
+							</option>
+
+							<option value="574">
+								74xxx - Other professional, scientific and technical activities
+							</option>
+
+							<option value="575">
+								75xxx - Veterinary activities
+							</option>
+
+							<option value="577">
+								77xxx - Rental and leasing activities
+							</option>
+
+							<option value="578">
+								78xxx - Employment activities
+							</option>
+
+							<option value="579">
+								79xxx - Travel agency, tour operator, reservations &amp; related activities
+							</option>
+
+							<option value="580">
+								80xxx - Security and investigation activities
+							</option>
+
+							<option value="581">
+								81xxx - Services to buildings and landscape activities
+							</option>
+
+							<option value="582">
+								82xxx - Office administrative/support; other business support activities
+							</option>
+
+							<option value="584">
+								84xxx - Public administration and defence; compulsory social security
+							</option>
+
+							<option value="585">
+								85xxx - Education
+							</option>
+
+							<option value="586">
+								86xxx - Human health activities
+							</option>
+
+							<option value="587">
+								87xxx - Residential care activities
+							</option>
+
+							<option value="588">
+								88xxx - Social work activities without accommodation
+							</option>
+
+							<option value="590">
+								90xxx - Creative, arts and entertainment activities
+							</option>
+
+							<option value="591">
+								91xxx - Libraries, archives, museums and other cultural activities
+							</option>
+
+							<option value="592">
+								92xxx - Gambling and betting activities
+							</option>
+
+							<option value="593">
+								93xxx - Sports activities and amusement and recreation activities
+							</option>
+
+							<option value="594">
+								94xxx - Activities of membership organisations
+							</option>
+
+							<option value="595">
+								95xxx - Repair of computers and personal and household goods
+							</option>
+
+							<option value="596">
+								96xxx - Other personal service activities
+							</option>
+
+							<option value="597">
+								97xxx - Activities of households as employers of domestic personnel
+							</option>
+
+							<option value="598">
+								98xxx - Undifferentiated goods/services; by private houses for own use
+							</option>
+
+							<option value="599">
+								99xxx - Activities of extraterritorial organisations and bodies
+							</option>
+						</select>
+					</div>
+					<!--end form-group-->
+					<input alt="Display associated trade descriptions" class="button space jsHide" id="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.expand" name="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.expand" style="display: none;" textid="Incorporation.incorporationNavigation.sectionContent.SICForm.W0013281" type="submit" value="Display associated trade descriptions">
+
+					<div class="form-group">
+						<p class="form-label-bold">Step 2 - Select a trade description</p>
+						<label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.sicID_7100">Mining of iron ores (07100) <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.sicID_7100" name="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.sicID" type="radio" value="7100"></label> <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.sicID_7210">Mining of uranium and thorium ores (07210) <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.sicID_7210" name="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.sicID" type="radio" value="7210"></label> <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.sicID_7290">Mining of other non-ferrous metal ores (07290) <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.sicID_7290" name="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.sicID" type="radio" value="7290"></label> <input id="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.origSicClass" name="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.origSicClass" type="hidden" value="507"> <input class="jsEnabled" id="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.jScriptEnabled" name="Incorporation.incorporationNavigation.sectionContent.SICForm.SIC.jScriptEnabled" type="hidden" value="yes">
+					</div>
+					<!--end form-group-->
+					 <span></span><!-- not sure what empty spans do, they're on current WebIncs-->
+				</fieldset>
+
+
+				<div class="form-group">
+					<input class="button" name="Incorporation.incorporationNavigation.sectionContent.SICForm.submit" type="submit" value="Submit"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.sectionContent.SICForm.cancel" type="submit" value="Cancel">
+				</div>
+				<!--end form-group-->
+				  <input name="" type="hidden" value="">
+				  <input data-postback="1" name="__VIEWSTATE" type="hidden" value="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">
+			</form>
+		</div>
+		<!--end column-two-thirds-->
+	</div>
+	<!--end row-->
+</main>
+{% endblock %}

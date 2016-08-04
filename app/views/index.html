@@ -1,0 +1,178 @@
+
+
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+<style type="text/css"> /* styles NOT needed in the real style sheet, so dumping them here */
+  table span {
+    background-color: grey;
+    display:inline-block;
+    color:white;
+    padding:.2em 2em .1em;
+    width:1.5em;
+  }
+  table span.yes {
+    background-color: #00823B;
+  }
+  table .page-title {
+    width:75%;
+  }
+</style>
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+
+      <h1 class="heading-xlarge">Web Incorporation Service prototype</h1>
+
+      <h2 class="heading-medium">Current live service:</h2>
+			<ul class="list list-bullet">
+				<li><a href="http://resources.companieshouse.gov.uk/promo/webincs/">Web Incorporation Service</a></li>
+			</ul>
+
+      <h2 class="heading-medium">Proposed versions:</h2>
+
+      <table>
+      <thead>
+        <tr>
+          <th scope="col" class="page-title">Page</th>
+          <th scope="col">Includes updated content from Jim (HMRC)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Welcome/Login</td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td>Forgot your password</td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/company-name-and-address">Company name and address</a></td>
+          <td><span>No</span></td>
+        </tr>
+        <!--<tr>
+          <td><a href="/ch-webincs/sic-none-added">SIC none added</a></td>
+          <td><span>No</span></td>
+        </tr>-->
+        <tr>
+          <td><a href="/ch-webincs/sic-select">Business activity (SIC) first select</a></td>
+          <td><span class="yes">Yes</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/sic-select-2">Business activity (SIC) second select</a></td>
+          <td><span class="yes">Yes</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/sic-one-added">Business activity (SIC) one added</a></td>
+          <td><span class="yes">Yes</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/add-person-as-an-officer">Details of (first) new director</a></td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><!--<a href="/ch-webincs/proposed-company-officers">-->Proposed Company Officers<!--</a>--></td>
+          <td><span>No</span></td>
+        </tr>
+
+        <tr>
+          <td>Add person as an secretary</td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td>Add company or firm as an director</td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td>Add company or firm as an director</td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/add-share-capital">Add share capital</a></td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/statement-of-capital">Statement of capital</a></td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/amount-unpaid">Amount unpaid</a></td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/subscriber-details">Subscriber details</a></td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/initial-shareholdings">Initial shareholdings</a></td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/psc-1">"PSC 1"</a></td>
+          <td><span class="yes">Yes</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/psc-2">"PSC 2"</a></td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/add-person-as-psc">Add a person as a PSC</a></td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td>Add a relevant legal entity as a PSC</td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td>Add a legal person as a PSC</td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/psc-summary">PSC summary</a></td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/registers">Registers</a></td>
+          <td><span class="yes">Yes</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/registers-change">Change location of register</a></td>
+          <td><span class="yes">Yes</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/statement-of-compliance">Statement of compliance select</a></td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/statement-of-compliance-agent">Statement of compliance (agent selected)</a></td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/statement-of-compliance-2">Statement of compliance summary</a></td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><!--<a href="/ch-webincs/summary">-->Summary<!--</a>--></td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ch-webincs/payment">Payment</a></td>
+          <td><span>No</span></td>
+        </tr>
+        <tr>
+          <td><!--<a href="/ch-webincs/confirmation">-->Confirmation<!--</a>--></td>
+          <td><span>No</span></td>
+        </tr>
+    </tbody>
+  </table>
+
+
+</main>
+
+{% endblock %}

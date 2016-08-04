@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<!--
+What I changed!
+# Heading is now a H1 with classes of .form-title .heading-large
+# Commented ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
+# Put help in a GDS column-third div, with class of .form-hint (and new styling to reduce font-size)
+# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
+# De-capitalised content, eg BACK becomes Back
+# Added secondary class of .button-secondary to some of the inputs
+# There are tables here that are not needed at all! Have removed and replaced with h2 and h3 tags
+# Added classes of .list .list-bullet to the ul tags (without the classes, list items don't get bullet points from GDS style)
+
+-->
+
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="registers" id="HPP" method="get" name="HPP">
+				<h1 class="form-title heading-large" id="page-title">Persons with Significant Control (PSC)</h1>
+
+  				<h2 class="heading-medium" id="psc-1-name">Mr Jack Burton (<span id="psc-1-type">Person</span>)</h2>
+
+  				<h3 class="heading-small">Nature of control</h3>
+
+  				<ul class="list list-bullet">
+  					<li>The person holds, directly or indirectly, more than 25% but not more than 50% of the shares in the company.</li>
+  					<li>The person has the right to exercise, or actually exercises, significant influence or control over the activities of a firm that, under the law by which it is governed is not a legal person; and the members of that firm (in their capacity as such) hold, directly or indirectly, more than 25% but not more than 50% of the shares in the company.</li>
+  					<li>The person has the right to exercise, or actually exercises, significant influence or control over the activities of a trust, and the trustees of that trust (in their capacity as such) hold, directly or indirectly, more than 50% but not more than 75% of the voting rights in the company.</li>
+  					<li>The person has the right to exercise, or actually exercises, significant influence or control over the activities of a firm that, under the law by which it is governed is not a legal person; and the members of that firm (in their capacity as such) have the right to exercise, or actually exercise, significant influence or control over the company.</li>
+  				</ul>
+
+  				<p><input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.PSCListPager.PSCListControl.displayPSC_1.btnEdit" textid="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.PSCListPager.PSCListControl.displayPSC_1.W0013632" type="submit" value="Edit"> <input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.PSCListPager.PSCListControl.displayPSC_1.btnRemove" textid="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.PSCListPager.PSCListControl.displayPSC_1.WA000047" type="submit" value="Remove"></p>
+
+  				<h2 class="heading-medium" id="psc-2-name">Mr R. J. MacReady (<span id="psc-2-type">Person</span>)</h2>
+
+  				<h3 class="heading-small">Nature of control</h3>
+
+  				<ul class="list list-bullet">
+  					<li>The person holds, directly or indirectly, more than 25% but not more than 50% of the shares in the company.</li>
+  				</ul>
+
+          <div class="form-group">
+  				  <p><input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.PSCListPager.PSCListControl.displayPSC_2.btnEdit" textid="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.PSCListPager.PSCListControl.displayPSC_2.W0013632" type="submit" value="Edit"> <input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.PSCListPager.PSCListControl.displayPSC_2.btnRemove" textid="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.PSCListPager.PSCListControl.displayPSC_2.WA000047" type="submit" value="Remove"></p>
+          </div><!--end form-group-->
+
+
+
+
+          <details>
+
+          <summary><span class="summary">Add another person with significant control (PSC)?</span></summary>
+
+          <div class="panel panel-border-narrow">
+
+            <p>Select the type of PSC from one of the following:</p>
+
+            <div class="form-group">
+              <input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.btnAddIndividual" textid="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.W0018075" type="submit" value="Add a person as a PSC">
+            </div>
+            <!--end form-group-->
+
+            <div class="form-group">
+              <input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.btnAddLegalEntity" textid="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.W0018076" type="submit" value="Add a relevant legal entity as a PSC">
+
+              <p class="form-hint">Such as a corporate body (for example, a company or firm).</p>
+            </div>
+            <!--end form-group-->
+
+            <div class="form-group">
+              <input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.btnAddLegalPerson" textid="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.W0018078" type="submit" value="Add a legal person as a PSC">
+
+              <p class="form-hint">Such as a corporation sole, government department, international organisation or local authority (for example, the Archbishop of Canterbury or The City of Cardiff Council).</p>
+            </div>
+            <!--end form-group-->
+
+          </div><!--end js-hidden-->
+
+        </details>
+
+        <br>
+        
+				<div class="form-group">
+					<input class="button" name="Incorporation.incorporationNavigation.next" textid="Incorporation.incorporationNavigation.W0013674" type="submit" value="Next"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.previous" textid="Incorporation.incorporationNavigation.W0013673" type="submit" value="Previous">
+				</div>
+				<!--end form-group-->
+				<input data-postback="0" name="__VIEWSTATE" type="hidden" value="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">
+			</form>
+		</div>
+		<!--end column-two-thirds-->
+	</div>
+	<!--end row-->
+</main>
+{% endblock %}

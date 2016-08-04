@@ -1,0 +1,91 @@
+@import 'colours';
+@import 'conditionals';
+
+.pseudo-link {
+  background: none;
+  border: 0;
+  color: $link-colour;
+  display: block;
+  font-size: .9em;
+  padding: 1em 0 0;
+  text-decoration: underline;
+
+  &.inline-pseudo-link {
+    display: inline;
+    padding: 1em 1em 0 0;
+  }
+}
+
+.pseudo-link:hover,
+.pseudo-link:focus {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button.button-secondary {
+  background-color: $link-hover-colour;
+  box-shadow: 0 2px 0 $link-colour;
+
+  &:hover {
+    background-color: $link-colour;
+    box-shadow: 0 2px 0 $link-colour;
+  }
+
+  &:focus {
+    background-color: $link-colour;
+    box-shadow: 0 2px 0 $link-colour;
+	}
+}
+
+.form-control-long {
+  @include media(tablet) {
+    width: 95%;
+  }
+}
+
+.form-control-short {
+  @include media(tablet) {
+    width: 30%;
+  }
+}
+
+//.column-third.form-hint {
+//  font-size: .8em;
+//  margin-top: 2.5em;
+//  padding-left: 4em;
+//}
+
+.capital-progress {  // To do: sort mobile styles
+  border-bottom: 1px solid $border-colour;
+  color: $secondary-text-colour;
+  list-style: none;
+  margin-bottom: 2em;
+  padding: .5em 0;
+
+  li {
+    background-color: $panel-colour;
+    display: inline;
+    margin-left: 0;
+    margin-right: 0;
+    padding: .4em 2em;
+
+    &.active {
+      background: none;
+      border: 1px solid $border-colour;
+      border-bottom: 5px solid $page-colour;
+      color: $text-colour;
+      font-weight: bold;
+      padding-bottom: .5em;
+      }
+
+    a {
+      color: $link-colour;
+      cursor: pointer;
+      text-decoration: underline;
+
+      &:hover {
+        color: $link-hover-colour;
+      }
+    }
+  }
+}

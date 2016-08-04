@@ -1,0 +1,304 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<!--
+What I changed!
+# Heading is now a H1 with classes of .form-title .heading-large
+# Commented ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
+# Put help in a GDS column-third div, with class of .form-hint (and new styling to reduce font-size)
+# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
+# De-capitalised content, eg BACK becomes Back
+# Removed the "required" em marker asterisks
+# Fixed radio buttons/checkboxes -  the input should be wrapped by the label like this  <label class="block-label"><input></label
+# Removed inline styles from form inputs, eg width=200px
+# Text boxes should be formatted like this: <label class="form-label-bold"></label><input class="form-control">
+# Radio buttons and checkboxes should be formatted like this : <label class="block-label"><input><l/abel>
+-->
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="statement-of-compliance-2" id="HPP" method="get" name="HPP">
+				<h1 class="heading-large form-title" id="StatementOfComplianceHeading_heading">
+					Statement of Compliance
+				</h1>
+
+				<fieldset id="authoriserAgentForm.StatCompCtrl.agreeInd_fieldset">
+					<legend></legend> <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.StatCompCtrl.agreeInd_Y">I confirm that the requirements of the Companies Act 2006 as to registration have been complied with. <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.StatCompCtrl.agreeInd_Y" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.StatCompCtrl.agreeInd" type="checkbox" value="Y"></label>
+				</fieldset>
+
+				<h2 class="heading-medium" id="AgentHeading_heading">
+					Agent Details
+				</h2>
+
+				<fieldset>
+					<p class="checkbox">
+						Please select:
+					</p>
+					<legend></legend> <label class="block-label" data-target="agent-is-person" for="person" id="">Person <input class="checkbox" id="person" name="person-or-company" type="radio" value="Y"></label>
+					<div class="panel panel-border-narrow js-hidden" id="agent-is-person">
+						<div class="form-group">
+							<legend></legend>
+              <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.forename" id="authoriserAgentForm.Authoriser.forename_label">Agent's Forename</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.forename" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.forename" type="text" value="">
+						</div>
+						<!--end form-group-->
+
+						<div class="form-group">
+							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.surname" id="authoriserAgentForm.Authoriser.surname_label">Agent's Surname</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.surname" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.surname" type="text" value="">
+						</div>
+						<!--end form-group-->
+					</div>
+					<!-- end js-hidden-->
+
+					<div class="form-group">
+						<legend></legend> <label class="block-label" data-target="agent-is-company" for="company" id="">Company or Firm <input class="checkbox" id="company" name="person-or-company" type="radio" value="N"></label>
+					</div>
+					<!--end form-group-->
+
+					<div class="panel panel-border-narrow js-hidden" id="agent-is-company">
+						<div class="form-group">
+							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.corporateName" id="authoriserAgentForm.Authoriser.corporateName_label">Company Name</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.corporateName" maxlength="160" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.corporateName" type="text" value="">
+						</div>
+						<!--end form-group-->
+
+						<div class="form-group">
+							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.authoriserForename" id="authoriserAgentForm.Authoriser.authoriserForename_label">Authorising Forename</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.authoriserForename" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.authoriserForename" type="text" value="">
+						</div>
+						<!--end form-group-->
+
+						<div class="form-group">
+							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.authoriserSurname" id="authoriserAgentForm.Authoriser.authoriserSurname_label">Authorising Surname</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.authoriserSurname" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.authoriserSurname" type="text" value="">
+						</div>
+						<!--end form-group-->
+					</div>
+					<!-- end js-hidden-->
+				</fieldset>
+
+				<h2 class="heading-medium" id="Address_heading">
+					Address
+				</h2>
+
+				<fieldset>
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.CountryList" id="authoriserAgentForm.Authoriser.Address.CountryList_label">Country <!--<em><img src="/images/com/required.gif" alt="required"></em>--></label> <select class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.CountryList" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.CountryList" onclick="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Country'])" onforminit="Y" onkeyup="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Country'])">
+							<option value="">
+								Please select
+							</option>
+							<option value="GBR">
+								United Kingdom
+							</option>
+							<option value="GB-ENG">
+								England
+							</option>
+							<option value="GB-WLS">
+								Wales
+							</option>
+							<option value="GB-SCT">
+								Scotland
+							</option>
+							<option value="GB-NIR">
+								Northern Ireland
+							</option>
+							<option value="GBR">
+								UK
+							</option>
+							<option value="GB-GBN">
+								Great Britain
+							</option>
+							<option value="">
+								-----------------
+							</option>
+							<option value="USA">
+								USA
+							</option>
+							<option value="IRL">
+								Ireland
+							</option>
+							<option value="DEU">
+								Germany
+							</option>
+							<option value="FRA">
+								France
+							</option>
+							<option value="ITA">
+								Italy
+							</option>
+							<option value="ESP">
+								Spain
+							</option>
+							<option value="PRT">
+								Portugal
+							</option>
+							<option value="NLD">
+								Netherlands
+							</option>
+							<option value="POL">
+								Poland
+							</option>
+							<option value="BEL">
+								Belgium
+							</option>
+							<option value="NOR">
+								Norway
+							</option>
+							<option value="SWE">
+								Sweden
+							</option>
+							<option value="DNK">
+								Denmark
+							</option>
+							<option value="AUS">
+								Australia
+							</option>
+							<option value="NZL">
+								New Zealand
+							</option>
+							<option value="CAN">
+								Canada
+							</option>
+							<option value="ZAF">
+								South Africa
+							</option>
+							<option value="AUT">
+								Austria
+							</option>
+							<option value="HRV">
+								Croatia
+							</option>
+							<option value="CYP">
+								Cyprus
+							</option>
+							<option value="CZE">
+								Czech Republic
+							</option>
+							<option value="EST">
+								Estonia
+							</option>
+							<option value="GRC">
+								Greece
+							</option>
+							<option value="HUN">
+								Hungary
+							</option>
+							<option value="LTU">
+								Lithuania
+							</option>
+							<option value="OTHER">
+								Other - enter below
+							</option>
+							<option value="NOTSPECIFIED">
+								Not specified
+							</option>
+						</select>
+					</div>
+					<!--end form-group-->
+					<!-- this should only be shown when user selects Other in the select box above
+<div class="form-group">
+  <fieldset >
+  <legend></legend>
+
+  <label class="form-label-bold" id="authoriserAgentForm.Authoriser.Address.Country_label" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Country" >Other Country </label>
+  <input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Country" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Country"  value="" maxlength="20" >
+
+  </fieldset>
+</div>--><!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Postcode" id="authoriserAgentForm.Authoriser.Address.Postcode_label">Postcode</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Postcode" maxlength="15" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Postcode" type="text" value=""> <!-- AS:WA000032 --><input alt="Expand postcode" class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.PostcodeLookup" type="submit" value="Lookup"><!-- AE:WA000032 -->
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Premise" id="authoriserAgentForm.Authoriser.Address.Premise_label">Building Name/No. <!--<em><img src="/images/com/required.gif" alt="required"></em>--></label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Premise" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Premise" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Street" id="authoriserAgentForm.Authoriser.Address.Street_label">Address <!--<em><img src="/images/com/required.gif" alt="required"></em>--></label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Street" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Street" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Thoroughfare" id="authoriserAgentForm.Authoriser.Address.Thoroughfare_label"></label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Thoroughfare" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Thoroughfare" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.PostTown" id="authoriserAgentForm.Authoriser.Address.PostTown_label">Post Town <!--<em><img src="/images/com/required.gif" alt="required"></em>--></label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.PostTown" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.PostTown" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.County" id="authoriserAgentForm.Authoriser.Address.County_label">County/Region</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.County" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.County" type="text" value="">
+					</div>
+					<!--end form-group-->
+				</fieldset>
+
+				<h2 class="heading-medium" id="ConsentToActHeading_heading">
+					Authentication - Personal Information
+				</h2>
+
+				<p id="authoriserAgentForm.Authoriser.ConsentToAct.cta1">
+					To take the place of a signature, please provide 3 pieces of personal information relating to the individual above. Where this is a company these should relate to the individual authorising the agent.
+				</p>
+
+				<p id="authoriserAgentForm.Authoriser.ConsentToAct.cta2">
+					Only complete 3 categories and enter 3 characters in each.
+				</p>
+
+				<fieldset>
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.birthTown" id="authoriserAgentForm.Authoriser.ConsentToAct.birthTown_label">Town of Birth (first 3 letters only)</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.birthTown" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.birthTown" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.telephone" id="authoriserAgentForm.Authoriser.ConsentToAct.telephone_label">Last 3 digits of Telephone Number</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.telephone" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.telephone" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.nationalInsuranceNumber" id="authoriserAgentForm.Authoriser.ConsentToAct.nationalInsuranceNumber_label">Last 3 Characters of National Insurance Number</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.nationalInsuranceNumber" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.nationalInsuranceNumber" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.passportNumber" id="authoriserAgentForm.Authoriser.ConsentToAct.passportNumber_label">Last 3 digits of Passport Number</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.passportNumber" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.passportNumber" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.maidenName" id="authoriserAgentForm.Authoriser.ConsentToAct.maidenName_label">Mothers Maiden Name (first 3 letters only)</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.maidenName" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.maidenName" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.eyeColour" id="authoriserAgentForm.Authoriser.ConsentToAct.eyeColour_label">Eye colour (first 3 letters only)</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.eyeColour" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.eyeColour" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.fatherName" id="authoriserAgentForm.Authoriser.ConsentToAct.fatherName_label">Fathers First Name (first 3 letters only)</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.fatherName" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.ConsentToAct.fatherName" type="text" value="">
+					</div>
+					<!--end form-group-->
+				</fieldset>
+				<input name="" type="hidden" value="">
+				
+				<div class="form-group">
+					<input class="button" name="Incorporation.incorporationNavigation.next" textid="Incorporation.incorporationNavigation.W0013674" type="submit" value="Next"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.previous" textid="Incorporation.incorporationNavigation.W0013673" type="submit" value="Previous">
+				</div>
+				<!--end form-group-->
+				<input data-postback="0" name="__VIEWSTATE" type="hidden" value="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">
+			</form>
+		</div>
+		<!--end column-two-thirds-->
+	</div>
+	<!--end grid-row-->
+</main>
+{% endblock %}

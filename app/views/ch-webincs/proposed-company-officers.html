@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<!--
+What I changed!
+# Made company name p tag a H2 with a class of .heading-medium and movd it under the H1 ("Payment")
+# Main heading is now a H1 with classes of .form-title .heading-large
+# Commented ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
+# Put help in a GDS column-third div, with class of .form-hint (and new styling to reduce font-size)
+# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
+# De-capitalised content, eg BACK becomes Back
+# Restructured opening text, adding in heading tags and heading classes
+# Gave form labels a class of .form-label-bold (turns them bold)
+# Removed unnecessary table tags
+# Added secondary class to buttons (turns them blue) - this is likely to change though
+-->
+<main id="content" role="main">{% include "includes/phase_banner_alpha.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			<form action="" method="get" name="HPP">
+
+				<h1 class="heading-xlarge form-title">Proposed Company Officers for A TEST COMPANY LIMITED</h1>
+
+				<div class="form-group">
+
+					<h2 class="heading-medium">Jack Burton</h2>
+					<ul class="list list-bullet">
+						<li>Address: <span class="heading-small">Same as registered office</span></li>
+						<li>Occupation:  <span class="heading-small">Director</span></li>
+						<li>Date of birth:  <span class="heading-small">01 January 1980</span></li>
+					</ul>
+					<input class="button button-secondary" name="" textid="" value="Edit" type="submit">
+					<input class="button button-secondary" name="" textid="" value="Remove" type="submit">
+
+
+					<h2 class="heading-medium">Snake Plissken</h2>
+					<ul class="list list-bullet">
+						<li>Address: <span class="heading-small">1 Any Street, Anytown, London AB12 3CD</span></li>
+						<li>Occupation:  <span class="heading-small">Secretary</span></li>
+						<li>Date of birth:  <span class="heading-small">31 December 1982</span></li>
+					</ul>
+					<input class="button button-secondary" name="" textid="" value="Edit" type="submit">
+					<input class="button button-secondary" name="" textid="" value="Remove" type="submit">
+
+				</div><!--end form-group-->
+
+
+				<div class="form-group">
+
+					<h2 class="heading-medium">Additional officers</h2>
+					<p>To appoint a new company officer, select the appointment type:</p>
+					<p><input class="button button-secondary" name="" textid="" value="Add a person as a director" type="submit"></p>
+					<p><input class="button button-secondary" name="" textid="" value="Add a company or firm as a director" type="submit"></p>
+					<p><input class="button button-secondary" name="" textid="" value="Add a person as a secretary" type="submit"></p>
+					<p><input class="button button-secondary" name="" textid="" value="Add a company or firm as a secretary" type="submit"></p>
+
+				</div><!--end form-group-->
+
+				<div class="form-group">
+					<input type="submit" name="Incorporation.incorporationNavigation.next" class="button" textid="Incorporation.incorporationNavigation.W0013674" value="Next">
+					<input type="submit" name="Incorporation.incorporationNavigation.previous" class="pseudo-link" textid="Incorporation.incorporationNavigation.W0013673" value="Previous">
+				</div><!--end form-group-->
+
+
+
+				<input type="hidden" name="__VIEWSTATE" value="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" data-postback="0">
+				</form>
+
+		</div><!--end column-two-thirds-->
+	</div><!--end row-->
+</main>
+{% endblock %}

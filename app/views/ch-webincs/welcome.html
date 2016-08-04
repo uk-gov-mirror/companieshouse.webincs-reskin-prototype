@@ -1,0 +1,163 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<!--
+What I changed!
+# Heading is now a H1 with classes of .form-title .heading-large
+# Removed ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
+# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
+# De-capitalised content, eg BACK becomes Back
+# Wrapped some elements in a div with a GDS class of .form-group - this gives the large bottom margin space
+# Added a (new) secondary class of form-control-full-width to the password input, to make it wider
+# Used GDS code (http://govuk-elements.herokuapp.com/form-elements/#form-toggle-content) to hide password field
+
+
+
+-->
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+<h1 class="form-title heading-xlarge text">Web Incorporation Service</h1>
+
+	<div class="grid-row">
+		<div class="column-half">
+
+			<form action="company-name-and-address" method="get">
+
+
+
+			<h2 class="heading-medium">Sign in or register to incorporate a new company</h2>
+
+
+			<fieldset>
+
+				<div class="form-group">
+					<legend></legend>
+					<label class="form-label-bold" for="welcomePage.welcome.email">Enter email address:</label>
+					<input type="text" name="welcomePage.welcome.email" value="" size="40" maxlength="256" id="welcomePage.welcome.email" class="form-control form-control-full-width">
+				</div><!-- end form-group-->
+
+				<p class="heading-small">Do you already have a Companies House password?</p>
+
+				<div class="form-group">
+					<legend></legend>
+	<label class="block-label" data-target="my-password-is" for="test">
+					<input id="test" type="radio" name="test" value="Y">
+					Yes, I am a returning customer
+					</label>
+					<div class="panel panel-border-narrow js-hidden" id="my-password-is">
+						<label class="form-label-bold" for="welcomePage.welcome.registeredCustomerVerify" onclick="selectPasswordBox();">My password is</label>
+						<input class="form-control" type="password" name="welcomePage.welcome.password" value="" size="32" maxlength="32" id="welcomePage.welcome.registeredCustomerVerify" onclick="selectPasswordBox();" onchange="$('#existingUser_Y').attr('checked',true);">
+		      </div>
+					<!-- end prototype only-->
+
+
+					<legend></legend>
+					<label class="block-label" for="welcomePage.welcome.existingUser_N">No, I am a new customer
+						<input type="radio" name="welcomePage.welcome.existingUser" id="welcomePage.welcome.existingUser_N" onclick="$('input[id=welcomePage.welcome.registeredCustomerVerify]').attr('disabled','disabled'); $('input[id=welcomePage.welcome.registeredCustomerVerify]').addClass('disabled');" value="N" class="checkbox">
+					</label>
+
+				</div><!-- end form-group-->
+
+
+
+
+
+
+
+
+
+			</fieldset>
+
+			<div class="form-group">
+				<input name="welcomePage.welcome.submit" type="submit" class="button" textid="welcomePage.W0012001" value="Continue" alt="">
+			</div><!-- end form-group-->
+				<p><a href="runpage?page=reminder">Forgotten your password?</a></p>
+
+
+			<input type="hidden" name="welcomePage.welcome.submit"  value="1">
+
+
+
+
+			<input type="hidden" name="__VIEWSTATE" value="ab43b4eJyFkzuvm1gUhe9MJhrJKVOknSaVpfAwF2NLKTgYbI45PAzHF9yMsHkYMGADNpxT5oelzO8KN5qRojQp1tYudrG/tbTe/v0evAWTyb+nuurCrIob8Obp6emvyde5wM/nzzEkJmlYK81lDC4rKQyIWRImFVKxxEZ5jCINgucZBB4ju0gL1rM4ma1EpV+UVqnwJtrAeK/wtzNjvxDoh6frrc6ttqA3mTuJDTg4orZHyQDziOBocKb3I5ELcVGERknv6/ksZXiSsNE8BwIQt1Eyj1SO2DvAsdwLJM+9vzB2msoq7RFAmK6FNKq3dJWPDO/6+HKqy9gO03jyTQpZXhRiOOSHXcQHlZ8J9WDT4mzSTLhT389wkQ4Ik8FVxaFTU4rUlKAcwO7o9MhQ2E49m16DeuRBO4qNLC+mV6o+EMWU924cK1y3tbnBw+kBOJoyNvIBG9m4NxVhw9ai5RWseyxe4D2sLlPsH/aX8FxdDi8gqK43V9OyU3WwlH2w3qXBWl8HSpAd0kOqZVoBponeNM7nzyPWh5+wPl3H4TXhqYibyeOYsBwv/YpICLNd4AfyfOweyMKmuLIoy3W48i1KOJ2iDhnJUTcIZ3VHSIhEIVXvszZtuM7QlZsj3V13gBAL+xF+JRPkoF4dUK9IsWJvxpc+KnV5Dassbjf1vY2XSy27ZFW6XGJ9uUzqpnS7sIsnXxNpEUu/yeC8Ba1eKIyJi/kOq1NUSINj6Jzl7RU7hwgVhHdyl0WV0c0FTm+QcDXQw/YcoXMyuAjKTZxIM934kUxQMxJ7h3hLHhv2qqOt2DkeaZuOIdlsrTc3xhjt8KSZ5jg58bRGHgn1Qaayp1J1heTWbWXFUk3fefX+/c/e/7d/+UdrwjLu66ZYLl9b1NSXH7zK/4367cFr4/4Y9eeoN98Bs8ourg==" data-postback="0"/>
+</form>
+
+
+</div><!--end column-half-->
+
+<div class="column-half">
+	<h2 class="heading-medium">You will need:</h2>
+
+
+<details>
+  <summary><span class="summary">Company Name, Address and Business Activity</span></summary>
+  <div class="panel panel-border-narrow">
+		<ul id="company-name-text" class="list list-bullet">
+				<li>Your company name must not contain any words considered to be <a href="http://www.companieshouse.gov.uk/about/gbhtml/gp1.shtml#ch7" target="_blank">sensitive</a> or be the<a href="http://www.companieshouse.gov.uk/about/gbhtml/gp1.shtml#ch6" target="_blank"> same as an existing name on the register.</a> You can check name availability before you start by using our <a href="http://www.companieshouse.gov.uk/info" target="_blank">WebCHeck service.</a></li>
+				<li>Every company must have a registered office within the UK which is the official legal address of the company.  It must be a physical address (i.e. not a PO Box without a physical location) as Companies House will use this address to send correspondence to.</li>
+				<li>You'll need to choose your company's business activity (a maximum of 4) and associated SIC (Standard Industrial Classification) code from the list of descriptions in the <a href="https://www.gov.uk/government/publications/standard-industrial-classification-of-economic-activities-sic" target="_blank">SIC(07) Business description reference table.</a></li>
+		</ul>
+  </div>
+</details>
+<br>
+<details>
+  <summary><span class="summary">Officer Details (Director and Secretary)</span></summary>
+  <div class="panel panel-border-narrow">
+		<p>To incorporate a private limited company you need at least one director, who has to be over 16 years of age. You may also have a secretary, but this is optional.  The information you will need to supply for each officer includes:</p>
+		<ul class="list list-bullet">
+				<li>full name</li>
+				<li>usual residential address (not displayed on public record)</li>
+				<li>service address (can be the same as the registered office)</li>
+				<li> country/state of residence (i.e. the country or state where the address is situated)</li>
+				<li>nationality, occupation, date of birth and any former names (that have been used for business purposes in the last 20 years).</li>
+		</ul>
+		<p>You may also have officers that are companies or firms, and for these you will need to supply the company or firm name, its registered office address, details of the legal form of the company, where it is registered and if applicable its registration number.</p>
+
+  </div>
+</details>
+<br>
+<details>
+  <summary><span class="summary">Share Capital and Shareholder Details</span></summary>
+  <div class="panel panel-border-narrow">
+		<ul class="list list-bullet">
+			<li>You will need to supply the name and address of each initial shareholder in the company (known as a subscriber); as well as the number and class of shares, nominal value of the shares (including amounts paid and unpaid on each share), plus currency and totals.</li>
+			<li><a href="http://www.companieshouse.gov.uk/infoAndGuide/faq/prescribedParticulars.shtml" target="_blank">Prescribed particulars</a> of rights attached to shares will also need to be supplied (i.e. details of voting, distribution, dividend and any redemption rights attached to the shares).</li>
+			<li>Subscriber Authentication Information - in place of a signature you will need to provide 3 items of personal information from the following 7 categories: town of birth, last 3 digits of telephone number, last 3 digits of National Insurance number, last 3 digits of passport number, mother's maiden name, eye colour, father's first name.</li>
+		</ul>
+	</div>
+</details>
+<br>
+<details>
+  <summary><span class="summary">Persons with Significant Control (PSC)</span></summary>
+  <div class="panel panel-border-narrow">
+		<ul class="list list-bullet">
+			<li>A PSC is a person or relevant legal entity (such as a company) who has significant influence or control over the company.</li>
+			<li>For most companies these are people who hold more than 25% of the company’s shares or voting rights, or have the right to appoint or remove directors.</li>
+			<li>If the PSC is a person you'll need to provide their:<br/>- full name<br/>- usual residential address (not displayed on public record)<br/>- service address (can be the same as the registered office)<br/>- country/state of residence (i.e. the country or state where the address is situated)<br/>- nationality and date of birth (only month and year are displayed on public record)</li>
+			<li>If the PSC is a relevant legal entity (such as a company) or a legal person (E.g. corporation sole, government department, international organisation) you'll need to provide their name, address, details of their legal form and, if applicable, where they are registered (including registration number).<br/><br/>You cannot use this service to incorporate a company that has a PSC who has protection under 790ZG of the Companies Act 2006.</li>
+	</ul>
+  </div>
+</details>
+<br>
+<details>
+  <summary><span class="summary">Payment - £12.00</span></summary>
+  <div class="panel panel-border-narrow">
+		<ul class="list list-bullet">
+			<li>You can pay for your incorporation online with a credit / debit card or PayPal or using a valid <a href="http://www.companieshouse.gov.uk/toolsToHelp/pdf/ofscaa.pdf" target="_blank">Online Filing Credit Account</a> which needs to be set up in advance.</li>
+		</ul>
+  </div>
+</details>
+
+
+</div><!--end column-half-->
+</div><!--end row-->
+</main>
+
+{% endblock %}

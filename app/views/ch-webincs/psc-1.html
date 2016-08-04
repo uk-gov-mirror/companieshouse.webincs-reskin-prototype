@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<!--
+What I changed!
+# Heading is now a H1 with classes of .form-title .heading-large
+# Commented ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
+# Put help in a GDS column-third div, with class of .form-hint (and new styling to reduce font-size)
+# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
+# De-capitalised content, eg BACK becomes Back
+# Fixed some of the radio buttons (which had labels nested inside of labels for some reason)
+# Had to change some of the form elements as the IDs, names, onclick events and onform inits were making the GDS reveal code not work - http://govuk-elements.herokuapp.com/form-elements/#form-toggle-content
+
+-->
+
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="psc-2" id="HPP" method="get" name="HPP">
+				<h1 class="form-title heading-large">Who are the people with significant control over your company?</h1>
+
+
+				<p>For most companies, a person with significant control (PSC):</p>
+
+
+				<ul class="list list-bullet">
+					<li>owns more than 25% of the company’s shares</li>
+
+
+					<li>owns more than 25% of the company’s voting rights</li>
+
+
+					<li>can appoint or remove the majority of directors</li>
+				</ul>
+
+
+				<div class="form-group">
+					<fieldset class="inline">
+						<legend></legend>
+
+						<p class="checkbox heading-small">Does the company have at least one PSC?</p>
+						<legend></legend> <label class="block-label" data-target="psc-yes" for="yes">Yes <input id="yes" name="psc-yes-no" type="radio" value="N"></label> <legend></legend> <label class="block-label" data-target="psc-no" for="no">No <input id="no" name="psc-yes-no" type="radio" value="Y"></label>
+					</fieldset>
+				</div>
+				<!--end form-group-->
+
+
+				<div class="panel panel-border-narrow js-hidden form-group" id="psc-no">
+					<fieldset>
+						<legend></legend>
+
+						<p class="heading-small">You must confirm the following statement:</p>
+						<label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCDeclaration.declarationNegative_Y">The company knows or has reasonable cause to believe that there is no registrable person or registrable relevant legal entity in relation to the company. <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCDeclaration.declarationNegative_Y" name="Incorporation.incorporationNavigation.sectionContent.PSCDeclaration.declarationNegative" onclick="" onforminit="" type="checkbox" value="Y"></label>
+					</fieldset>
+				</div>
+				<!--end js-hidden-->
+
+
+				<div class="panel panel-border-narrow js-hidden form-group" id="psc-yes">
+					<fieldset>
+						<legend></legend>
+
+						<p class="heading-small">You must confirm the following statement:</p>
+						<label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCDeclaration.declarationAffirmative_Y">There is a registrable person or registrable relevant legal entity in relation to the company. <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCDeclaration.declarationAffirmative_Y" name="Incorporation.incorporationNavigation.sectionContent.PSCDeclaration.declarationAffirmative" onclick="" onforminit="" type="checkbox" value="Y"></label>
+					</fieldset>
+				</div>
+				<!--end js-hidden-->
+
+
+				<div class="form-group">
+					<input class="button" name="Incorporation.incorporationNavigation.sectionContent.PSCDeclaration.submit" type="submit" value="Next"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.sectionContent.PSCDeclaration.cancel" type="submit" value="Cancel">
+				</div>
+				<!--end form-group-->
+				<input name="" type="hidden" value=""> <input data-postback="0" name="__VIEWSTATE" type="hidden" value="437482eJytlbuu60QUhvfh6CC0JSoqOhqqSMR2YjuOROFr4vEtjq9xg+yJ44zv9jiJ7ZKH4XF4FB6AiuwDSBwaEKIYjWZpivn/9c36P3zxlfBBeH39ATb1EKM67YX3Ly8vn7/+TMbpmrukYConlrCynPfs3X4Tx5pZTctMHW3J3zEwrkBBFEoFsaybBdC7PSHU3GSxGXuBaiL55V1RFC6cIysul5a07u9FtqtgZOY7FRmt7JsgsFLPEzuFslItYZo9mTCsSxzDZr72OLwQVsRiQ9OPtMgG1kNdMySTSB2Peb53qV1FyCxDmrbEmNTyRPibGTGgUfAkHRPeoIQULmXLeGr6Uq1h07dNHw+oqV9/pVmCorgUjDl9FKhTHaJ1Mx7m4mrOaH2bwxB5RTYa3jQ6MjMOcjYbcjYZuQCGxH4YukgM8tV0e+NhuOBwTnWUOxyYnZXqOCPgvLshXEBpLC1ns8bapsGOM+vzZmnrqLUkjzYFVyecRlJrvWPX9GGGGXY2TrEJwUqpvPGQg3yosSxUca/sL1U5dm3gB1RkRSXDlH7QtHTgAxa0fhnZmJmwbEVOB6hzdtoJ8glFGcgipFR8JQQqdRJPe1tASDkQTzPWn5jxHfrryYzvKPu9jlP4totPONJ6eP1llUIupp9QDLkkH55Q2MdSkQftJnVLjm8CsTxN/k7Jz7WHOGXHyKXPR+GFrWodxTepWqwXJJ0aoAI2EFrxCBWfg6sMTZ0JKR6jTDhWBw23gRHArmPkY3TDxZRalc9GnZQIbkc10hAMd1CxUUW5vaqc3QkuaFteO94JDEFV346IrS7g7hwTbnPoz3PKFfR4HyzSrC5W/gjrMYQ2oB7ruV5Kl3Ul1zdoFuIeqZNR2EakLnj3wJGp9PRJ/C8+fXdwRCmFZfwHaj17JqmU+Dtq07TU3jBxQ8+JlgkBKdo5Q/age7kxEY+Bw9ld9xgS17o+G7XhsOkk3gMCZ1orOTTQ5aJ0r97MPwxJHfmZd+WZt2xCTdTvn0//VmyqNq5RivfNDafbrYJKVGfbradut5emr5whHtJ3Ly/vzAudQJZ4++tzT1qPmfeEVODF+HhbwBU/ocE2rs4haQK10BuPxojD/k0nVRoJU5HYN42zvGJPCc/++oih56vlXZ/zANFNu8jPw+ousLnKaetSc891FQ56dYrYNreOOKwSpgicVohwQEqxiSv57IuUk2zk6ugE0qZ/thDwXq4b9+6G94Gs3ELintBwkDgdU1e5uYJ2yd1b7xI1WINw6FwKk3seBwrXkAvTbsKJ2q28gx6TsN/vGTBGornBixt36mdAGtFtEW70FG6GhRNTeTD1Cx0uVap/kNNyc1loptohdUY7ORp5STs/hKwyMijLbc1byooH/oo3TVpa8Pzxkizlj97/K2xef4LnJCHi/3UGFYt2lu/G7M2U25HEqaIcKA7aLBPD/ARu6FWNS5xJK66G+yBap5itEdXChCX+weeyK0uGZNjYNh4ab4UNMPGboK8/FdTGWer2MSzS/sdvlD6u0kfTF9vtW4r0TfmRLPHPRPnHC2+J8+Tw5bPnev8bnpw3Ug==">
+			</form>
+		</div>
+		<!--end column-two-thirds-->
+	</div>
+	<!--end row-->
+</main>
+{% endblock %}

@@ -1,0 +1,1133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- FILE_START::page.tmpl -->
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Companies House WebFiling system - Incorporation</title>
+
+<!-- FILE_START::css.tmpl -->
+<!-- css.tmpl -->
+<link href="/style/standard.css" rel="stylesheet" type="text/css" media="screen">
+<link href="/style/standardPrint.css" rel="stylesheet" type="text/css" media="print">
+
+
+
+<!-- SkipLink:STYLE<link href="/style/skip.css" rel="stylesheet" type="text/css">SkipLink:STYLE -->
+
+
+
+<!-- FILE_START::ieFix.tmpl -->
+<!--[if lt IE 8]>
+<style type="text/css" media="screen">
+#titleContainer a.buttonRight, #titleContainer a.exit {
+	margin-top: 9px;
+	margin-right: 10px;
+	margin-left: 0px;
+}
+</style>
+<![endif]-->
+<!--[if IE]>
+<style type="text/css" media="screen">
+a.button, a.buttonLeft, a.buttonRight, a.exit {
+	padding: 3px;
+}
+.mainContentBox .confirmationContainer p.linkButtonHolder input.buttonLeft {
+	margin-left: -10px;
+}
+.mainContentBox .confirmationContainer p.linkButtonHolder input.buttonRight {
+	margin-right: -10px;
+}
+
+input.button, input.buttonLeft, input.buttonRight {
+	/* IE */ padding: 2px;
+}
+
+a.button, a.buttonLeft, a.buttonRight, a.exit {
+	/* FF, IE & CHROME */ padding: 4px 6px;
+}
+.space {
+	margin-left: 14px;
+}
+input.checkbox {
+	margin: 0px 10px 10px 0px;
+}
+label.checkbox {
+	margin-top: 2px;
+}
+fieldset fieldset {
+	padding-top: 0px;
+	margin: 5px 0px 0px 0px;
+}
+fieldset fieldset p {
+	margin: 0px;
+}
+p.checkbox {
+	margin: 0px;
+	margin-left: 24px;
+}
+textarea {
+	margin: 15px 0 0 24px;
+}
+.rightAlignContainer p {
+	margin: 0px;
+}
+
+.rightAlignContainer address {
+	clear: both;
+    margin-top: -5px;
+}
+/* Fix for pager spacing problem */
+ul.pageNav li.disabled {
+	padding: 5px 2px 5px 5px;
+	margin: 0 3px 0 0;
+}
+
+/************** Non Form Frag Form Elements ****************/
+p.dropdownLabel {margin: 0 0 10px 0;}
+.nonFFField, #secstatecode {margin: 0;}
+img.proof {margin: 0 0 0 10px;}
+
+.inlineEdit {
+	padding: 15px 0 1px 10px;
+}
+.inlineEdit input, .add input {
+	margin-bottom: 5px;
+}
+.inlineEdit input.button {
+	margin: 0 15px 0 0;
+}
+.inlineEditDisplay input.button {
+	margin-top: -25px;
+}
+.inlineEdit p {
+	margin-bottom: 15px;
+	width: 74%;
+}
+.inlineEdit p span.label {
+	font-weight: normal;
+	float: left;
+	width: 54%;
+}
+.inlineEdit p span.value {
+	float: none;
+}
+.add input.button {margin: -20px -5px 0 0;}
+.inLineEditButtons {
+	width:140px;
+}	
+.nobullets {margin-left:0;}
+.nobullets li input, .column p input, .transfers p input {margin-top: -20px;}
+.holdings p input {margin-top: 0;}
+.shareholders li .warning {margin-top: -15px;}
+.fullWidth .right, .fullWidth .left {float:none; clear:both;}
+.fullWidth .right {text-align:right;}
+
+div.heading /* Tooltip's next to headings */ {margin-top:7px;}
+
+.tooltipHelp {
+    padding-top: 5px;
+}
+
+fieldset + .tooltipHelp {
+    padding-top: 10px;
+}
+
+/************** Annual Return Split Screen ****************/
+.mainContentBox .mainContentHalfLeft h2, .mainContentBox .mainContentHalfRight h2 {margin-bottom: 10px;}
+.mainContentBox .mainContentHalfRight input {margin-top: 18px;}
+.mainContentBox .mainContentHalfRight {margin-top: 11px;}
+
+.highlight {width: 300px; padding: 10px;}
+.highlight p {margin: 0;}
+.highlight img {margin: -5px -3px 0 0;}
+
+/**** HMRC Joint Filing Styles ****/
+
+input.withHMRCImage {
+    background-color:#008080;
+ 	background-image:none;
+    padding-right:10px;
+    padding-left:10px;
+}
+input.withHMRCImage:visited, input.withHMRCImage:hover, input.withHMRCImage:active {
+    background-color:#E4FFFF;
+   	background-image:none;
+	padding-right:10px;
+}
+input.withHMRCGreyImage {
+    background-color:#008080;
+    background-image:none;
+   	padding-right:10px;
+    color:#000
+}
+input.withHMRCGreyImage:visited, input.withHMRCGreyImage:hover, input.withHMRCGreyImage:active {
+    background-color:#E4FFFF;
+    background-image:none;
+	padding-right:10px;
+}
+
+legend {
+    white-space: normal;
+    width: 100%;
+}
+legend span {
+    display:block;
+    width: 100%;
+}
+
+</style>
+<style type="text/css" media="print">
+div.print {font-size: 16pt;}
+</style>
+<![endif]-->
+
+<!--[if IE 6]>
+<style type="text/css" media="screen">
+.mainContentBox #mainContentLeftColumn {
+	width: 65%;
+}
+.column-1 {width: 16%;} /** + 10px margin-right **/
+.column-2 {width: 35%;} /** .column-1 x2 + 10px margin-right **/
+.column-3 {width: 54%;} /** .column-2 + .column 1 + 10px margin-right **/
+.column-4 {width: 73%;} /** .column-3 + .column 1 + 10px margin-right **/
+.column-5 {width: 92%;} /** .column-4 + .column 1 + 10px margin-right **/
+label.column-3 {width: 51%;}
+span.centerText {
+    margin:12px auto 0 auto;
+    margin-left: 10px;
+}
+.mainContentBox .mainContentHalfRight {
+	border: none;
+}
+div.add fieldset {padding:1px;width:70%;}
+
+.inlineEdit fieldset {
+	padding:1px;;
+}
+.add input.button {margin-top: -15px;}
+label.column-3 {width: 51%;}
+.shareholding {border-bottom: none;}
+</style>
+<![endif]-->
+
+
+
+
+<!--[if lt IE 9]>
+<style type="text/css" media="screen">
+table.recentFilingsTable {
+	border-collapse: collapse;
+}
+table.recentFilingsTable tr th {
+	padding:10px 0 10px 10px;
+}
+
+table.recentFilingsTable tr td {
+	padding:10px 5px 10px 10px;
+	border-bottom:2px solid #FFFFFF;
+}
+table.recentFilingsTable a.accepted:link, table.recentFilingsTable a.accepted:visited, table.recentFilingsTable a.formstatus_27:link, table.recentFilingsTable a.formstatus_27:visited, table.recentFilingsTable a.formstatus_20:link, table.recentFilingsTable a.formstatus_20:visited, table.recentFilingsTable a.rejected:link, table.recentFilingsTable a.rejected:visited, table.recentFilingsTable a.failed:link, table.recentFilingsTable a.failed:visited, table.recentFilingsTable a.pdfLink:visited, table.recentFilingsTable a.htmlLink:visited {
+    color:#00144D;
+}
+table.recentFilingsTable input.paymentButton {width:100%;}
+
+</style>
+<![endif]-->
+
+<!--[if lt IE 8]>
+<style type="text/css" media="screen">
+#titleContainer h1 {
+	width: 50%;
+    margin-left:12%;
+}
+#nature-of-control .link-toggleable-collapse {
+    margin-top: 0;
+}
+</style>
+<![endif]-->
+<!--[if lt IE 7]>
+<script language="JavaScript">
+function correctPNG() // correctly handle PNG transparency in Win IE 5.5 & 6.
+{
+   var arVersion = navigator.appVersion.split("MSIE")
+   var version = parseFloat(arVersion[1])
+   if ((version >= 5.5) && (document.body.filters)) 
+   {
+      for(var i=0; i<document.images.length; i++)
+      {
+         var img = document.images[i]
+         var imgName = img.src.toUpperCase()
+         if (imgName.substring(imgName.length-3, imgName.length) == "PNG")
+         {
+            var imgID = (img.id) ? "id='" + img.id + "' " : ""
+            var imgClass = (img.className) ? "class='" + img.className + "' " : ""
+            var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' "
+            var imgStyle = "display:inline-block;" + img.style.cssText 
+            if (img.align == "left") imgStyle = "float:left;" + imgStyle
+            if (img.align == "right") imgStyle = "float:right;" + imgStyle
+            if (img.parentElement.href) imgStyle = "cursor:hand;" + imgStyle
+            var strNewHTML = "<span " + imgID + imgClass + imgTitle
+            + " style=\"" + "width:" + img.width + "px; height:" + img.height + "px;" + imgStyle + ";"
+            + "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
+            + "(src=\'" + img.src + "\', sizingMethod='scale');\"></span>" 
+            img.outerHTML = strNewHTML
+            i = i-1
+         }
+      }
+   }    
+}
+window.attachEvent("onload", correctPNG);
+</script>
+<![endif]-->
+
+<!-- FILE_END::ieFix.tmpl -->
+
+<link rel="stylesheet" href="/style/datepicker/jquery-ui-1.8.16.custom.css" />
+<!-- FILE_END::css.tmpl -->
+
+
+<!-- FILE_START::progressBarCSS.tmpl -->
+<!-- if NOT IE -->
+<!--[if !IE]><!-->
+<style type="text/css">
+#progressBar li {
+	margin: 0 -3px 0 0;
+}
+</style>
+<!--<![endif]-->
+
+<link href="/style/com/progressBar.css" rel="stylesheet" type="text/css">
+
+<!-- if IE 6 ONLY-->
+<!--[if IE]>
+<link href="/style/com/ieFix_progressBar.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<!-- FILE_END::progressBarCSS.tmpl -->
+
+<!-- FILE_START::jquery.tmpl -->
+<script type="text/javascript" src="/scripts/com/jquery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/scripts/com/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/scripts/com/jquery/jquery.validate.js"></script>
+<script type="text/javascript" src="/scripts/com/jquery/jquery.dictionary.js"></script>
+<script type="text/javascript" src="/scripts/com/jquery/jquery.storage.js"></script>
+<script type="text/javascript" src="/scripts/com/jquery/additional-methods.js"></script>
+<script type="text/javascript" src="/scripts/com/jquery/postCodeLookUp.js"></script>
+<script type="text/javascript" src="/scripts/com/jquery/autocomplete.js"></script>
+<script type="text/javascript" src="/scripts/com/jquery/consentToAct.js"></script>
+<script type="text/javascript" src="/scripts/com/jquery/fileUpload.js"></script>
+<script type="text/javascript" src="/scripts/com/jquery/chjslib.min.2de20f794f5c45788c234ab046aaa91b.js"></script>
+
+<!-- FILE_END::jquery.tmpl -->
+
+
+<!-- FILE_START::javascript.tmpl -->
+<script language="Javascript" type="text/javascript">
+
+  function popup( url, width, height ) {
+     window.open(url,'popup', 'toolbar=0,scrollbars=1,location=0,status=1,menubar=0,resizable=yes,width=' + width + ',height=' + height + '');
+  }
+
+  function clearSearch(cname,cnumb,cotype) {
+     cname.value = '';
+     cnumb.value = '';
+     cotype[0].checked = 1;
+     cotype[1].checked = 0;
+     cotype[2].checked = 0;
+     cotype[3].checked = 0;
+  }
+
+function openurl(opt) {
+   if (opt == "info") {
+      txt = document.dropdown.information.value;
+   }
+   if (opt == "tools") {
+   txt = document.dropdown.tools.value;
+   }
+   if(txt != "") {
+   window.location = txt;
+   }
+}
+
+</script>
+
+
+<!-- FILE_END::javascript.tmpl -->
+
+<script type="text/javascript">
+
+// Internal method
+function internal_disable ( hide, disable, fields )
+{
+    for ( var i=0; i < fields.length; i++ )
+    {
+        var element = document.getElementById(fields[i]);
+        // OREL
+        if ( element ) {
+           element.disabled=disable;
+           regEx = new RegExp('(\\s|^)disabledField(\\s|$)');
+           if (disable) {
+               if (!element.className.match(regEx)) {
+                  element.className += " disabledField";
+               }
+           }
+           else {
+              element.className = element.className.replace( regEx, ' ' );
+           }
+           if ( hide ) { internal_hide( element, disable ); }
+           //if ( hide ) { alert( "HIDE:"+element.nodeName ); }
+        }
+    }
+}
+
+// Internal method
+function internal_hide( element, disable )
+{
+    var target;
+    var debug = false; // set to true for debugging
+    if ( element.nodeName=='P' )
+    {
+        target = element; // p
+    }
+    if ( element.nodeName=='DIV' )
+    {
+        target = element; // div
+    }
+    else if ( element.nodeName=='SELECT' )
+    {
+        target = element.parentNode; // fieldset.select
+    }
+    else if ( element.nodeName=='INPUT' )
+    {
+        if ( element.type=='radio' || element.type=='checkbox' )
+        {
+            target = element.parentNode.parentNode; // fieldset.p.input
+        }
+        else
+        {
+            target = element.parentNode; // fieldset.input
+        }
+    }
+    else if ( element.nodeName=='FIELDSET' )
+    {
+        target = element;
+    }
+    if ( target ) {
+        var styl = (disable)?'none':'';
+        if ( target.nodeName=='FIELDSET' || target.nodeName=='P' || target.nodeName=='DIV' ) {
+            target.style.display=styl;
+        }
+        else if ( debug ) { alert( "DEBUG: target name["+target.nodeName+"] for element name["+element.nodeName+"] is not expected" ); }
+    }
+    else if ( debug ) { alert( "DEBUG: target for element name["+element.nodeName+"] type["+element.type+"] is not defined" ); }
+}
+
+// External method - use directly in validation files
+function set_disable ( disable, fields )
+{
+    internal_disable ( false, disable, fields );
+}
+
+// External method - use directly in validation files
+function set_hide ( disable, fields )
+{
+    internal_disable ( true, disable, fields );
+}
+
+function load()
+{
+    var input_array = document.getElementsByTagName('input');
+//    for ( var i=0; i < input_array.length; i++ )
+    for ( var i=input_array.length-1; i>=0; i-- )
+    {
+        if ( input_array[i].type=='radio'&& (input_array[i].checked || input_array[i].getAttribute('onforminit')=='Y') && input_array[i].onclick ) 
+        { 
+            input_array[i].onclick();
+        }
+        else if ( input_array[i].type=='checkbox' && (input_array[i].checked || input_array[i].getAttribute('onforminit')=='Y') && input_array[i].onclick ) 
+        { 
+            input_array[i].onclick();
+        }
+        else if ( input_array[i].type=='hidden' && input_array[i].onclick ) 
+        { 
+            input_array[i].onclick();
+        }
+    }
+    var select_array = document.getElementsByTagName('select');
+//    for ( var i=0; i < select_array.length; i++ )
+    for ( var i=select_array.length-1; i>=0; i-- )
+    {
+        if ( select_array[i].onclick ) 
+        { 
+            if ( select_array[i].value || select_array[i].getAttribute('onforminit')=='Y' )
+            {
+                select_array[i].onclick();
+            }
+        }
+    }
+}
+
+//function get_value ( field )
+//{
+//    return document.getElementById(field).value;
+//}
+
+function get_value ( field )
+{
+    x=document.getElementById(field);
+    if ( x.type=='radio' )
+    {
+        return x.checked;
+    }
+    else if ( x.type=='checkbox' )
+    {
+       return x.checked;
+    }
+    else
+    {
+        return x.value;
+    }
+}
+
+function showlinks() {
+    var links = document.getElementsByTagName('a');
+    for (i=0;i<links.length;i++) {
+        if (links[i].className == 'tiplink') {
+            links[i].style.display = "inline";
+        }
+    }
+}
+var checker = 0;
+
+function jqueryLoaded() {
+    clearInterval(checker);
+    $(document).ready(load);
+    $(document).ready(showlinks);
+
+
+    $(document).ready(function() {
+        if ($.browser.mozilla || $.browser.webkit) {
+            $('head').append('<link rel="stylesheet" href="/style/com/progressBarFixer.css" type="text/css" />');
+        }
+        $(document).ready(function(){backButtonInterceptor()});
+    });
+}
+
+function checkJquery() {
+    if (window.jQuery) {
+        jqueryLoaded();
+    }
+    if(checker == 0) {
+        //alert('Setting up interval');
+        checker = window.setInterval(checkJquery, 100);
+    }
+}
+
+checkJquery();
+
+</script>
+
+
+<!-- FILE_START::javascript.tmpl -->
+<script language="Javascript" type="text/javascript">
+
+  function popup( url, width, height ) {
+     window.open(url,'popup', 'toolbar=0,scrollbars=1,location=0,status=1,menubar=0,resizable=yes,width=' + width + ',height=' + height + '');
+  }
+
+  function clearSearch(cname,cnumb,cotype) {
+     cname.value = '';
+     cnumb.value = '';
+     cotype[0].checked = 1;
+     cotype[1].checked = 0;
+     cotype[2].checked = 0;
+     cotype[3].checked = 0;
+  }
+
+function openurl(opt) {
+   if (opt == "info") {
+      txt = document.dropdown.information.value;
+   }
+   if (opt == "tools") {
+   txt = document.dropdown.tools.value;
+   }
+   if(txt != "") {
+   window.location = txt;
+   }
+}
+
+</script>
+
+
+<!-- FILE_END::javascript.tmpl -->
+
+</head>
+
+<body>
+
+<!-- FILE_START::myCHNav.tmpl -->
+<!-- en/stdwf/myCHNav.tmpl -->
+<div id="top">
+
+<!-- FILE_START::skip.tmpl -->
+<!-- SkipLink:skip_content<a class="skip" href="#mainContentLeftColumn">Skip to content</a>SkipLink:skip_content -->
+<!-- SkipLink:skip_notes<a class="skip" href="#mainContentRightColumn">Skip to notes</a>SkipLink:skip_notes -->
+
+<!-- FILE_END::skip.tmpl -->
+
+<!-- FILE_START::topBanner.tmpl -->
+<!-- en/webinc/topBanner.tmpl -->
+<div class="print"><!-- DS:W0012716 -->PRINTED COPY NOT FOR SUBMISSION<!-- DE:W0012716 --></div>
+<img src="/images/com/en/gds_new_logo.jpg" alt="Companies House" class="print" />
+<div class="block darkBlue mainBanner">
+    <div id="minWidthContainer">
+        <img style="margin:10px 0 -10px 10px"  src="/images/com/en/CompaniesHouseNewLogo.png" alt="Companies House" />
+        <p><!--Placeholder for navigation links etc --><!--<a href="#nogo">Home</a> | <a href="#nogo">Test</a> -->&nbsp;</p>
+    </div>
+</div>
+
+<!-- FILE_END::topBanner.tmpl -->
+ 
+
+    
+</div>
+<!-- FILE_END::myCHNav.tmpl -->
+
+<!-- END top navigation -->
+
+<form action="" method="POST" name='HPP'>
+
+	
+<!-- FILE_START::incorporationNavigation.tmpl -->
+<div id="titleContainer">
+<a class="buttonRight" href="/help/en/stdwf/webIncHelp.html#summary" target="_blank" id="btnHelp">Help</a>
+
+<a class="buttonRight" href="javascript:window.print()" id="btnPrint">PRINT</a>
+<a href="https://ewf.companieshouse.gov.uk//com-logout?silent=1&amp;amp;lang=en" class="exit" id="btnLogout">Log out and finish later</a>
+<h1>Web Incorporation Service</h1>
+
+<p class="dottedLine"></p>
+</div>
+
+<p class="summary">The following progress bar displays the sections of the Incorporation process and indicates at what point in the process you are.  Each section must be completed to progress to the next.  The Incorporation sections are as follows:</p>
+
+<ol class="incNewProgressBar">
+
+  
+    <li class="complete">
+    Company Name & Address
+    </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <li class="complete">
+    SIC
+	</li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+    <li class="complete">
+    Officers
+	</li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+    <li class="complete">
+    Capital
+	</li>
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+    <li class="complete">
+    Subscribers
+	</li>
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+    <li class="complete">
+    PSC
+	</li>
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+    <li class="complete">
+    Registers
+	</li>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    <li class="complete">
+    Statement of Compliance
+	</li>
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <li class="active">
+    Summary
+	</li>
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <li class="">
+    Payment
+	</li>
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <li class="end ">
+    Confirmation
+	</li>
+  
+
+</ol>
+
+<div id="sectionFrame"><!-- Incorporation Template Frame -->
+
+    
+<!-- FILE_START::summarySection.tmpl -->
+<div class="mainContentBox">
+    <!-- NOTES COLUMN -->
+    <div id="mainContentRightColumn">
+        <div class="notesBlock">
+            <h2>Note 1: Summary of information</h2>
+            <p>This screen displays a summary of the information you have entered in your application to incorporate a company.<br/><br/>To amend any of the details displayed, click on the 'change details' button which will direct you to the corresponding section for editing.  Please note you will then need to click back through the sections to return to this Summary screen.</p>
+        </div>
+        <div class="notesBlock">
+            <h2>Note 2: Statement of Capital (Totals)</h2>
+            <p>The Statement of Capital shows the totals for each currency and class entered.  To amend the share capital information, click the 'change details' button to return to the Capital section for editing.</p>
+        </div>
+        <div class="notesBlock">
+            <h2>Note 3: Memorandum and Articles of Association</h2>
+            <p>The <strong>Memorandum of Association</strong> is a statement that each subscriber wishes to form a company and it records each subscriber's agreement to be a member of the company and to take at least one share in that company.  It is authenticated by each named subscriber.  The Memorandum is in the form required by law.<br/><br/>The <strong>Articles of Association</strong> contains details of running the company, internal management affairs and liability - they are essentially the company's internal rulebook.<br/>The Companies Act 2006 offers Model Articles of Association, which are available from our website and can be viewed by clicking on the link on this page.<br/>The current application for a company, if successful, will be incorporated by adopting the model articles in their entirety. If the company wishes to make changes to the model articles after incorporation a copy of the special resolution making the change must be delivered to Companies House within 15 days of being passed.  You must also deliver a copy of the amended articles to Companies House within 15 days.</p>
+        </div>
+    </div>
+    <!-- END OF NOTES COLUMN -->
+
+    <!-- CONTENT COLUMN -->
+    <div id="mainContentLeftColumn">
+        <div class="mainContentBox form">
+            <div class="mainContentFullWidth">
+                <div class="tooltip"></div><h1>Summary of information</h1>
+                <p>Please review the information on this page before submitting your application.</p>
+                
+                <!-- Company Name and Address -->
+                <!-- FILE_START::summaryCompanyDisplay.tmpl -->
+<p class="dottedLine"></p>
+
+<input type="submit" class="buttonRight" name="Incorporation.incorporationNavigation.sectionContent.summaryCompanyDisplay.btnChangeDetails" textid="Incorporation.incorporationNavigation.sectionContent.summaryCompanyDisplay.W0012011" value="CHANGE DETAILS" />
+<h2 id="summary-heading-company-name-and-address">Company Name and Address</h2>
+<table class="indent">
+    <tr>
+    	<th class="column-1" valign="top">Company Name</th>
+        <td class="column-1" id="summary-company-name">VFVFV LIMITED</td>
+    </tr>
+    <tr>
+    	<th valign="top">Registered Office Address</th>
+        <td>
+<!-- FILE_START::displayAddressControl.tmpl -->
+
+<p class="margin-top-10 bold">
+    
+    1 
+    111<br />
+    11<br />
+    111<br />
+    
+    United Kingdom<br />
+    
+</p>
+
+
+<!-- FILE_END::displayAddressControl.tmpl -->
+</td>
+    </tr>
+    <tr>
+    	<th>Company Type</th>
+        <td id="summary-company-type">Private Limited by Shares</td>
+    </tr>
+    
+</table>
+<!-- FILE_END::summaryCompanyDisplay.tmpl -->
+
+                
+                <!-- SIC -->
+                <!-- FILE_START::summarySICDisplay.tmpl -->
+<p class="dottedLine"></p>
+
+<input type="submit" class="buttonRight" name="Incorporation.incorporationNavigation.sectionContent.sicDisplay.btnChangeDetails" textid="Incorporation.incorporationNavigation.sectionContent.sicDisplay.W0012011" value="CHANGE DETAILS" />
+<h2 id="summary-heading-sic-codes">SIC Codes</h2>
+<table class="indent">
+    <tr>
+        <th class="column-1">SIC Code</th>
+        <th class="column-1">Description</th>
+    </tr>
+    
+        <tr>
+            <td id="summary-sic-1-code">01110</td>
+            <td id="summary-sic-1-desc">Growing of cereals (except rice), leguminous crops and oil seeds</td>
+        </tr>
+    
+</table>
+
+<!-- FILE_END::summarySICDisplay.tmpl -->
+
+                
+                <!-- Officer listing -->
+                <!-- FILE_START::summaryOfficersDisplay.tmpl -->
+<p class="dottedLine"></p>
+
+<input type="submit" class="buttonRight" name="Incorporation.incorporationNavigation.sectionContent.officerDisplayControl.btnChangeDetails" textid="Incorporation.incorporationNavigation.sectionContent.officerDisplayControl.W0012011" value="CHANGE DETAILS" />
+<h2 id="summary-heading-officers">Officers</h2>
+<table class="indent">
+    <tr>
+        <th class="column-1">Name</th>
+        <th class="column-1">DOB</th>
+        <th class="column-1">Appt Type</th>
+    </tr>
+    
+        <tr>
+            <td>yy6y6 hhh</td>
+            <td>01/01/1995</td>
+            <td>Person Director</td>
+        </tr>
+    
+</table>
+<!-- FILE_END::summaryOfficersDisplay.tmpl -->
+
+
+                <!-- Statement of Capital (Totals) -->
+                <!-- FILE_START::summaryStatementOfCapitalDisplay.tmpl -->
+<p class="dottedLine"></p>
+
+<input type="submit" class="buttonRight" name="Incorporation.incorporationNavigation.sectionContent.statementOfCapitalDisplay.btnChangeDetails" textid="Incorporation.incorporationNavigation.sectionContent.statementOfCapitalDisplay.W0012011" value="CHANGE DETAILS" />
+<h2 id="summary-heading-capital">Statement of Capital (Totals)</h2>
+
+
+
+<table class="indent">
+<tr>
+    <th class="column-1" valign="top">Currency:</th>
+    <td class="column-1">GBP - Pound Sterling</td>
+</tr>
+
+<tr>
+    <th class="column-1">Total amount unpaid for this currency:</th>
+    <td class="column-1">1</td>
+</tr>
+
+</table>
+
+<table class="indent">
+    <tr>
+        <th class="column-1">Class of share</th>
+        <th class="column-1">Total number of shares issued</th>
+        <th class="column-1">Total aggregate value of shares issued</th>
+    </tr>
+    
+    <tr>
+        <td id="summary-capital-1-class">Ordinary</td>
+        <td id="summary-capital-1-number">1</td>
+        <td id="summary-capital-1-value">1</td>
+    </tr>
+    
+</table>
+
+
+
+<!-- FILE_END::summaryStatementOfCapitalDisplay.tmpl -->
+
+
+                <!-- Registers held on public record -->
+                <!-- FILE_START::summaryRegisterLocationsDisplay.tmpl -->
+<p class="dottedLine"></p>
+
+<input type="submit" class="buttonRight" name="Incorporation.incorporationNavigation.sectionContent.registersOnPublicRecordDisplay.btnChangeDetails" textid="Incorporation.incorporationNavigation.sectionContent.registersOnPublicRecordDisplay.W0012011" value="CHANGE DETAILS" />
+<h2 id="summary-heading-location-of-registers">Location of registers</h2>
+<table class="indent">
+<tr>
+    <th>Register type</th>
+    <th>Where register will be kept</th>
+</tr>
+<tr>
+    <td>Register of Directors</td>
+    <td id="summary-registers-directors">Registered office</td>
+</tr>
+<tr>
+    <td>Register of Directors’ Residential Addresses</td>
+    <td id="summary-registers-directorsura">Registered office</td>
+</tr>
+
+</table>
+<!-- FILE_END::summaryRegisterLocationsDisplay.tmpl -->
+
+                
+                <!-- Initial Shareholdings -->
+                <!-- FILE_START::summarySubscriberDisplay.tmpl -->
+<p class="dottedLine"></p>
+
+<input class="buttonRight" type="submit" name="Incorporation.incorporationNavigation.sectionContent.subscribersDisplay.btnChangeDetails" textid="Incorporation.incorporationNavigation.sectionContent.subscribersDisplay.W0012011" value="CHANGE DETAILS" />
+<h2 id="summary-heading-subscribers">Initial Shareholdings</h2>
+
+<table class="indent">
+<tr>
+    <th class="column-1">Name</th>
+    <th class="column-1">Number of shares</th>
+    <th class="column-1">Currency and Class</th>
+</tr>
+
+<tr>
+    <td id="summary-subscribers-1-name">gbgbgb bgbgbb</td>
+    <td id="summary-subscribers-1-numShares">1</td>
+    <td id="summary-subscribers-1-currencyAndClass">GBP - Ordinary</td></tr>
+
+</table>
+
+<!-- FILE_END::summarySubscriberDisplay.tmpl -->
+
+
+                <!-- PSC -->
+                <!-- FILE_START::summaryPSCDisplay.tmpl -->
+<p class="dottedLine"></p>
+
+<input id="summary-button-psc" type="submit" class="buttonRight" name="Incorporation.incorporationNavigation.sectionContent.pscDisplay.btnChangeDetails" textid="Incorporation.incorporationNavigation.sectionContent.pscDisplay.W0012011" value="CHANGE DETAILS" />
+<h2 id="summary-heading-psc">Person(s) with Significant Control (PSC)</h2>
+<table class="indent">
+    
+        <tr>
+            <th class="column-1">Name</th>
+            <th class="column-1">PSC Type</th>
+        </tr>
+        
+        <tr>
+            <td id="summary-psc-1-name">rfff rfrf</td>
+            <td id="summary-psc-1-type">
+                Person
+                
+                
+            </td>
+        </tr>
+        
+        <tr>
+            <td id="summary-psc-2-name">ggttt tgtgg</td>
+            <td id="summary-psc-2-type">
+                Person
+                
+                
+            </td>
+        </tr>
+        
+    
+</table>
+<!-- FILE_END::summaryPSCDisplay.tmpl -->
+
+
+                <!-- Statement of Compliance -->
+                <!-- FILE_START::summaryAuthoriserDisplay.tmpl -->
+<p class="dottedLine"></p>
+
+<input class="buttonRight" type="submit" name="Incorporation.incorporationNavigation.sectionContent.authoriserDisplay.btnChangeDetails" textid="Incorporation.incorporationNavigation.sectionContent.authoriserDisplay.W0012011" value="CHANGE DETAILS" />
+<h2 id="summary-heading-authoriser">Statement of Compliance</h2>
+
+        <p>Completed by all of the subscribers of the memorandum of association:</p>
+        <ul>
+            <li>gbgbgb bgbgbb</li>
+        </ul>
+
+
+<!-- FILE_END::summaryAuthoriserDisplay.tmpl -->
+
+                
+                <!-- Memorandum and Articles of Association -->
+                <!-- FILE_START::summaryMemArtsDisplay.tmpl -->
+<p class="dottedLine"></p>
+
+<h2 id="summary-heading-memarts">Memorandum and Articles of Association</h2>
+<p>The following memorandum and articles of association have been accepted by the subscribers as the memorandum and articles of association with which the company is to be registered.</p>
+<p><a href="autopage?form=memorandum" target="_blank">View memorandum of association</a><br/>
+(PDF copy will be attached to acceptance email with certificate of incorporation)
+</p>
+<p><a href="http://www.companieshouse.gov.uk/about/modelArticles/model_articles_private_ltd_by_shares.pdf" target="_blank">View model articles of association</a><br/>
+(links to a PDF document)</p>
+
+<!-- FILE_END::summaryMemArtsDisplay.tmpl -->
+
+                
+            </div>
+        </div>
+    </div><!-- End of mainContentLeftColumn -->
+    <p class="spacer"></p>
+</div><!-- End of mainContentBox -->
+
+<!-- FILE_END::summarySection.tmpl -->
+
+    
+    <div class="rightAlignContainer">
+      
+        <input type="submit" name="Incorporation.incorporationNavigation.next" class="buttonRight" textid="Incorporation.incorporationNavigation.W0013674" value="NEXT">
+      
+      
+        
+            <input type="submit" name="Incorporation.incorporationNavigation.previous" class="buttonLeft" textid="Incorporation.incorporationNavigation.W0013673" value="PREVIOUS">
+        
+      
+    </div>
+    
+
+</div><!-- end of Incorporation Template Frame -->
+
+<!-- FILE_END::incorporationNavigation.tmpl -->
+
+
+<input type="hidden" name="__VIEWSTATE" value="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" data-postback="0"/>
+</form>
+    
+<!-- FILE_START::bottomNav.tmpl -->
+<!-- $Id: bottomNav.tmpl,v 1.14 2009/02/02 12:24:44 jthomas Exp $ -->
+<p class="dottedLine" style="margin-top: 30px;"></p>
+<p class="solidLine"></p>
+<p class="solidDivider"></p>
+<p></p>
+<p class="block mediumBlue">
+    <!-- DS:W0012295 -->Companies House Service Desk:<!-- DE:W0012295 --> +44 (0)303 1234 500
+    &nbsp;<!-- DS:W0011959 -->available 08:30 to 18:00 (UK time)<!-- DE:W0011959 -->
+    <!-- DS:W0011960 -->Mon-Fri<!-- DE:W0011960 -->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!-- DS:W0012296 -->Companies House Email:<!-- DE:W0012296 -->
+    <a href="mailto:enquiries@companies-house.gov.uk"><!-- DS:W0011637 -->enquiries@companieshouse.gov.uk<!-- DE:W0011637 --></a>
+</p>
+<p class="solidDivider"></p>
+
+<!-- FILE_START::tracker.tmpl -->
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://stats.companieshouse.gov.uk/piwik/" : "http://stats.companieshouse.gov.uk/piwik/");
+document.write(unescape("<script src='" + pkBaseURL + "piwik.js' type='text/javascript'></" + "script%3E"));
+</script><script type="text/javascript">
+try {
+        var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 6);
+            piwikTracker.trackPageView();
+                piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://stats.companieshouse.gov.uk/piwik/piwik.php?idsite=6" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+<!-- FILE_END::tracker.tmpl -->
+
+
+<!-- FILE_END::bottomNav.tmpl -->
+
+</body>
+
+</html>
+
+<!-- FILE_END::page.tmpl -->
