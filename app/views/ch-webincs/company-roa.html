@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  What's your company's registered office address?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+	<div class="grid-row">
+		<div class="column-two-thirds">
+      <form action="company-location-of-roa" method="GET" name="">
+
+			<h1 id="Proposednamehead_heading" class="heading-xlarge">What's your company's registered office address?</h1>
+
+      <p class="form-hint">The registered office is the official address of the company and will be where the legal notices and company mail are sent.</p>
+
+			<fieldset>
+
+          <h2 class="heading-medium">Find your company address</h2>
+
+          <div class="form-group">
+            <legend></legend>
+            <label class="form-label-bold" id="nameAndAddressForm.newAddress.Postcode_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Postcode">Postcode </label>
+            <input class="form-control form-control-short" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Postcode" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Postcode" value="" maxlength="12" >
+            <input type="submit" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.PostcodeLookup" value="Lookup" class="button button-secondary" alt="Expand postcode" id="find-address-button" onclick="showAddress()"><!-- AE:WA000032 -->
+            <span></span>
+          </div><!-- end form-group-->
+
+    			<div class="form-group">
+    				<legend></legend>
+    				<label class="form-label-bold" id="nameAndAddressForm.newAddress.Premise_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Premise">Building name or number</label>
+    				<input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Premise" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Premise"  value="1" maxlength="50" >
+    				<span></span>
+    			</div><!-- end form-group-->
+
+          <div id="find-address-selection" style="display:none;">
+               <h1 class="form-title heading-medium">Select your company address</h1>
+               <fieldset>
+                   <div class="form-group">
+                       <label class="block-label" for="radio-inline-1-company-address-input" id="radio-inline-1-company-address">
+                           <input id="radio-inline-1-company-address-input" type="radio" name="radio-inline-group" value="add1"> 1 Addison Road, London, W17 9PQ
+                       </label>
+                       <label class="block-label" for="radio-inline-2-company-address-input" id="radio-inline-2-company-address">
+                           <input id="radio-inline-2-company-address-input" type="radio" name="radio-inline-group" value="addr2"> 2 Addison Road, London, W17 9PQ
+                       </label>
+                       <label class="block-label" for="radio-inline-3-company-address-input" id="radio-inline-3-company-address">
+                           <input id="radio-inline-3-company-address-input" type="radio" name="radio-inline-group" value="addr3"> 3 Addison Road, London, W17 9PQ
+                       </label>
+                       <label class="block-label" for="radio-inline-4-company-address-input" id="radio-inline-4-company-address">
+                           <input id="radio-inline-4-company-address-input" type="radio" name="radio-inline-group" value="addr4"> 4 Addison Road, London, W17 9PQ
+                       </label>
+                   </div>
+               </fieldset>
+           </div><!--find-address-selection-->
+
+
+
+
+          <details class="form-group">
+          <summary><span class="summary">Enter address manually</span></summary>
+          <div class="panel panel-border-narrow">
+
+            			<div class="form-group">
+            				<legend></legend>
+            				<label class="form-label-bold" id="nameAndAddressForm.newAddress.Street_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Street">Address Line 1 </label>
+            				<input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Street" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Street"  value="" maxlength="50" >
+            				<span></span>
+            			</div><!-- end form-group-->
+
+            			<div class="form-group">
+            				<legend></legend>
+            				<label class="form-label-bold" id="nameAndAddressForm.newAddress.Thoroughfare_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Thoroughfare">Address Line 2 </label>
+            				<input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Thoroughfare" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Thoroughfare"  value="" maxlength="50" >
+            				<span></span>
+            			</div><!-- end form-group-->
+
+
+            			<div class="form-group">
+            				<legend></legend>
+            				<label class="form-label-bold" id="nameAndAddressForm.newAddress.PostTown_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.PostTown">Post Town </label>
+            				<input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.PostTown" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.PostTown"  value="" maxlength="50" >
+            				<span></span>
+            			</div><!-- end form-group-->
+
+            			<div class="form-group">
+            				<legend></legend>
+            				<label class="form-label-bold" id="nameAndAddressForm.newAddress.County_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.County">County/Region </label>
+            				<input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.County" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.County"  value="" maxlength="50" >
+            				<span></span>
+            			</div><!-- end form-group-->
+
+            			<div class="form-group">
+            				<legend></legend>
+            				<label class="form-label-bold" id="nameAndAddressForm.newAddress.CountryList_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.CountryList">Country </label>
+            				<select class="form-control" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.CountryList" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.CountryList" onforminit="" onclick="" onkeyup="">
+            					<option value="">Please select</option>
+            					<option value="GBR" selected="">United Kingdom</option>
+            					<option value="GB-ENG">England</option>
+            					<option value="GB-WLS">Wales</option>
+            					<option value="GB-SCT">Scotland</option>
+            					<option value="GB-NIR">Northern Ireland</option>
+            					<option value="GBR" selected="">UK</option>
+            					<option value="GB-GBN">Great Britain</option>
+            					<option value="NOTSPECIFIED">Not specified</option>
+            				</select>
+            				<span></span>
+            			</div><!-- end form-group-->
+
+            			<div class="form-group">
+            				<legend></legend>
+            				<label class="form-label-bold" id="nameAndAddressForm.newAddress.CareOfName_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.CareOfName">c/o (if part of address)</label>
+            				<span class="form-hint">Typically this c/o information consists of a person's name or the name of a company, partnership or firm whose property is being used as the service address for the company officer(s).</span>
+            				<input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.CareOfName" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.CareOfName"  value="" maxlength="100" >
+            				<span></span>
+            			</div><!-- end form-group-->
+
+            			<div class="form-group">
+            				<legend></legend>
+            				<label class="form-label-bold" id="nameAndAddressForm.newAddress.PoBox_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.PoBox">PO Box No (if part of address) </label>
+            				<input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.PoBox" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.PoBox"  value="" maxlength="10" >
+            			<span></span>
+            			</div><!-- end form-group-->
+
+          </div><!--panel-->
+          </details>
+
+			</fieldset>
+
+			<input type="submit" name="" class="button" value="Next">
+
+    </form>
+
+		</div><!--end column-two-thirds-->
+
+	</div><!--end row-->
+</main>
+
+
+{% endblock %}

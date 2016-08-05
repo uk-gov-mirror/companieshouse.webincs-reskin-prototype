@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="company-roa" method="GET" name="">
+
+			<h1 id="Proposednamehead_heading" class="heading-xlarge">Company name</h1>
+
+      <h2 class="heading-medium">What do you want your company name to be?</h2>
+
+			<fieldset id="nameAndAddressForm.companyName.proposedName_fieldset">
+				<div class="form-group">
+					<legend class="visuallyhidden"></legend>
+					<label class="visuallyhidden" id="nameAndAddressForm.companyName.proposedName_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.companyName.proposedName">What do you want your company name to be?</label>
+	        <span class="form-hint">Don't include the name ending (for example, Limited or Ltd) you can choose that later.</span>
+				  <input type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.companyName.proposedName" class="form-control form-control-long" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.companyName.proposedName" value="" maxlength="160">
+
+          <details>
+            <br>
+            <summary><span class="summary">What are the rules for company names?</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>Your company name:</p>
+                <ul class="list list-bullet">
+                  <li>can’t be the same as another registered company’s name</li>
+                  <li>can’t be too similar to another registered name - but you may be able to get permission from the existing registered company</li>
+                  <li>can't contain certain regulated words - unless you get permission</li>
+                  <li>can't suggest a connection with government or local authorities</li>
+                  <li>must not be offensive</li>
+                  <li>can be up to 160 characters long</li>
+                </ul>
+                <p>Read the <a href="https://www.gov.uk/choose-company-name" target="_blank">detailed rules for company names<span class="visuallyhidden"> Link opens in a new tab/window</span></a>.</p>
+            </div><!--panel-->
+          </details>
+
+        </div><!-- end form-group-->
+      </fieldset>
+
+
+
+          <h2 class="heading-medium">What name ending do you want to use?</h2>
+          <details>
+          <summary><span class="summary">Which name ending should I choose?</span></summary>
+            <div class="panel panel-border-narrow">
+              <p>Revealed text</p>
+            </div>
+          </details>
+          <br>
+          <fieldset>
+
+            <legend class="visuallyhidden">What name ending do you want to use?</legend>
+
+            <div class="form-group">
+
+            <label class="block-label" for="limited">
+            <input id="limited" type="radio" name="name-ending" value="Limited">
+            Limited
+            </label>
+
+
+            <label class="block-label" for="ltd">
+            <input id="ltd" type="radio" name="name-ending" value="Ltd">
+            Ltd
+            </label>
+
+
+            <label class="block-label" data-target="other-name-ending-reveal" for="other-name-ending">
+            <input id="other-name-ending" type="radio" name="name-ending" value="Other">
+            Other name endings (including Welsh)
+            </label>
+
+                  <div class="panel panel-border-narrow js-hidden" id="other-name-ending-reveal">
+
+                    <label class="block-label" for="ltd-dot">
+                    <input id="ltd-dot" type="radio" name="name-ending-reveal" value="Ltd.">
+                    Ltd.
+                    </label>
+
+                    <label class="block-label" data-target="welsh-reveal" for="cyfyngedig">
+                    <input id="cyfyngedig" type="radio" name="name-ending-reveal" value="Cyfyngedig">
+                    Cyfyngedig
+                    </label>
+
+                    <label class="block-label" data-target="welsh-reveal" for="cyf">
+                    <input id="cyf" type="radio" name="name-ending-reveal" value="Cyf">
+                    Cyf
+                    </label>
+
+                    <label class="block-label" data-target="welsh-reveal" for="cyf-dot">
+                    <input id="cyf-dot" type="radio" name="name-ending-reveal" value="Cyf.">
+                    Cyf.
+                    </label>
+
+                    <div class="panel panel-border-narrow js-hidden" id="welsh-reveal">
+                    Your company's registered office address must be in Wales to choose this option.
+                    </div><!--welsh-reveal-->
+
+                  </div><!--other-name-ending-reveal-->
+
+            </div><!--form-group-->
+
+          </fieldset>
+
+			<input type="submit" name="" class="button" value="Save and continue">
+
+</form>
+
+		</div><!--end column-two-thirds-->
+
+	</div><!--end row-->
+</main>
+
+{% endblock %}
