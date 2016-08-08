@@ -36,10 +36,13 @@
     box-shadow: 0 2px 0 $link-colour;
 	}
 }
+.form-control-inline {
+  display: inline-block;
+}
 
 .form-control-long {
   @include media(tablet) {
-    width: 95%;
+    width: 85%;
   }
 }
 

@@ -34,9 +34,13 @@
   box-shadow: 0 2px 0 #005ea5;
 }
 
+.form-control-inline {
+  display: inline-block;
+}
+
 @media (min-width: 641px) {
   .form-control-long {
-    width: 95%;
+    width: 85%;
   }
 }
 
