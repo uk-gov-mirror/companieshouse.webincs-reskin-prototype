@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Where will your company be registered?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="sic-none-added" method="GET" name="">
+
+			<h1 id="Proposednamehead_heading" class="heading-xlarge">Where will your company be registered?</h1>
+		  	<p class="form-hint">Some information about which jurisdiction you should choose and implications of your choice.</p>
+        <details class="form-group">
+        <summary><span class="summary">Does it matter where my company is registered?</span></summary>
+        <div class="panel panel-border-narrow">
+          <p>Revealed text</p>
+        </div>
+        </details>
+
+
+
+			<fieldset>
+
+			<div class="form-group">
+
+			<legend></legend>
+
+				<label class="block-label" id="nameAndAddressForm.addJurisdiction.Jurisdiction_EW_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.addJurisdiction.Jurisdiction_EW">England and Wales
+				  <input type="radio" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.addJurisdiction.Jurisdiction" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.addJurisdiction.Jurisdiction_EW" onforminit="Y" onclick="set_hide(!get_value(&#39;Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.addJurisdiction.Jurisdiction_WA&#39;), [&#39;Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.bilingualForm&#39;,&#39;bilingualForm_info&#39;])" value="EW" class="checkbox" checked="">
+        </label>
+
+				<label class="block-label" data-target="location-wales" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.addJurisdiction.Jurisdiction">
+				  <input id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.addJurisdiction.Jurisdiction" type="radio" name="radio-contact-group" value="">Wales
+				</label>
+
+						<div class="panel panel-border-narrow js-hidden" id="location-wales">
+
+							<div class="form-group">
+								<label class="form-label-bold" id="nameAndAddressForm.bilingualForm_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.bilingualForm">How would you like to register the information?</label>
+								<select class="form-control" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.bilingualForm" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.bilingualForm" onforminit="" onclick="" onkeyup="">
+									<option value="en">IN01 - English</option>
+									<option value="cy">IN01c - Bilingual</option>
+								</select>
+							</div><!-- end form-group-->
+
+							<div id="bilingualForm_info">
+										<h3 class="heading-small">IN01</h3>
+										<ul class="list list-bullet">
+                      <li>By selecting this option you will be registering the information in English.</li>
+                      <li>You will have an English memorandum.</li>
+                      <li>You will be adopting English model articles for a private company limited by shares.</li>
+                      <li>You will receive an English certificate of incorporation.</li>
+                    </ul>
+										<h3 class="heading-small">IN01c</h3>
+										<ul class="list list-bullet">
+                      <li>By selecting this option you will be registering the information bilingually.</li>
+                      <li>You will have an English memorandum and there will be a certified Welsh translation placed on the public record.</li>
+                      <li>You will be adopting English model articles for a private company limited by shares.</li>
+                      <li>You will receive both an English and Welsh certificate of incorporation.</li>
+                    </ul>
+							</div><!--bilingualForm_info-->
+
+						</div><!-- panel-->
+		</div><!-- end form-group-->
+	</fieldset>
+
+
+
+
+			<input type="submit" name="" class="button" value="Next">
+
+</form>
+
+		</div><!--end column-two-thirds-->
+
+
+
+
+
+	</div><!--end row-->
+</main>
+
+{% endblock %}
