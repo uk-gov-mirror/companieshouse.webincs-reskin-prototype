@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="initial-shareholdings" id="HPP" method="get" name="HPP">
+
+
+				<h1 class="form-title heading-large">
+					Subscriber Authentication
+				</h1>
+
+        <p class="lede">
+          We'll use the answers provided below to verify the identity of the shareholder in future communication.
+        </p>
+
+        <div class="panel panel-border-narrow">
+          <h4 class="heading-medium">
+            You'll need to answer three of the following questions
+          </h4>
+        </div>
+
+				<fieldset>
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.birthTown">Town of Birth (first 3 letters only)</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.birthTown" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.birthTown" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.telephone">Last 3 digits of Telephone Number</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.telephone" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.telephone" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.nationalInsuranceNumber">Last 3 Characters of National Insurance Number</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.nationalInsuranceNumber" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.nationalInsuranceNumber" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.passportNumber">Last 3 digits of Passport Number</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.passportNumber" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.passportNumber" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.maidenName">Mothers Maiden Name (first 3 letters only)</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.maidenName" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.maidenName" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.eyeColour">Eye colour (first 3 letters only)</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.eyeColour" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.eyeColour" type="text" value="">
+					</div>
+					<!--end form-group-->
+
+					<div class="form-group">
+						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.fatherName">Fathers First Name (first 3 letters only)</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.fatherName" maxlength="3" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.Subscriber.ConsentToAct.fatherName" type="text" value="">
+					</div>
+					<!--end form-group-->
+				</fieldset>
+
+				<!--end form-group-->
+				<input class="button" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.submit" type="submit" value="Continue"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.cancel" type="submit" value="Cancel">
+        <input name="" type="hidden" value="">
+			</form>
+		</div>
+		<!--end column-two-thirds-->
+	</div>
+	<!--end row-->
+</main>
+{% endblock %}

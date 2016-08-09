@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/phase_banner_alpha.html" %}
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="subscriber-security" id="HPP" method="get" name="HPP">
+
+				<h1 class="form-title heading-large">
+					Shares held by John Smith
+				</h1>
+
+        <p class="lede">
+          Tell us what shares are held by the subscriber.
+        </p>
+
+        <div class="form-group">
+          <label class="form-label" for="">Share class</label>
+          <span class="form-hint">Choose the class and currency of the shares held by John Smith</span>
+          <select name="subscriberShareClass" id="subscriber-share-class" class="form-control">
+            <option value="">Ordinary - British Pounds</option>
+            <option value="">Preference - British Pounds</option>
+            <option value="">Ordinary - US Dollars</option>
+            <option value="">Preference - US Dollars</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="">Total shares held</label>
+          <span class="form-hint">
+            This is the total number of shares that will be allocated.
+          </span>
+          <input class="form-control" id="" type="text" value="">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="">Amount paid up on each share</label>
+          <span class="form-hint">
+            This is the total amount already paid by the subscriber for the shares, divided by the total number of shares.
+          </span>
+          <input class="form-control" id="" type="text" value="">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="">Amount unpaid on each share</label>
+          <span class="form-hint">
+            This is the total amount still outstanding for the shares, divided by the total number of shares.
+          </span>
+          <input class="form-control" id="" type="text" value="">
+        </div>
+
+
+				<input class="button" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.submit" type="submit" value="Continue"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.sectionContent.subscriberFormControl.cancel" type="submit" value="Cancel">
+        <input name="" type="hidden" value="">
+			</form>
+		</div>
+	</div>
+</main>
+{% endblock %}

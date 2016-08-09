@@ -124,4 +124,11 @@ $(document).ready(function() {
   toggleContent.showHideRadioToggledContent();
   toggleContent.showHideCheckboxToggledContent();
 
+  // Manual Address Entry
+  $(".manual-address").click(function() {
+    $(this).parent().hide();
+    $(".manual-address-group").show();
+    return false;
+  });
+
 });
