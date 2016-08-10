@@ -26,25 +26,37 @@ What I changed!
 
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<form action="add-person-as-psc" id="HPP" method="get" name="HPP">
-				<h1 class="form-title heading-large" id="page-title">Persons with Significant Control (PSC)</h1>
+			<form action="add-person-as-psc" id="" method="get" name="">
+				<h1 class="form-title heading-xlarge" id="page-title">Persons with Significant Control (PSC)</h1>
 
 
-				<h2 class="heading-medium">Initial statement of significant control:</h2>
+
+        <table class="check-your-answers">
+
+            <thead>
+              <tr>
+                <th colspan="2">
+                  <h2 class="heading-medium">Initial statement of significant control</h2>
+                </th>
+                <th>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>There is a registrable person or registrable relevant legal entity in relation to the company.</td>
+                <td class="change-answer">
+                  <a href="/ch-webincs/psc-1">
+                    Change <span class="visuallyhidden">There is a registrable person...</span>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
-				<p id="initialDeclaration">There is a registrable person or registrable relevant legal entity in relation to the company.</p>
 
-
-				<div class="form-group">
-					<fieldset>
-						<legend></legend> <input class="button button-secondary" id="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.btnChangeDeclaration" name="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.btnChangeDeclaration" textid="W0018072" type="submit" value="Change the statement of control">
-					</fieldset>
-				</div>
-				<!--end form-group-->
-
-
-		
 
 
 				<h2 class="heading-medium">You must provide details of the persons with significant control (PSC):</h2>
@@ -52,25 +64,35 @@ What I changed!
 
 				<p>Select the type of PSC from one of the following:</p>
 
+        <fieldset>
 
-				<div class="form-group">
-					<input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.btnAddIndividual" textid="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.W0018075" type="submit" value="Add a person as a PSC">
-				</div>
-				<!--end form-group-->
+        <legend class="visuallyhidden">Select the type of PSC from one of the following:</legend>
+
+          <div class="form-group">
+
+            <label class="block-label" for="psc-person">
+            <input id="psc-person" type="radio" name="psc-type" value="psc-person">
+            A person
+            </label>
+
+            <label class="block-label" for="psc-legal-entity">
+            <input id="psc-legal-entity" type="radio" name="psc-type" value="psc-legal-entity-yes">
+            A relevant legal entity
+            <span class="form-hint">Such as a corporate body (for example, a company or firm)</span>
+            </label>
+
+            <label class="block-label" data-target="contact-by-text" for="example-contact-by-text">
+            <input id="example-contact-by-text" type="radio" name="psc-type" value="No">
+            A legal person
+            <span class="form-hint">Such as a corporation sole, government department, international organisation or local authority (for example, the Archbishop of Canterbury or The City of Cardiff Council)</span>
+            </label>
+
+          </div><!--form-group-->
+
+        </fieldset>
 
 
-				<div class="form-group">
-					<input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.btnAddLegalEntity" textid="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.W0018076" type="submit" value="Add a relevant legal entity as a PSC">
-					<p class="form-hint">Such as a corporate body (for example, a company or firm).</p>
-				</div>
-				<!--end form-group-->
 
-
-				<div class="form-group">
-					<input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.btnAddLegalPerson" textid="Incorporation.incorporationNavigation.sectionContent.PSCDisplay.W0018078" type="submit" value="Add a legal person as a PSC">
-					<p class="form-hint">Such as a corporation sole, government department, international organisation or local authority (for example, the Archbishop of Canterbury or The City of Cardiff Council).</p>
-				</div>
-				<!--end form-group-->
 
 
 				<div class="form-group">

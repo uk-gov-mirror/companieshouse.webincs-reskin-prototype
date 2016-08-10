@@ -1,0 +1,912 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Web Incorporation Service prototype
+{% endblock %}
+
+{% block content %}
+
+  <!--
+  What I changed!
+  # Heading is now a H1 with classes of .form-title .heading-large
+  # Commented ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
+  # Put help in a GDS column-third div, with class of .form-hint (and new styling to reduce font-size)
+  # Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
+  # De-capitalised content, eg BACK becomes Back
+  # Added secondary class of .button-secondary to some of the inputs
+  # Wrapped some elements in a div with a GDS class of .form-group - this gives the large bottom margin space
+  # Gave form labels a class of .form-label-bold (turns them bold)
+  # Gave some form inputs/selects a class of .form-control - sorts width and adds solid black border
+  # Removed inline styles, eg widths of forms inputs of 200px
+  # Removed required asterisk markers - meaning we may need to add (optional) to the optional inputs, as per GDS guidelines
+  # The Country/State of residence tooltip on live doesn't work, so have commented it out here
+  # "You must confirm" paras now have a class of .heading-small (makes them bold)
+  # Fixed radio buttons/checkboxes -  the input should be wrapped by the label like this  <label class="block-label"><input></label
+  # Sub-headings are now H2 with a class of .heading-medium
+  # Important message about addresses now has the .important class (gives black exclamation icon)
+
+  -->
+
+  <main id="content" role="main">
+  	{% include "includes/phase_banner_alpha.html" %}
+  	<div class="grid-row">
+  		<div class="column-two-thirds">
+  			<form action="psc-summary" id="HPP" method="get" name="HPP">
+  				<h1 class="form-title heading-large">
+  					Details of new person with significant control
+  				</h1>
+
+  				<div class="form-group">
+  					<fieldset>
+  						<div class="form-group">
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Forename" id="PSCForm.Notification.PSC.Forename_label">Forename</label>
+                <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Forename" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Forename" type="text" value="">
+  						</div>
+  						<!--end form-group-->
+
+  						<div class="form-group">
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.OtherForenames" id="PSCForm.Notification.PSC.OtherForenames_label">Other Forename(s)</label>
+                <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.OtherForenames" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.OtherForenames" type="text" value="">
+  						</div>
+  						<!--end form-group-->
+
+  						<div class="form-group">
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Surname" id="PSCForm.Notification.PSC.Surname_label">Surname</label>
+                <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Surname" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Surname" type="text" value="">
+  						</div>
+  						<!--end form-group-->
+
+  						<div class="form-group">
+  							<legend></legend>
+                <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.DOB" id="PSCForm.Notification.PSC.DOB_label">Date of Birth</label>
+                <span id="dob-hint" class="form-hint">For example, 31 3 1980</span>
+  							<div class="form-date">
+  								<div class="form-group form-group-day">
+  									<label class="form-label" for="dob-day">Day</label> <input aria-describedby="dob-hint" class="form-control" id="dob-day" max="31" min="0" name="dob-day" pattern="[0-9]*" type="number">
+  								</div>
+
+  								<div class="form-group form-group-month">
+  									<label class="form-label" for="dob-month">Month</label> <input class="form-control" id="dob-month" max="12" min="0" name="dob-month" pattern="[0-9]*" type="number">
+  								</div>
+
+  								<div class="form-group form-group-year">
+  									<label class="form-label" for="dob-year">Year</label> <input class="form-control" id="dob-year" max="2016" min="0" name="dob-year" pattern="[0-9]*" type="number">
+  								</div>
+  							</div>
+  							<!--<input class="form-control datepicker" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.DOB" maxlength="10" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.DOB" type="text" value="">-->
+  						</div>
+  						<!--end form-group-->
+
+  						<div class="form-group">
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Nationality" id="PSCForm.Notification.PSC.Nationality_label">Nationality</label>
+                <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Nationality" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Nationality" type="text" value="">
+  						</div>
+  						<!--end form-group-->
+
+  						<div class="form-group">
+  							<legend></legend> <!--<div class="tooltip"><a href="#countryStateResidence_tooltip"><span class="summary">Help for Country/State of residence</span>&#63;</a></div>-->
+  							 <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidenceList" id="countryStateResidence_tooltip-src">Country/State of residence</label>
+                 <select class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidenceList" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidenceList" onclick="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidence'])" onforminit="Y" onkeyup="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidence'])">
+  								<option value="">
+  									Please select
+  								</option>
+  								<option value="GBR">
+  									United Kingdom
+  								</option>
+  								<option value="GB-ENG">
+  									England
+  								</option>
+  								<option value="GB-WLS">
+  									Wales
+  								</option>
+  								<option value="GB-SCT">
+  									Scotland
+  								</option>
+  								<option value="GB-NIR">
+  									Northern Ireland
+  								</option>
+  								<option value="GBR">
+  									UK
+  								</option>
+  								<option value="GB-GBN">
+  									Great Britain
+  								</option>
+  								<option value="">
+  									-----------------
+  								</option>
+  								<option value="USA">
+  									USA
+  								</option>
+  								<option value="IRL">
+  									Ireland
+  								</option>
+  								<option value="DEU">
+  									Germany
+  								</option>
+  								<option value="FRA">
+  									France
+  								</option>
+  								<option value="ITA">
+  									Italy
+  								</option>
+  								<option value="ESP">
+  									Spain
+  								</option>
+  								<option value="PRT">
+  									Portugal
+  								</option>
+  								<option value="NLD">
+  									Netherlands
+  								</option>
+  								<option value="POL">
+  									Poland
+  								</option>
+  								<option value="BEL">
+  									Belgium
+  								</option>
+  								<option value="NOR">
+  									Norway
+  								</option>
+  								<option value="SWE">
+  									Sweden
+  								</option>
+  								<option value="DNK">
+  									Denmark
+  								</option>
+  								<option value="AUS">
+  									Australia
+  								</option>
+  								<option value="NZL">
+  									New Zealand
+  								</option>
+  								<option value="CAN">
+  									Canada
+  								</option>
+  								<option value="ZAF">
+  									South Africa
+  								</option>
+  								<option value="AUT">
+  									Austria
+  								</option>
+  								<option value="HRV">
+  									Croatia
+  								</option>
+  								<option value="CYP">
+  									Cyprus
+  								</option>
+  								<option value="CZE">
+  									Czech Republic
+  								</option>
+  								<option value="EST">
+  									Estonia
+  								</option>
+  								<option value="GRC">
+  									Greece
+  								</option>
+  								<option value="HUN">
+  									Hungary
+  								</option>
+  								<option value="LTU">
+  									Lithuania
+  								</option>
+  								<option value="OTHER">
+  									Other - enter below
+  								</option>
+  							</select>
+  						</div>
+  						<!--end form-group-->
+
+  						<p id="OtherCountryInstruction">
+  							Details of 'Country/State of residence' must correspond with the residential address.
+  						</p>
+  						<!-- Other countries should only be shown when selected from the drop-down list above, so hiding it here=-->
+  						<!--<div class="form-group">
+  <fieldset >
+      <legend></legend>
+
+      <label class="form-label-bold" id="PSCForm.Notification.PSC.CountryOfResidence_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidence" >Other Country/State </label>
+      <input type="text" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidence" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidence" class="form-control" value="" maxlength="50">
+
+  </fieldset>
+  </div>-->
+  						<!--end form-group-->
+  					</fieldset>
+
+  					<div class="form-group">
+  						<fieldset id="PSCForm.Notification.PSC.Consent_fieldset">
+  							<legend></legend> <!--<p class="checkbox" id="PSCForm.Notification.PSC.Consent_title"><strong>You must confirm the following statement--><!--</strong></p>-->
+
+  							<p class="heading-small" id="PSCForm.Notification.PSC.Consent_title">
+  								You must confirm the following statement
+  							</p>
+  							<legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Consent" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Consent_Y" onforminit="" onclick="" value="Y" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.PSC.Consent_Y_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Consent_Y">The subscribers confirm that the person named above knows that their details are being supplied as part of this incorporation.</label>-->
+  							 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Consent_Y" id="PSCForm.Notification.PSC.Consent_Y_label">The subscribers confirm that the person named above knows that their details are being supplied as part of this incorporation. <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Consent_Y" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Consent" onclick="" onforminit="" type="checkbox" value="Y"></label>
+  						</fieldset>
+  					</div>
+  					<!--end form-group-->
+
+  					<p>
+  						&nbsp;
+  					</p>
+  					<!-- temporary style, need to figure out why headings are working correctly here-->
+
+  					<h2 class="heading-medium" id="ServiceAddressHeading1_heading">
+  						Service address of the person with significant control
+  					</h2>
+  					<!--<p id="ServiceAddressInstruction2">A service address is where a PSC chooses to receive mail. This address will show on the public record.</p>-->
+
+  					<div class="notice">
+  						<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="ServiceAddressInstruction2">A service address is where a PSC chooses to receive mail. This address will show on the public record.</strong>
+  					</div>
+
+  					<div class="form-group">
+  						<legend></legend> <!--<p class="checkbox">Where is the service address situated? (please select):-->
+  						 <!--</p>-->
+
+  						<p class="heading-small">
+  							Where is the service address situated? (please select):
+  						</p>
+  						<legend></legend> <!-- the original name for this form elements caused issues with GDS "Conditionally revealing content" styles, so changed it to example-2 -->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_Y" id="PSCForm.Notification.PSC.SameAsRegisteredOffice_Y_label">The service address is 'same as' the company's registered office <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_Y" name="example" onclick="set_hide(!get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_N'), ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.SADisplayed', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Postcode', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PoBox', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Premise', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Street', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Thoroughfare', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PostTown', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.County',]); set_disable(get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_Y'), ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_Y']); set_disable(get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList')!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country']);" onforminit="Y" type="radio" value="Y"></label> <!-- this code doesn't work with GDS "Conditionally revealing content" styles so commenting out-->
+  						 <!--  <label class="block-label" id="PSCForm.Notification.PSC.SameAsRegisteredOffice_N_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_N">The service address is at the address supplied (select to display address fields)
+                      <input type="radio" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_N" onforminit="" onclick="set_hide(false,['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.SADisplayed',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Postcode',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PoBox',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Premise',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Street',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Thoroughfare',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PostTown',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.County']);                                   set_disable(false,['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_Y']);                                  set_disable(get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList')!='OTHER',                                                     ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country']);                                  set_mandatory_indicator([                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList',                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Premise',                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Street',                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PostTown',                                  ]);" value="N" class="checkbox" >
+                  </label>-->
+  						 <!-- this code is only for the prototype-->
+  						 <label class="block-label" data-target="service-address-supplied" for="example"><input id="example" name="example" type="radio" value=""> The service address is at the address supplied (select to display address fields)</label>
+  					</div>
+  					<!--end form-group-->
+
+  					<div class="panel panel-border-narrow js-hidden" id="service-address-supplied">
+  						<div class="form-group">
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList" id="PSCForm.Notification.PSC.ServiceAddress.CountryList_label">Country</label> <select class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList" onclick="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country'])" onforminit="" onkeyup="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country'])">
+  								<option value="">
+  									Please select
+  								</option>
+  								<option value="GBR">
+  									United Kingdom
+  								</option>
+  								<option value="GB-ENG">
+  									England
+  								</option>
+  								<option value="GB-WLS">
+  									Wales
+  								</option>
+  								<option value="GB-SCT">
+  									Scotland
+  								</option>
+  								<option value="GB-NIR">
+  									Northern Ireland
+  								</option>
+  								<option value="GBR">
+  									UK
+  								</option>
+  								<option value="GB-GBN">
+  									Great Britain
+  								</option>
+  								<option value="">
+  									-----------------
+  								</option>
+  								<option value="USA">
+  									USA
+  								</option>
+  								<option value="IRL">
+  									Ireland
+  								</option>
+  								<option value="DEU">
+  									Germany
+  								</option>
+  								<option value="FRA">
+  									France
+  								</option>
+  								<option value="ITA">
+  									Italy
+  								</option>
+  								<option value="ESP">
+  									Spain
+  								</option>
+  								<option value="PRT">
+  									Portugal
+  								</option>
+  								<option value="NLD">
+  									Netherlands
+  								</option>
+  								<option value="POL">
+  									Poland
+  								</option>
+  								<option value="BEL">
+  									Belgium
+  								</option>
+  								<option value="NOR">
+  									Norway
+  								</option>
+  								<option value="SWE">
+  									Sweden
+  								</option>
+  								<option value="DNK">
+  									Denmark
+  								</option>
+  								<option value="AUS">
+  									Australia
+  								</option>
+  								<option value="NZL">
+  									New Zealand
+  								</option>
+  								<option value="CAN">
+  									Canada
+  								</option>
+  								<option value="ZAF">
+  									South Africa
+  								</option>
+  								<option value="AUT">
+  									Austria
+  								</option>
+  								<option value="HRV">
+  									Croatia
+  								</option>
+  								<option value="CYP">
+  									Cyprus
+  								</option>
+  								<option value="CZE">
+  									Czech Republic
+  								</option>
+  								<option value="EST">
+  									Estonia
+  								</option>
+  								<option value="GRC">
+  									Greece
+  								</option>
+  								<option value="HUN">
+  									Hungary
+  								</option>
+  								<option value="LTU">
+  									Lithuania
+  								</option>
+  								<option value="OTHER">
+  									Other - enter below
+  								</option>
+  								<option value="NOTSPECIFIED">
+  									Not specified
+  								</option>
+  							</select>
+  						</div>
+  						<!--end form-group-->
+
+  						<div class="form-group">
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country" id="PSCForm.Notification.PSC.ServiceAddress.Country_label">Other Country</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country" type="text" value="">
+  						</div>
+  						<!--end form-group-->
+
+  						<div class="form-group">
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Postcode" id="PSCForm.Notification.PSC.ServiceAddress.Postcode_label">Postcode</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Postcode" maxlength="15" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Postcode" type="text" value=""> <!-- AS:WA000032 --><input alt="Expand postcode" class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PostcodeLOOKUP" type="submit" value="Look up"><!-- AE:WA000032 -->
+
+  						</div>
+  						<!--end form-group-->
+
+  						<div class="form-group">
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PoBox" id="PSCForm.Notification.PSC.ServiceAddress.PoBox_label">PO Box No</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PoBox" maxlength="10" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PoBox" type="text" value="">
+  						</div>
+  						<!--end form-group-->
+
+  						<div class="form-group">
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Premise" id="PSCForm.Notification.PSC.ServiceAddress.Premise_label">Building Name/No.</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Premise" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Premise" type="text" value="">
+  						</div>
+  						<!--end form-group-->
+
+  						<div class="form-group">
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Street" id="PSCForm.Notification.PSC.ServiceAddress.Street_label">Address</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Street" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Street" type="text" value="">
+  						</div>
+  						<!--end form-group-->
+
+  						<div class="form-group">
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Thoroughfare" id="PSCForm.Notification.PSC.ServiceAddress.Thoroughfare_label"></label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Thoroughfare" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Thoroughfare" type="text" value="">
+  						</div>
+  						<!--end form-group-->
+
+  						<div class="form-group">
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PostTown" id="PSCForm.Notification.PSC.ServiceAddress.PostTown_label">Post Town</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PostTown" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PostTown" type="text" value="">
+  						</div>
+  						<!--end form-group-->
+
+  						<div class="form-group">
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.County" id="PSCForm.Notification.PSC.ServiceAddress.County_label">County/Region</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.County" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.County" type="text" value="">
+  						</div>
+  						<!--end form-group-->
+  					</div>
+  					<!-- end js-hidden-->
+
+  					<p>
+  						&nbsp;
+  					</p>
+  					<!-- temporary style, need to figure out why headings are working correctly here-->
+
+  					<h2 class="heading-medium" id="PSCForm.Notification.PSC.ResidentialAddress.residentialAddress1_heading">
+  						Residential address of the person with significant control
+  					</h2>
+  					<!--<p id="ResidentialAddressInstruction">This address is the PSC's home/residential address. This will NOT be shown on the public record.</p>-->
+
+  					<div class="notice">
+  						<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="ResidentialAddressInstruction">This address is the PSC's home/residential address. This will NOT be shown on the public record.</strong>
+  					</div>
+
+  					<div class="form-group">
+  						<fieldset>
+  							<legend></legend> <!--<p class="checkbox">Where is the residential address situated? (please select):-->
+  							 <!--</p>-->
+
+  							<p class="heading-small">
+  								Where is the residential address situated? (please select):
+  							</p>
+  							<legend></legend> <!-- the original name for this form elements caused issues with GDS "Conditionally revealing content" styles, so changed it to example-2 -->
+  							 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_Y" id="PSCForm.Notification.PSC.SameAsServiceAddress_Y_label">The residential address is 'same as' the service address <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_Y" name="example-2" onclick="set_hide(!get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_N'), ['PSCForm.Notification.PSC.ResidentialAddress.RADisplayed', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Postcode', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Premise', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Street', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Thoroughfare', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.PostTown', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.County']); set_disable(get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList')!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country']);" onforminit="Y" type="radio" value="Y"></label> <!-- this code doesn't work with GDS "Conditionally revealing content" styles so commenting out-->
+  							 <!--<legend></legend>
+                  <label class="block-label" id="PSCForm.Notification.PSC.SameAsServiceAddress_N_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_N">The residential address is at the address supplied (select to display address fields)
+                          <input type="radio" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_N" onforminit="" onclick="set_hide(false,['PSCForm.Notification.PSC.ResidentialAddress.RADisplayed',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Postcode',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Premise',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Street',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Thoroughfare',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.PostTown',                                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.County']);                                  set_disable(get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList')!='OTHER',                                                     ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country']);                                                                                      set_mandatory_indicator([                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList',                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Premise',                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Street',                                     'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.PostTown',                                  ]);" value="N" class="checkbox" >
+                      </label>-->
+  							 <!-- this code is only for the prototype-->
+  							 <label class="block-label" data-target="residential-address-supplied" for="example-2"><input id="example-2" name="example-2" type="radio" value=""> The residential address is at the address supplied (select to display address fields)</label>
+  						</fieldset>
+  					</div>
+  					<!--end form-group-->
+  				</div>
+  				<!--end form-group-->
+
+  				<div class="panel panel-border-narrow js-hidden" id="residential-address-supplied">
+  					<!--<p id="PSCForm.Notification.PSC.ResidentialAddress.RADisplayed">Details entered below will only be submitted if the option '<strong>display address fields</strong>' is selected above.</p>-->
+
+  					<div class="form-group">
+  						<fieldset>
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList" id="PSCForm.Notification.PSC.ResidentialAddress.CountryList_label">Country</label> <select class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList" onclick="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country'])" onforminit="" onkeyup="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country'])">
+  								<option value="">
+  									Please select
+  								</option>
+  								<option value="GBR">
+  									United Kingdom
+  								</option>
+  								<option value="GB-ENG">
+  									England
+  								</option>
+  								<option value="GB-WLS">
+  									Wales
+  								</option>
+  								<option value="GB-SCT">
+  									Scotland
+  								</option>
+  								<option value="GB-NIR">
+  									Northern Ireland
+  								</option>
+  								<option value="GBR">
+  									UK
+  								</option>
+  								<option value="GB-GBN">
+  									Great Britain
+  								</option>
+  								<option value="">
+  									-----------------
+  								</option>
+  								<option value="USA">
+  									USA
+  								</option>
+  								<option value="IRL">
+  									Ireland
+  								</option>
+  								<option value="DEU">
+  									Germany
+  								</option>
+  								<option value="FRA">
+  									France
+  								</option>
+  								<option value="ITA">
+  									Italy
+  								</option>
+  								<option value="ESP">
+  									Spain
+  								</option>
+  								<option value="PRT">
+  									Portugal
+  								</option>
+  								<option value="NLD">
+  									Netherlands
+  								</option>
+  								<option value="POL">
+  									Poland
+  								</option>
+  								<option value="BEL">
+  									Belgium
+  								</option>
+  								<option value="NOR">
+  									Norway
+  								</option>
+  								<option value="SWE">
+  									Sweden
+  								</option>
+  								<option value="DNK">
+  									Denmark
+  								</option>
+  								<option value="AUS">
+  									Australia
+  								</option>
+  								<option value="NZL">
+  									New Zealand
+  								</option>
+  								<option value="CAN">
+  									Canada
+  								</option>
+  								<option value="ZAF">
+  									South Africa
+  								</option>
+  								<option value="AUT">
+  									Austria
+  								</option>
+  								<option value="HRV">
+  									Croatia
+  								</option>
+  								<option value="CYP">
+  									Cyprus
+  								</option>
+  								<option value="CZE">
+  									Czech Republic
+  								</option>
+  								<option value="EST">
+  									Estonia
+  								</option>
+  								<option value="GRC">
+  									Greece
+  								</option>
+  								<option value="HUN">
+  									Hungary
+  								</option>
+  								<option value="LTU">
+  									Lithuania
+  								</option>
+  								<option value="OTHER">
+  									Other - enter below
+  								</option>
+  								<option value="NOTSPECIFIED">
+  									Not specified
+  								</option>
+  							</select>
+  						</fieldset>
+  					</div>
+  					<!--end form-group-->
+
+  					<div class="form-group">
+  						<fieldset>
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country" id="PSCForm.Notification.PSC.ResidentialAddress.Country_label">Other Country</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country" type="text" value="">
+  						</fieldset>
+  					</div>
+  					<!--end form-group-->
+
+  					<div class="form-group">
+  						<fieldset>
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Postcode" id="PSCForm.Notification.PSC.ResidentialAddress.Postcode_label">Postcode</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Postcode" maxlength="15" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Postcode" type="text" value=""> <!-- AS:WA000032 --><input alt="Expand postcode" class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.PostcodeLOOKUP" type="submit" value="Look up"><!-- AE:WA000032 -->
+
+  						</fieldset>
+  					</div>
+  					<!--end form-group-->
+
+  					<div class="form-group">
+  						<fieldset>
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Premise" id="PSCForm.Notification.PSC.ResidentialAddress.Premise_label">Building Name/No.</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Premise" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Premise" type="text" value="">
+  						</fieldset>
+  					</div>
+  					<!--end form-group-->
+
+  					<div class="form-group">
+  						<fieldset>
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Street" id="PSCForm.Notification.PSC.ResidentialAddress.Street_label">Address</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Street" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Street" type="text" value="">
+  						</fieldset>
+  					</div>
+  					<!--end form-group-->
+
+  					<div class="form-group">
+  						<fieldset>
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Thoroughfare" id="PSCForm.Notification.PSC.ResidentialAddress.Thoroughfare_label"></label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Thoroughfare" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Thoroughfare" type="text" value="">
+  						</fieldset>
+  					</div>
+  					<!--end form-group-->
+
+  					<div class="form-group">
+  						<fieldset>
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.PostTown" id="PSCForm.Notification.PSC.ResidentialAddress.PostTown_label">Post Town</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.PostTown" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.PostTown" type="text" value="">
+  						</fieldset>
+  					</div>
+  					<!--end form-group-->
+
+  					<div class="form-group">
+  						<fieldset>
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.County" id="PSCForm.Notification.PSC.ResidentialAddress.County_label">County/Region</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.County" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.County" type="text" value="">
+  						</fieldset>
+  					</div>
+  					<!--end form-group-->
+  				</div>
+  				<!-- end js-hidden-->
+
+  				<fieldset id="PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_fieldset">
+  					<legend></legend> <!--<p class="checkbox" id="PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_title"><strong>Disclosure exemptions (only complete if applicable) </strong></p>-->
+
+  					<h3 class="heading-medium" id="PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_title">
+  						Disclosure exemptions (only complete if applicable)
+  					</h3>
+  					<!--<p class="checkbox" id="PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_description">The following exemptions oly apply to people who, due to risk of harm, have restrictions in place against the sharing and disclosure of their information:</p>-->
+
+  					<div class="notice form-group">
+  						<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_description">The following exemptions only apply to people who, due to risk of harm, have restrictions in place against the sharing and disclosure of their information:</strong>
+  					</div>
+
+  					<div class="form-group">
+  						<legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_Y" onforminit="" onclick="" value="Y" class="checkbox" >
+                    <label class="checkbox" id="PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_Y_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_Y">Only tick this box if you have made an application which grants exemption from disclosing the PSC’s residential address to credit reference agencies under section 790ZF of the Companies Act 2006.</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_Y" id="PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_Y_label">Only tick this box if you have made an application which grants exemption from disclosing the PSC’s residential address to credit reference agencies under section 790ZF of the Companies Act 2006. <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_Y" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd" onclick="" onforminit="" type="checkbox" value="Y"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.isSuperSecure" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.isSuperSecure_Y" onforminit="" onclick="" value="Y" class="checkbox" >
+                    <label class="checkbox" id="PSCForm.Notification.PSC.isSuperSecure_Y_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.isSuperSecure_Y">Only tick this box if you have made an application which grants exemption from disclosing the PSC’s identity on the public record under section 790ZG of the Companies Act 2006.</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.isSuperSecure_Y" id="PSCForm.Notification.PSC.isSuperSecure_Y_label">Only tick this box if you have made an application which grants exemption from disclosing the PSC’s identity on the public record under section 790ZG of the Companies Act 2006. <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.isSuperSecure_Y" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.isSuperSecure" onclick="" onforminit="" type="checkbox" value="Y"></label>
+  					</div>
+  					<!--end form-group-->
+  				</fieldset>
+
+  				<p>
+  					&nbsp;
+  				</p>
+  				<!-- temporary style, need to figure out why headings are working correctly here-->
+
+  				<h2 class="heading-large" id="NatureOfControlHeading_heading">
+  					Nature of control
+  				</h2>
+
+  				<p id="NatureOfControlPreamble">
+  					The nature of control is what gives the person their influence over the company.
+  				</p>
+
+  				<p class="heading-small" id="NatureOfControlPreamble2">
+  					You must complete at least one of the nature of control sections.<span></span>
+  				</p>
+
+  				<details>
+  					<summary>
+  						<span class="summary">Which nature of control should I choose?</span>
+  					</summary>
+
+  					<div class="panel panel-border-narrow">
+  						<h3 class="heading-small">
+  						</h3>
+
+  						<p>
+  							For most small companies, only the following are likely to apply:
+  						</p>
+
+  						<ul class="list list-bullet">
+  							<li>ownership of shares as a person (section 1)
+  							</li>
+
+  							<li>ownership of voting rights as a person (section 4)
+  							</li>
+
+  							<li>the person has the right to appoint or remove the majority of the board of directors of the company (section 7)
+  							</li>
+  						</ul>
+
+  						<p>
+  							If none of the above apply then the following option may be more suitable:
+  						</p>
+
+  						<ul class="list list-bullet">
+  							<li>the person has significant influence or control over the company (section 8)
+  							</li>
+  						</ul>
+
+  						<p>
+  							A small company with a straightforward structure is not likely to use the options relating to a member of a firm or trustee of a trust.
+  						</p>
+  					</div>
+  				</details>
+
+
+
+
+  				<h2 class="heading-medium" id="">Ownership of shares</h2>
+
+  				<legend></legend>
+  				<h3 class="heading-small" id="PSCForm.Notification.NatureOfControl.SharesPerson_title">
+  					Section 1: Ownership of shares as a person
+  				</h3>
+
+  				<p class="checkbox" id="PSCForm.Notification.NatureOfControl.SharesPerson_description">
+  					The person holds:
+  				</p>
+
+  				<fieldset>
+  					<legend></legend>
+  					<div class="form-group">
+  						<!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_25TO50PERCENT_AS_PERSON" onforminit="" onclick="" value="OWNERSHIPOFSHARES_25TO50PERCENT_AS_PERSON" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_25TO50PERCENT_AS_PERSON_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_25TO50PERCENT_AS_PERSON">more than 25% but not more than 50% of shares</label>-->
+  						<label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_25TO50PERCENT_AS_PERSON" id="PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_25TO50PERCENT_AS_PERSON_label">more than 25% but not more than 50% of shares <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_25TO50PERCENT_AS_PERSON" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson" onclick="" onforminit="" type="checkbox" value="OWNERSHIPOFSHARES_25TO50PERCENT_AS_PERSON"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_50TO75PERCENT_AS_PERSON" onforminit="" onclick="" value="OWNERSHIPOFSHARES_50TO75PERCENT_AS_PERSON" class="checkbox" >
+                    <label class="checkbox" id="PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_50TO75PERCENT_AS_PERSON_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_50TO75PERCENT_AS_PERSON">more than 50% but not more than 75% of shares</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_50TO75PERCENT_AS_PERSON" id="PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_50TO75PERCENT_AS_PERSON_label">more than 50% but not more than 75% of shares <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_50TO75PERCENT_AS_PERSON" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson" onclick="" onforminit="" type="checkbox" value="OWNERSHIPOFSHARES_50TO75PERCENT_AS_PERSON"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_75TO100PERCENT_AS_PERSON" onforminit="" onclick="" value="OWNERSHIPOFSHARES_75TO100PERCENT_AS_PERSON" class="checkbox" >
+                    <label class="checkbox" id="PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_75TO100PERCENT_AS_PERSON_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_75TO100PERCENT_AS_PERSON">more than 75% of shares</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_75TO100PERCENT_AS_PERSON" id="PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_75TO100PERCENT_AS_PERSON_label">more than 75% of shares <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson_OWNERSHIPOFSHARES_75TO100PERCENT_AS_PERSON" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesPerson" onclick="" onforminit="" type="checkbox" value="OWNERSHIPOFSHARES_75TO100PERCENT_AS_PERSON"></label>
+  					</div>
+  					<!--end form-group-->
+  				</fieldset>
+
+  				<fieldset id="PSCForm.Notification.NatureOfControl.SharesMember_fieldset">
+  					<legend></legend> <!--<p class="checkbox" id="PSCForm.Notification.NatureOfControl.SharesMember_title"><strong>Section 2: Ownership of shares as a member of a firm </strong></p>-->
+
+  					<h3 class="heading-small" id="PSCForm.Notification.NatureOfControl.SharesMember_title">
+  						Section 2: Ownership of shares as a member of a firm
+  					</h3>
+
+  					<p class="checkbox" id="PSCForm.Notification.NatureOfControl.SharesMember_description">
+  						The person has the right to exercise, or actually exercises, significant influence or control over the activities of a firm that, under the law by which it is governed, is not a legal person, and the members of the firm hold:
+  					</p>
+
+  					<div class="form-group">
+  						<legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_25TO50PERCENT_AS_FIRM" onforminit="" onclick="" value="OWNERSHIPOFSHARES_25TO50PERCENT_AS_FIRM" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_25TO50PERCENT_AS_FIRM_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_25TO50PERCENT_AS_FIRM">more than 25% but not more than 50% of shares</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_25TO50PERCENT_AS_FIRM" id="PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_25TO50PERCENT_AS_FIRM_label">more than 25% but not more than 50% of shares <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_25TO50PERCENT_AS_FIRM" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember" onclick="" onforminit="" type="checkbox" value="OWNERSHIPOFSHARES_25TO50PERCENT_AS_FIRM"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_50TO75PERCENT_AS_FIRM" onforminit="" onclick="" value="OWNERSHIPOFSHARES_50TO75PERCENT_AS_FIRM" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_50TO75PERCENT_AS_FIRM_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_50TO75PERCENT_AS_FIRM">more than 50% but not more than 75% of shares</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_50TO75PERCENT_AS_FIRM" id="PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_50TO75PERCENT_AS_FIRM_label">more than 50% but not more than 75% of shares <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_50TO75PERCENT_AS_FIRM" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember" onclick="" onforminit="" type="checkbox" value="OWNERSHIPOFSHARES_50TO75PERCENT_AS_FIRM"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_75TO100PERCENT_AS_FIRM" onforminit="" onclick="" value="OWNERSHIPOFSHARES_75TO100PERCENT_AS_FIRM" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_75TO100PERCENT_AS_FIRM_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_75TO100PERCENT_AS_FIRM">more than 75% of shares</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_75TO100PERCENT_AS_FIRM" id="PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_75TO100PERCENT_AS_FIRM_label">more than 75% of shares <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember_OWNERSHIPOFSHARES_75TO100PERCENT_AS_FIRM" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesMember" onclick="" onforminit="" type="checkbox" value="OWNERSHIPOFSHARES_75TO100PERCENT_AS_FIRM"></label>
+  					</div>
+  					<!--end form-group-->
+  				</fieldset>
+
+  				<fieldset id="PSCForm.Notification.NatureOfControl.SharesTrustee_fieldset">
+  					<legend></legend> <!--<p class="checkbox" id="PSCForm.Notification.NatureOfControl.SharesTrustee_title"><strong>Section 3: Ownership of shares as a trustee of a trust </strong></p>-->
+
+  					<h3 class="heading-small" id="PSCForm.Notification.NatureOfControl.SharesTrustee_title">
+  						Section 3: Ownership of shares as a trustee of a trust
+  					</h3>
+
+  					<p class="checkbox" id="PSCForm.Notification.NatureOfControl.SharesTrustee_description">
+  						The person has the right to exercise, or actually exercises, significant influence or control over the activities of a trust, and the trustees of the trust hold:
+  					</p>
+
+  					<div class="form-group">
+  						<legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_25TO50PERCENT_AS_TRUST" onforminit="" onclick="" value="OWNERSHIPOFSHARES_25TO50PERCENT_AS_TRUST" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_25TO50PERCENT_AS_TRUST_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_25TO50PERCENT_AS_TRUST">more than 25% but not more than 50% of shares</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_25TO50PERCENT_AS_TRUST" id="PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_25TO50PERCENT_AS_TRUST_label">more than 25% but not more than 50% of shares <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_25TO50PERCENT_AS_TRUST" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee" onclick="" onforminit="" type="checkbox" value="OWNERSHIPOFSHARES_25TO50PERCENT_AS_TRUST"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_50TO75PERCENT_AS_TRUST" onforminit="" onclick="" value="OWNERSHIPOFSHARES_50TO75PERCENT_AS_TRUST" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_50TO75PERCENT_AS_TRUST_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_50TO75PERCENT_AS_TRUST">more than 50% but not more than 75% of shares</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_50TO75PERCENT_AS_TRUST" id="PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_50TO75PERCENT_AS_TRUST_label">more than 50% but not more than 75% of shares <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_50TO75PERCENT_AS_TRUST" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee" onclick="" onforminit="" type="checkbox" value="OWNERSHIPOFSHARES_50TO75PERCENT_AS_TRUST"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_75TO100PERCENT_AS_TRUST" onforminit="" onclick="" value="OWNERSHIPOFSHARES_75TO100PERCENT_AS_TRUST" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_75TO100PERCENT_AS_TRUST_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_75TO100PERCENT_AS_TRUST">more than 75% of shares</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_75TO100PERCENT_AS_TRUST" id="PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_75TO100PERCENT_AS_TRUST_label">more than 75% of shares <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee_OWNERSHIPOFSHARES_75TO100PERCENT_AS_TRUST" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SharesTrustee" onclick="" onforminit="" type="checkbox" value="OWNERSHIPOFSHARES_75TO100PERCENT_AS_TRUST"></label>
+  					</div>
+  					<!--end form-group-->
+  				</fieldset>
+
+  				<fieldset>
+  					<h2 class="heading-medium" id="NatureOfControlVotingRightsHeading_heading">
+  						Ownership of voting rights
+  					</h2>
+  					<!--</div>-->
+
+  					<h3 class="heading-small" id="PSCForm.Notification.NatureOfControl.VotingRightsPerson_title">
+  						Section 4: Ownership of voting rights as a person
+  					</h3>
+
+  					<p class="checkbox" id="PSCForm.Notification.NatureOfControl.VotingRightsPerson_description">
+  						The person holds:
+  					</p>
+
+  					<div class="form-group">
+  						<legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_25TO50PERCENT_AS_PERSON" onforminit="" onclick="" value="VOTINGRIGHTS_25TO50PERCENT_AS_PERSON" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_25TO50PERCENT_AS_PERSON_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_25TO50PERCENT_AS_PERSON">more than 25% but not more than 50% of voting rights</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_25TO50PERCENT_AS_PERSON" id="PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_25TO50PERCENT_AS_PERSON_label">more than 25% but not more than 50% of voting rights <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_25TO50PERCENT_AS_PERSON" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson" onclick="" onforminit="" type="checkbox" value="VOTINGRIGHTS_25TO50PERCENT_AS_PERSON"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_50TO75PERCENT_AS_PERSON" onforminit="" onclick="" value="VOTINGRIGHTS_50TO75PERCENT_AS_PERSON" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_50TO75PERCENT_AS_PERSON_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_50TO75PERCENT_AS_PERSON">more than 50% but not more than 75% of voting rights</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_50TO75PERCENT_AS_PERSON" id="PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_50TO75PERCENT_AS_PERSON_label">more than 50% but not more than 75% of voting rights <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_50TO75PERCENT_AS_PERSON" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson" onclick="" onforminit="" type="checkbox" value="VOTINGRIGHTS_50TO75PERCENT_AS_PERSON"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_75TO100PERCENT_AS_PERSON" onforminit="" onclick="" value="VOTINGRIGHTS_75TO100PERCENT_AS_PERSON" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_75TO100PERCENT_AS_PERSON_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_75TO100PERCENT_AS_PERSON">more than 75% of voting rights</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_75TO100PERCENT_AS_PERSON" id="PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_75TO100PERCENT_AS_PERSON_label">more than 75% of voting rights <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson_VOTINGRIGHTS_75TO100PERCENT_AS_PERSON" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsPerson" onclick="" onforminit="" type="checkbox" value="VOTINGRIGHTS_75TO100PERCENT_AS_PERSON"></label>
+  					</div>
+  					<!--end form-group-->
+  				</fieldset>
+
+  				<fieldset id="PSCForm.Notification.NatureOfControl.VotingRightsMember_fieldset">
+  					<legend></legend> <!--<p class="checkbox" id="PSCForm.Notification.NatureOfControl.VotingRightsMember_title"><strong>Section 5: Ownership of voting rights as a member of a firm </strong></p>-->
+
+  					<h3 class="heading-small" id="PSCForm.Notification.NatureOfControl.VotingRightsMember_title">
+  						Section 5: Ownership of voting rights as a member of a firm
+  					</h3>
+
+  					<p class="checkbox" id="PSCForm.Notification.NatureOfControl.VotingRightsMember_description">
+  						The person has the right to exercise, or actually exercises, significant influence or control over the activities of a firm that, under the law by which it is governed, is not a legal person, and the members of the firm hold:
+  					</p>
+
+  					<div class="form-group">
+  						<legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_25TO50PERCENT_AS_FIRM" onforminit="" onclick="" value="VOTINGRIGHTS_25TO50PERCENT_AS_FIRM" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_25TO50PERCENT_AS_FIRM_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_25TO50PERCENT_AS_FIRM">more than 25% but not more than 50% of voting rights</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_25TO50PERCENT_AS_FIRM" id="PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_25TO50PERCENT_AS_FIRM_label">more than 25% but not more than 50% of voting rights <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_25TO50PERCENT_AS_FIRM" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember" onclick="" onforminit="" type="checkbox" value="VOTINGRIGHTS_25TO50PERCENT_AS_FIRM"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_50TO75PERCENT_AS_FIRM" onforminit="" onclick="" value="VOTINGRIGHTS_50TO75PERCENT_AS_FIRM" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_50TO75PERCENT_AS_FIRM_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_50TO75PERCENT_AS_FIRM">more than 50% but not more than 75% of voting rights</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_50TO75PERCENT_AS_FIRM" id="PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_50TO75PERCENT_AS_FIRM_label">more than 50% but not more than 75% of voting rights <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_50TO75PERCENT_AS_FIRM" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember" onclick="" onforminit="" type="checkbox" value="VOTINGRIGHTS_50TO75PERCENT_AS_FIRM"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_75TO100PERCENT_AS_FIRM" onforminit="" onclick="" value="VOTINGRIGHTS_75TO100PERCENT_AS_FIRM" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_75TO100PERCENT_AS_FIRM_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_75TO100PERCENT_AS_FIRM">more than 75% of voting rights</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_75TO100PERCENT_AS_FIRM" id="PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_75TO100PERCENT_AS_FIRM_label">more than 75% of voting rights <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember_VOTINGRIGHTS_75TO100PERCENT_AS_FIRM" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsMember" onclick="" onforminit="" type="checkbox" value="VOTINGRIGHTS_75TO100PERCENT_AS_FIRM"></label>
+  					</div>
+  					<!--end form-group-->
+  				</fieldset>
+
+  				<fieldset id="PSCForm.Notification.NatureOfControl.VotingRightsTrustee_fieldset">
+  					<legend></legend> <!--<p class="checkbox" id="PSCForm.Notification.NatureOfControl.VotingRightsTrustee_title"><strong>Section 6: Ownership of voting rights as a trustee of a trust </strong></p>-->
+
+  					<h3 class="heading-small" id="PSCForm.Notification.NatureOfControl.VotingRightsTrustee_title">
+  						Section 6: Ownership of voting rights as a trustee of a trust
+  					</h3>
+
+  					<p class="checkbox" id="PSCForm.Notification.NatureOfControl.VotingRightsTrustee_description">
+  						The person has the right to exercise, or actually exercises, significant influence or control over the activities of a trust, and the trustees of the trust hold:
+  					</p>
+
+  					<div class="form-group">
+  						<legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_25TO50PERCENT_AS_TRUST" onforminit="" onclick="" value="VOTINGRIGHTS_25TO50PERCENT_AS_TRUST" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_25TO50PERCENT_AS_TRUST_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_25TO50PERCENT_AS_TRUST">more than 25% but not more than 50% of voting rights</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_25TO50PERCENT_AS_TRUST" id="PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_25TO50PERCENT_AS_TRUST_label">more than 25% but not more than 50% of voting rights <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_25TO50PERCENT_AS_TRUST" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee" onclick="" onforminit="" type="checkbox" value="VOTINGRIGHTS_25TO50PERCENT_AS_TRUST"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_50TO75PERCENT_AS_TRUST" onforminit="" onclick="" value="VOTINGRIGHTS_50TO75PERCENT_AS_TRUST" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_50TO75PERCENT_AS_TRUST_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_50TO75PERCENT_AS_TRUST">more than 50% but not more than 75% of voting rights</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_50TO75PERCENT_AS_TRUST" id="PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_50TO75PERCENT_AS_TRUST_label">more than 50% but not more than 75% of voting rights <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_50TO75PERCENT_AS_TRUST" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee" onclick="" onforminit="" type="checkbox" value="VOTINGRIGHTS_50TO75PERCENT_AS_TRUST"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_75TO100PERCENT_AS_TRUST" onforminit="" onclick="" value="VOTINGRIGHTS_75TO100PERCENT_AS_TRUST" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_75TO100PERCENT_AS_TRUST_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_75TO100PERCENT_AS_TRUST">more than 75% of voting rights</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_75TO100PERCENT_AS_TRUST" id="PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_75TO100PERCENT_AS_TRUST_label">more than 75% of voting rights <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee_VOTINGRIGHTS_75TO100PERCENT_AS_TRUST" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.VotingRightsTrustee" onclick="" onforminit="" type="checkbox" value="VOTINGRIGHTS_75TO100PERCENT_AS_TRUST"></label>
+  					</div>
+  					<!--end form-group-->
+  				</fieldset>
+
+  				<h2 class="heading-medium" id="NatureOfControlRightToAppointHeading_heading">
+  					Right to appoint or remove directors and significant influence or control
+  				</h2>
+  				<!--</div>-->
+
+  				<fieldset id="PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_fieldset">
+  					<legend></legend> <!--<p class="checkbox" id="PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_title"><strong>Section 7: Right to appoint or remove the majority of the board of directors </strong></p>-->
+
+  					<h3 class="heading-small" id="PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_title">
+  						Section 7: Right to appoint or remove the majority of the board of directors
+  					</h3>
+
+  					<p class="checkbox" id="PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_description">
+  						Choose which of the following rights the person has:
+  					</p>
+
+  					<div class="form-group">
+  						<legend></legend> <!--    <input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_PERSON" onforminit="" onclick="" value="RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_PERSON" class="checkbox" >
+                              <label class="checkbox" id="PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_PERSON_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_PERSON">The person has the right to appoint or remove the majority of the board of directors of the company</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_PERSON" id="PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_PERSON_label">The person has the right to appoint or remove the majority of the board of directors of the company <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_PERSON" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors" onclick="" onforminit="" type="checkbox" value="RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_PERSON"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_FIRM" onforminit="" onclick="" value="RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_FIRM" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_FIRM_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_FIRM">The person has control over the firm and members of that firm (in their capacity as such) hold the right to appoint or remove the majority of the board of directors of the company</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_FIRM" id="PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_FIRM_label">The person has control over the firm and members of that firm (in their capacity as such) hold the right to appoint or remove the majority of the board of directors of the company <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_FIRM" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors" onclick="" onforminit="" type="checkbox" value="RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_FIRM"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_TRUST" onforminit="" onclick="" value="RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_TRUST" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_TRUST_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_TRUST">The person has control over the trust and the trustees of that trust (in their capacity as such) hold the right to appoint or remove the majority of the board of directors of the company</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_TRUST" id="PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_TRUST_label">The person has control over the trust and the trustees of that trust (in their capacity as such) hold the right to appoint or remove the majority of the board of directors of the company <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors_RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_TRUST" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.AppointRemoveDirectors" onclick="" onforminit="" type="checkbox" value="RIGHTTOAPPOINTANDREMOVEDIRECTORS_AS_TRUST"></label>
+  					</div>
+  					<!--end form-group-->
+  				</fieldset>
+
+  				<fieldset id="PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_fieldset">
+  					<legend></legend> <!--<p class="checkbox" id="PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_title"><strong>Section 8: Significant influence or control </strong></p>-->
+
+  					<h3 class="heading-small" id="PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_title">
+  						Section 8: Significant influence or control
+  					</h3>
+
+  					<p class="checkbox" id="PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_description">
+  						Choose the influence or control the person has (if applicable):
+  					</p>
+
+  					<div class="form-group">
+  						<legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_PERSON" onforminit="" onclick="" value="SIGINFLUENCECONTROL_AS_PERSON" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_PERSON_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_PERSON">The person has significant influence or control over the company</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_PERSON" id="PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_PERSON_label">The person has significant influence or control over the company <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_PERSON" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl" onclick="" onforminit="" type="checkbox" value="SIGINFLUENCECONTROL_AS_PERSON"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_FIRM" onforminit="" onclick="" value="SIGINFLUENCECONTROL_AS_FIRM" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_FIRM_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_FIRM">The person has control over the firm and members of that firm (in their capacity as such) have significant influence or control over the company</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_FIRM" id="PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_FIRM_label">The person has control over the firm and members of that firm (in their capacity as such) have significant influence or control over the company <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_FIRM" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl" onclick="" onforminit="" type="checkbox" value="SIGINFLUENCECONTROL_AS_FIRM"></label> <legend></legend> <!--<input type="checkbox" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_TRUST" onforminit="" onclick="" value="SIGINFLUENCECONTROL_AS_TRUST" class="checkbox" >
+                  <label class="checkbox" id="PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_TRUST_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_TRUST">The person has control over the trust and the trustees of that trust (in their capacity as such) have significant influence or control over the company</label>-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_TRUST" id="PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_TRUST_label">The person has control over the trust and the trustees of that trust (in their capacity as such) have significant influence or control over the company <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl_SIGINFLUENCECONTROL_AS_TRUST" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.NatureOfControl.SignificantInfluenceControl" onclick="" onforminit="" type="checkbox" value="SIGINFLUENCECONTROL_AS_TRUST"></label>
+  					</div>
+  					<!--end form-group-->
+  				</fieldset>
+
+  				<div class="form-group">
+  					<input class="button" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.submit" type="submit" value="Submit"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.cancel" type="submit" value="Cancel">
+  				</div>
+  				<input name="" type="hidden" value="">
+  				<script src="/scripts/com/jquery/jsOnly.js" type="text/javascript">
+  				</script> <input data-postback="0" name="__VIEWSTATE" type="hidden" value="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">
+  			</form>
+  		</div>
+  		<!--end column-two-thirds-->
+  	</div>
+  	<!--end row-->
+  </main>
+  {% endblock %}
