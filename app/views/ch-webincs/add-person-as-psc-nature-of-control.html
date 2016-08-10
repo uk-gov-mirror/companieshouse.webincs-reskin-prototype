@@ -1,0 +1,253 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Nature of control for Joe Bloggs
+{% endblock %}
+
+{% block content %}
+
+
+  <main id="content" role="main">
+  	{% include "includes/phase_banner_alpha.html" %}
+  	<div class="grid-row">
+  		<div class="column-two-thirds">
+  			<form action="psc-summary" id="" method="get" name="">
+  				<h1 class="form-title heading-xlarge">Nature of control
+          <span class="heading-secondary">Joe Bloggs</span></h1>
+
+
+  				<p id="NatureOfControlPreamble">The nature of control is what gives the person their influence over the company.</p>
+
+
+  				<details>
+  					<summary>
+  						<span class="summary">Which nature of control should I choose?</span>
+  					</summary>
+
+  					<div class="panel panel-border-narrow">
+
+  						<p>For most small companies, only the following are likely to apply:</p>
+
+  						<ul class="list list-bullet">
+  							<li>ownership of shares as a person</li>
+  							<li>ownership of voting rights as a person</li>
+  							<li>the person has the right to appoint or remove the majority of the board of directors of the company</li>
+  						</ul>
+
+  						<p>If none of the above apply then the following option may be more suitable:	</p>
+
+  						<ul class="list list-bullet">
+  							<li>the person has significant influence or control over the company</li>
+  						</ul>
+
+  						<p>	A small company with a straightforward structure is not likely to use the options relating to a member of a firm or trustee of a trust.</p>
+  					</div><!--panel-->
+  				</details>
+
+
+
+          <div id="shares-the-person-holds" class="form-group">
+    				<h2 class="heading-medium">Shares the person holds</h2>
+
+    				<legend></legend>
+
+    				<h3 class="heading-small">Does the person hold more than 25% of shares in the company?</h3>
+
+            <fieldset class="inline">
+
+            <legend class="visuallyhidden">Does the person hold more than 25% of shares in the company?</legend>
+
+            <label class="block-label" data-target="more-than-25-percent-shares-reveal" for="more-than-25-percent-shares-yes">
+              <input id="more-than-25-percent-shares-yes" type="radio" name="more-than-25-percent-shares" value="more-than-25-percent-shares-yes">
+              Yes</label>
+            <label class="block-label" for="more-than-25-percent-shares-no">
+              <input id="more-than-25-percent-shares-no" type="radio" class="nones" name="more-than-25-percent-shares" value="more-than-25-percent-shares-no">
+              No</label>
+
+            </fieldset>
+
+
+            <div class="panel panel-border-narrow js-hidden" id="more-than-25-percent-shares-reveal">
+              <fieldset class="inline">
+
+              <label class="block-label" for="more-than-25-percent-shares-not-50">more than 25% but not more than 50% of shares
+              <input class="radio" id="more-than-25-percent-shares-not-50" name="more-than-25-percent-shares-reveal-choice" type="radio" value="more-than-25-percent-shares-not-50"></label>
+              <label class="block-label" for="more-than-50-percent-shares-not-75">more than 50% but less than 75% of shares
+              <input class="radio" id="more-than-50-percent-shares-not-75" name="more-than-25-percent-shares-reveal-choice" type="radio" value="more-than-50-percent-shares-not-75"></label>
+              <label class="block-label" for="more-than-75-percent-shares">75% or more of shares
+              <input class="radio" id="more-than-75-percent-shares" name="more-than-25-percent-shares-reveal-choice" type="radio" value="more-than-75-percent-shares"></label>
+            </fieldset>
+
+          </div><!--panel-->
+        </div><!--shares-the-person-holds-->
+
+        <div id="voting-rights-the-person-holds" class="form-group">
+
+          <h2 class="heading-medium">Voting rights the person holds</h2>
+
+          <legend></legend>
+
+  				<h3 class="heading-small">Does the person hold more than 25% of voting rights in the company?</h3>
+
+          <fieldset class="inline">
+
+          <legend class="visuallyhidden">Does the person hold more than 25% of voting rights in the company?</legend>
+
+          <label class="block-label" data-target="more-than-25-percent-voting-rights-reveal" for="more-than-25-percent-voting-rights-yes">
+            <input id="more-than-25-percent-voting-rights-yes" type="radio" name="more-than-25-percent-voting-rights" value="more-than-25-percent-voting-rights-yes">
+            Yes</label>
+          <label class="block-label" for="more-than-25-percent-voting-rights-no">
+            <input id="more-than-25-percent-voting-rights-no" class="nones" type="radio" name="more-than-25-percent-voting-rights" value="more-than-25-percent-voting-rights-no">
+            No</label>
+
+          </fieldset>
+
+          <div class="panel panel-border-narrow js-hidden" id="more-than-25-percent-voting-rights-reveal">
+            <fieldset class="inline">
+
+            <label class="block-label" for="more-than-25-percent-voting-rights-not-50">more than 25% but not more than 50% of voting rights
+            <input class="radio" id="more-than-25-percent-voting-rights-not-50" name="more-than-25-percent-voting-rights-reveal-choice" type="radio" value="more-than-25-percent-voting-rights-not-50"></label>
+            <label class="block-label" for="more-than-50-percent-voting-rights-not-75">more than 50% but less than 75% of voting rights
+            <input class="radio" id="more-than-50-percent-voting-rights-not-75" name="more-than-25-percent-voting-rights-reveal-choice" type="radio" value="more-than-50-percent-voting-rights-not-75"></label>
+            <label class="block-label" for="more-than-75-percent-voting-rights">75% or more of voting rights
+            <input class="radio" id="more-than-75-percent-voting-rights" name="more-than-25-percent-voting-rights-reveal-choice" type="radio" value="more-than-75-percent-voting-rights"></label>
+          </fieldset>
+
+        </div><!--panel-->
+      </div><!--voting-rights-the-person-holds-->
+
+
+      <div id="right-to-appoint-or-remove-directors" class="form-group">
+
+        <h2 class="heading-medium">Right to appoint or remove directors</h2>
+
+        <legend></legend>
+
+        <h3 class="heading-small">Does the person have the right to appoint or remove the majority of the company's directors?</h3>
+
+        <fieldset class="inline">
+
+        <legend class="visuallyhidden">Does the person have the right to appoint or remove the majority of the company's directors?</legend>
+
+        <label class="block-label" for="right-remove-directors-yes">
+          <input id="right-remove-directors-yes" type="radio" name="right-remove-directors" value="right-remove-directors-yes">
+          Yes</label>
+        <label class="block-label" for="right-remove-directors-no">
+          <input id="right-remove-directors-no" type="radio" name="right-remove-directors" class="nones" value="right-remove-directors-no">
+          No</label>
+
+        </fieldset>
+
+      </div><!--right-to-appoint-or-remove-directors-->
+
+
+
+      <div id="significant-influence-or-control" class="form-group"><!--This should only appear if NO is selected on Shares the person holds, Voting rights the person holds, Right to appoint or remove directors-->
+
+        <h2 class="heading-medium">Significant influence or control</h2>
+
+        <legend></legend>
+
+        <h3 class="heading-small">Does the person have significant influence or control over the company?</h3>
+
+        <fieldset class="inline">
+
+        <legend class="visuallyhidden">Does the person have significant influence or control over the company?</legend>
+
+        <label class="block-label" for="significant-influence-yes">
+          <input id="significant-influence-yes" type="radio" name="significant-influence" value="Yes">
+          Yes</label>
+        <label class="block-label" for="significant-influence-no">
+          <input id="significant-influence-no" type="radio" name="significant-influence" value="No">
+          No</label>
+
+        </fieldset>
+
+      </div><!--significant-influence-or-control-->
+
+
+
+      <div id="additional-controls-regarding" class="form-group"><!--This should only appear once the user has interacted with Shares the person holds, Voting rights the person holds, Right to appoint or remove directors, and (if applicable) Significant influence or control-->
+
+        <h2 class="heading-medium">Control over the company by the members of a firm and/or trustees of a trust</h2>
+        <p class="form-hint">This only applies if the company being incorporated meets both of the following:</p>
+        <ul class="list list-bullet form-hint">
+          <li>it's directly controlled by the members of a firm and/or trustees of a trust</li>
+          <li>that firm and/or trust is directly controlled by the person you're providing as a PSC</li>
+        </ul>
+
+        <legend></legend>
+
+        <h3 class="heading-small">Do the members of a firm and/or the trustees of a trust have control over the company?</h3>
+
+        <fieldset class="inline">
+
+        <legend class="visuallyhidden">Do the members of a firm and/or the trustees of a trust have control over the company?</legend>
+
+        <label class="block-label" for="additional-controls-yes">
+          <input id="additional-controls-yes" type="radio" name="additional-controls" value="Yes">
+          Yes</label>
+        <label class="block-label" for="additional-controls-no">
+          <input id="additional-controls-no" type="radio" name="additional-controls" value="No">
+          No</label>
+
+        </fieldset>
+
+        <div id="person-have-control-over-that">
+            <h3 class="heading-small">Does this person have control over that firm and/or trust?</h3>
+
+            <fieldset class="inline">
+
+            <legend class="visuallyhidden">Does this person have control over that firm and/or trust?</legend>
+
+            <label class="block-label"  data-target="additional-controls-reveal" for="additional-controls2-yes">
+              <input id="additional-controls2-yes" type="radio" name="additional-controls2" value="Yes">
+              Yes</label>
+            <label class="block-label"  data-target="additional-controls-none" for="additional-controls2-no">
+              <input id="additional-controls2-no" type="radio" name="additional-controls2" value="No">
+              No</label>
+
+            </fieldset>
+
+            <div class="panel panel-border-narrow js-hidden" id="additional-controls-reveal">
+              <h3 class="heading-small">What does this person have control over?</h3>
+
+              <fieldset>
+                <legend class="visuallyhidden">What does this person have control over?</legend>
+
+                <label class="block-label" for="activities-of-a-firm">the activities of the firm
+                <input class="radio" id="activities-of-a-firm" name="additional-controls-reveal-choice" type="radio" value="activities-of-a-firm"></label>
+                <label class="block-label" for="activities-of-a-trust">the activities of the trust
+                <input class="radio" id="activities-of-a-trust" name="additional-controls-reveal-choice" type="radio" value="activities-of-a-trust"></label>
+                <label class="block-label" for="firm-and-trust">the activities of the firm and trust
+                <input class="radio" id="firm-and-trust" name="additional-controls-reveal-choice" type="radio" value="firm-and-trust"></label>
+              </fieldset>
+            </div><!--panel-->
+
+            <div class="panel panel-border-narrow js-hidden" id="additional-controls-none">
+
+              <fieldset>
+                <p>Based on your answers, you don't need to provide any further information for this particular PSC.</p>
+              </fieldset>
+            </div><!--panel-->
+        </div>
+
+      </div><!--additional-controls-regarding-->
+
+
+
+
+
+
+
+  				<div class="form-group">
+  					<input class="button" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.submit" type="submit" value="Continue">
+            <input class="pseudo-link" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.cancel" type="submit" value="Cancel">
+  				</div><!--form-group-->
+  			</form>
+  		</div>
+  		<!--end column-two-thirds-->
+  	</div>
+  	<!--end row-->
+  </main>
+  {% endblock %}
