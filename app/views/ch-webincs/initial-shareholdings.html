@@ -6,71 +6,105 @@
 
 {% block content %}
 
-<!--
-What I changed!
-# Heading is now a H1 with classes of .form-title .heading-large
-# Commented ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
-# Removed this info from the table tag: border="0" cellpadding="0" cellspacing="0"
-# Added thead, tbody, th elements to tables
-# Put help in a GDS column-third div, with class of .form-hint (and new styling to reduce font-size)
-# Added new  class of .button-secondary to some inputs (turns them blue)
-# Wrapped some inputs in a div with a GDS class of .form-group - gives them a large bottom margin
-# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
-# De-capitalised content, eg BACK becomes Back
-
--->
-
-
 <main id="content" role="main">
 	{% include "includes/phase_banner_alpha.html" %}
 
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<form action="psc-1" id="HPP" method="get" name="HPP">
-				<h1 class="form-title heading-large">Initial Shareholdings for A TEST COMPANY LIMITED</h1>
+				<h1 class="form-title heading-xlarge">Initial Shareholdings for A TEST COMPANY LIMITED</h1>
 
+        <h2 class="heading-large">John Smith</h2>
 
 				<table>
-					<caption class="visuallyhidden">Initial Shareholdings for A TEST COMPANY LIMITED</caption><!-- needed for accessibility-->
+					<caption class="visuallyhidden">Initial Shareholdings for John Smith</caption><!-- needed for accessibility-->
 					<thead>
 						<tr>
-							<th>Subscriber</th>
-							<th>Joe Bloggs</th>
+							<th>Class</th>
+							<th>Currency</th>
+              <th class="numeric">Shares allocated</th>
+              <th class="numeric">Value per share</th>
+              <th></th>
+              <th></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>Class of share</td>
-							<td>GBP - Ordinary</td>
+							<td>Ordinary</td>
+							<td>British Pounds</td>
+              <td class="numeric">100</td>
+              <td class="numeric">&pound;1</td>
+              <td>
+                <a href="" class="link">Edit</a>
+              </td>
+              <td>
+                <a href="" class="link">Remove</a>
+              </td>
 						</tr>
-						<tr>
-							<td>Number</td>
-							<td>1</td>
-						</tr>
-						<tr>
-							<td>Nominal value of each share:</td>
-							<td>1.000000</td>
+            <tr>
+							<td>Preference</td>
+							<td>British Pounds</td>
+              <td class="numeric">10</td>
+              <td class="numeric">&pound;1</td>
+              <td>
+                <a href="" class="link">Edit</a>
+              </td>
+              <td>
+                <a href="" class="link">Remove</a>
+              </td>
 						</tr>
 					</tbody>
 				</table>
 
+        <h2 class="heading-large">Jane Smith</h2>
+
+				<table>
+					<caption class="visuallyhidden">Initial Shareholdings for Jane Smith</caption>
+					<thead>
+						<tr>
+							<th>Class</th>
+							<th>Currency</th>
+              <th class="numeric">Shares allocated</th>
+              <th class="numeric">Value per share</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Ordinary</td>
+							<td>US Dollars</td>
+              <td class="numeric">100</td>
+              <td class="numeric">&dollar;2</td>
+              <td>
+                <a href="" class="link">Edit</a>
+              </td>
+              <td>
+                <a href="" class="link">Remove</a>
+              </td>
+						</tr>
+            <tr>
+							<td>Preference</td>
+							<td>US Dollars</td>
+              <td class="numeric">10</td>
+              <td class="numeric">&dollar;2</td>
+              <td>
+                <a href="" class="link">Edit</a>
+              </td>
+              <td>
+                <a href="" class="link">Remove</a>
+              </td>
+						</tr>
+					</tbody>
+				</table>
 
 				<div class="form-group">
-					<p><input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.DisplaySubscriber.SubscribersListPager.subscribersList.subscriber_1.btnEditSubscriber" textid="Incorporation.incorporationNavigation.sectionContent.DisplaySubscriber.SubscribersListPager.subscribersList.subscriber_1.W0013632" type="submit" value="Edit"> <input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.DisplaySubscriber.SubscribersListPager.subscribersList.subscriber_1.btnRemoveSubscriber" textid="Incorporation.incorporationNavigation.sectionContent.DisplaySubscriber.SubscribersListPager.subscribersList.subscriber_1.WA000047" type="submit" value="Remove"></p>
-				</div>
-				<!--end form-group-->
-
-
-				<div class="form-group">
-					<p><input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.DisplaySubscriber.btnAddNewSubscriber" textid="Incorporation.incorporationNavigation.sectionContent.DisplaySubscriber.W0013695" type="submit" value="Add new subscriber">
+          <br>
+					<p>
+					  <a href="" class="link">Add another subscriber</a>
 					</p>
 				</div>
-				<!--end form-group-->
-				<input class="button" name="Incorporation.incorporationNavigation.next" type="submit" value="Next"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.previous" textid="" type="submit" value="Previous"> <input data-postback="0" name="__VIEWSTATE" type="hidden" value="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">
+				<input class="button" name="Incorporation.incorporationNavigation.next" type="submit" value="Continue"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.previous" textid="" type="submit" value="Previous"> <input data-postback="0" name="__VIEWSTATE" type="hidden" value="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">
 			</form>
 		</div>
-		<!--end column-two-thirds-->
 	</div>
-	<!--end row-->
 </main>
 {% endblock %}
