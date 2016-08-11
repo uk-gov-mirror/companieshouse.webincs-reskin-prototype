@@ -21,7 +21,7 @@ What I changed!
 			{% include "includes/phase_banner_alpha.html" %}
 			<div class="grid-row">
 				<div class="column-two-thirds">
-					<form action="add-person-as-an-officer-dsa" id="" method="get" name="">
+					<form action="add-person-as-an-officer-dca" id="" method="get" name="">
 						<h1 class="form-title heading-xlarge" id="DetailsOfNewDirectorInstruction_heading">
 							Details of new director
 						</h1>
@@ -38,7 +38,7 @@ What I changed!
 							<!--end form-group-->
 
 							<div class="form-group">
-								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" id="AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames_label">Other Forename (s) (optional)</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" type="text" value=""> <span></span>
+								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" id="AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames_label">Other forename (s) (optional)</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" type="text" value=""> <span></span>
 							</div>
 							<!--end form-group-->
 
@@ -49,9 +49,9 @@ What I changed!
 
 							<div class="form-group">
 								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.CountryOfResidenceList" id="AP01.NaturalDirectorAppointment.NaturalDirector.CountryOfResidenceList_label">Country of residence</label>
-								<p class="form-hint">
-									The details entered here must correspond with the residential address.<!-- You can select a country from the list provided, or if it is not listed, select 'Other' and enter details in the 'Other' field.-->
-								</p>
+								<!--<p class="form-hint">
+									The country must match details with the residential address.
+								</p>-->
 								<select class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.CountryOfResidenceList" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.CountryOfResidenceList" onclick="set_disable(this.value!=&#39;OTHER&#39;, [&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.CountryOfResidence&#39;])" onforminit="Y" onkeyup="set_disable(this.value!=&#39;OTHER&#39;, [&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.CountryOfResidence&#39;])">
 									<option value="">
 										Please select
@@ -176,7 +176,10 @@ What I changed!
 							<!--end form-group-->
 
 							<div class="form-group">
-								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.DOB" id="AP01.NaturalDirectorAppointment.NaturalDirector.DOB_label">Date of Birth</label> <span class="form-hint">Director must be at least 16 years of age.</span>
+								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.DOB" id="AP01.NaturalDirectorAppointment.NaturalDirector.DOB_label">Date of Birth</label>
+            <p>Director must be at least 16 years of age</p>
+
+                <span class="form-hint">For example, 31 3 1980<br></span>
 								<div class="form-date">
 									<div class="form-group form-group-day">
 										<label class="form-label" for="dob-day">Day</label> <input aria-describedby="dob-hint" class="form-control" id="dob-day" max="31" min="0" name="dob-day" pattern="[0-9]*" type="number">
@@ -227,18 +230,16 @@ What I changed!
 
             <fieldset>
               <h2 class="heading-large" id="StatementOfConsentToActHeading_heading">
-                Consent to Act
+                Consent to act
               </h2>
 
               <div class="panel panel-border-wide">
-                <p>
-                  A statement of consent to act is required in the place of a signature:
-                </p>
+                <p>A statement of consent to act is required in the place of a signature.</p>
               </div>
 
               <div class="form-group">
                 <!--<fieldset id="AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_fieldset">-->
-                <legend></legend> <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y" id="AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y_label">The subscribers confirm that the person named has consented to act as a director <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement" onclick="" onforminit="" type="checkbox" value="Y"></label>
+                <legend></legend> <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y" id="AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y_label">The subscribers confirm that this person has consented to act as a director <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement" onclick="" onforminit="" type="checkbox" value="Y"></label>
               </div>
               <!--end form-group-->
               <!--</fieldset>-->

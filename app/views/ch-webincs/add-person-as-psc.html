@@ -12,12 +12,18 @@
   	{% include "includes/phase_banner_alpha.html" %}
   	<div class="grid-row">
   		<div class="column-two-thirds">
-  			<form action="add-person-as-psc-nature-of-control" id="HPP" method="get" name="HPP">
+  			<form action="add-person-as-psc-dca" id="" method="get" name="">
   				<h1 class="form-title heading-xlarge">
   					Details of new person with significant control
   				</h1>
 
   					<fieldset>
+
+              <div class="form-group">
+                <legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Title" id="AP01.NaturalDirectorAppointment.NaturalDirector.Title_label">Title (optional)</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Title" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Title" type="text" value=""> <span></span>
+              </div>
+              <!--end form-group-->
+
   						<div class="form-group">
   							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Forename" id="PSCForm.Notification.PSC.Forename_label">Forename</label>
                 <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Forename" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Forename" type="text" value="">
@@ -25,7 +31,7 @@
   						<!--end form-group-->
 
   						<div class="form-group">
-  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.OtherForenames" id="PSCForm.Notification.PSC.OtherForenames_label">Other Forename(s)</label>
+  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.OtherForenames" id="PSCForm.Notification.PSC.OtherForenames_label">Other forename(s) (optional)</label>
                 <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.OtherForenames" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.OtherForenames" type="text" value="">
   						</div>
   						<!--end form-group-->
@@ -36,235 +42,10 @@
   						</div>
   						<!--end form-group-->
 
-  						<div class="form-group">
-  							<legend></legend>
-                <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.DOB" id="PSCForm.Notification.PSC.DOB_label">Date of Birth</label>
-                <span id="dob-hint" class="form-hint">For example, 31 3 1980</span>
-  							<div class="form-date">
-  								<div class="form-group form-group-day">
-  									<label class="form-label" for="dob-day">Day</label> <input aria-describedby="dob-hint" class="form-control" id="dob-day" max="31" min="0" name="dob-day" pattern="[0-9]*" type="number">
-  								</div>
-
-  								<div class="form-group form-group-month">
-  									<label class="form-label" for="dob-month">Month</label> <input class="form-control" id="dob-month" max="12" min="0" name="dob-month" pattern="[0-9]*" type="number">
-  								</div>
-
-  								<div class="form-group form-group-year">
-  									<label class="form-label" for="dob-year">Year</label> <input class="form-control" id="dob-year" max="2016" min="0" name="dob-year" pattern="[0-9]*" type="number">
-  								</div>
-  							</div>
-  						</div>
-  						<!--end form-group-->
-
-  						<div class="form-group">
-  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Nationality" id="PSCForm.Notification.PSC.Nationality_label">Nationality</label>
-                <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Nationality" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Nationality" type="text" value="">
-  						</div>
-  						<!--end form-group-->
-
-  						<div class="form-group">
-  							<legend></legend>
-  							 <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidenceList" id="countryStateResidence_tooltip-src">Country/State of residence</label>
+              <div class="form-group">
+                <legend></legend>
+                 <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidenceList" id="countryStateResidence_tooltip-src">Country of residence</label>
                  <select class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidenceList" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidenceList" onclick="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidence'])" onforminit="Y" onkeyup="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidence'])">
-  								<option value="">
-  									Please select
-  								</option>
-  								<option value="GBR">
-  									United Kingdom
-  								</option>
-  								<option value="GB-ENG">
-  									England
-  								</option>
-  								<option value="GB-WLS">
-  									Wales
-  								</option>
-  								<option value="GB-SCT">
-  									Scotland
-  								</option>
-  								<option value="GB-NIR">
-  									Northern Ireland
-  								</option>
-  								<option value="GBR">
-  									UK
-  								</option>
-  								<option value="GB-GBN">
-  									Great Britain
-  								</option>
-  								<option value="">
-  									-----------------
-  								</option>
-  								<option value="USA">
-  									USA
-  								</option>
-  								<option value="IRL">
-  									Ireland
-  								</option>
-  								<option value="DEU">
-  									Germany
-  								</option>
-  								<option value="FRA">
-  									France
-  								</option>
-  								<option value="ITA">
-  									Italy
-  								</option>
-  								<option value="ESP">
-  									Spain
-  								</option>
-  								<option value="PRT">
-  									Portugal
-  								</option>
-  								<option value="NLD">
-  									Netherlands
-  								</option>
-  								<option value="POL">
-  									Poland
-  								</option>
-  								<option value="BEL">
-  									Belgium
-  								</option>
-  								<option value="NOR">
-  									Norway
-  								</option>
-  								<option value="SWE">
-  									Sweden
-  								</option>
-  								<option value="DNK">
-  									Denmark
-  								</option>
-  								<option value="AUS">
-  									Australia
-  								</option>
-  								<option value="NZL">
-  									New Zealand
-  								</option>
-  								<option value="CAN">
-  									Canada
-  								</option>
-  								<option value="ZAF">
-  									South Africa
-  								</option>
-  								<option value="AUT">
-  									Austria
-  								</option>
-  								<option value="HRV">
-  									Croatia
-  								</option>
-  								<option value="CYP">
-  									Cyprus
-  								</option>
-  								<option value="CZE">
-  									Czech Republic
-  								</option>
-  								<option value="EST">
-  									Estonia
-  								</option>
-  								<option value="GRC">
-  									Greece
-  								</option>
-  								<option value="HUN">
-  									Hungary
-  								</option>
-  								<option value="LTU">
-  									Lithuania
-  								</option>
-  								<option value="OTHER">
-  									Other - enter below
-  								</option>
-  							</select>
-  						</div>
-  						<!--end form-group-->
-
-  						<p id="OtherCountryInstruction">
-  							Details of 'Country/State of residence' must correspond with the residential address.
-  						</p>
-  						<!-- Other countries should only be shown when selected from the drop-down list above, so hiding it here=-->
-  						<!--<div class="form-group">
-  <fieldset >
-      <legend></legend>
-
-      <label class="form-label-bold" id="PSCForm.Notification.PSC.CountryOfResidence_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidence" >Other Country/State </label>
-      <input type="text" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidence" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidence" class="form-control" value="" maxlength="50">
-
-  </fieldset>
-  </div>-->
-  						<!--end form-group-->
-
-
-  					<div class="form-group">
-  							<legend></legend>
-  							<p class="heading-small" id="PSCForm.Notification.PSC.Consent_title">
-  								You must confirm the following statement
-  							</p>
-  							<legend></legend>
-  							 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Consent_Y" id="PSCForm.Notification.PSC.Consent_Y_label">The subscribers confirm that the person named above knows that their details are being supplied as part of this incorporation. <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Consent_Y" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Consent" onclick="" onforminit="" type="checkbox" value="Y"></label>
-  					</div>
-  					<!--end form-group-->
-          </fieldset>
-
-
-  					<h2 class="heading-medium" id="ServiceAddressHeading1_heading">
-  						Service address of the person with significant control
-  					</h2>
-
-  					<div class="notice">
-  						<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="ServiceAddressInstruction2">A service address is where a PSC chooses to receive mail. This address will show on the public record.</strong>
-  					</div>
-
-            <fieldset>
-  					<div class="form-group">
-  						<legend></legend>
-
-  						<p class="heading-small">
-  							Where is the service address situated? (please select):
-  						</p>
-  						<legend></legend>
-  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_Y" id="PSCForm.Notification.PSC.SameAsRegisteredOffice_Y_label">The service address is 'same as' the company's registered office <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_Y" name="example" onclick="set_hide(!get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_N'), ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.SADisplayed', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Postcode', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PoBox', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Premise', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Street', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Thoroughfare', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PostTown', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.County',]); set_disable(get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_Y'), ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_Y']); set_disable(get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList')!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country']);" onforminit="Y" type="radio" value="Y"></label> <!-- this code doesn't work with GDS "Conditionally revealing content" styles so commenting out-->
-
-  						 <label class="block-label" data-target="service-address-supplied" for="example"><input id="example" name="example" type="radio" value=""> The service address is at the address supplied (select to display address fields)</label>
-  					</div>
-  					<!--end form-group-->
-
-  					<div class="panel panel-border-narrow js-hidden" id="service-address-supplied">
-
-
-  						<div class="form-group">
-  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Premise" id="PSCForm.Notification.PSC.ServiceAddress.Premise_label">Building Name/No.</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Premise" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Premise" type="text" value="">
-  						</div>
-  						<!--end form-group-->
-
-              <div class="form-group">
-                <legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PoBox" id="PSCForm.Notification.PSC.ServiceAddress.PoBox_label">PO Box No</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PoBox" maxlength="10" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PoBox" type="text" value="">
-              </div>
-              <!--end form-group-->
-
-  						<div class="form-group">
-  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Street" id="PSCForm.Notification.PSC.ServiceAddress.Street_label">Address</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Street" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Street" type="text" value="">
-  						</div>
-  						<!--end form-group-->
-
-  						<div class="form-group">
-  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Thoroughfare" id="PSCForm.Notification.PSC.ServiceAddress.Thoroughfare_label"></label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Thoroughfare" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Thoroughfare" type="text" value="">
-  						</div>
-  						<!--end form-group-->
-
-  						<div class="form-group">
-  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PostTown" id="PSCForm.Notification.PSC.ServiceAddress.PostTown_label">Post Town</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PostTown" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PostTown" type="text" value="">
-  						</div>
-  						<!--end form-group-->
-
-  						<div class="form-group">
-  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Postcode" id="PSCForm.Notification.PSC.ServiceAddress.Postcode_label">Postcode</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Postcode" maxlength="15" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Postcode" type="text" value=""> <!-- AS:WA000032 --><input alt="Expand postcode" class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PostcodeLOOKUP" type="submit" value="Look up"><!-- AE:WA000032 -->
-  						</div>
-  						<!--end form-group-->
-
-  						<div class="form-group">
-  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.County" id="PSCForm.Notification.PSC.ServiceAddress.County_label">County/Region</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.County" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.County" type="text" value="">
-  						</div>
-  						<!--end form-group-->
-
-              <div class="form-group">
-                <legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList" id="PSCForm.Notification.PSC.ServiceAddress.CountryList_label">Country</label> <select class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList" onclick="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country'])" onforminit="" onkeyup="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country'])">
                   <option value="">
                     Please select
                   </option>
@@ -370,226 +151,76 @@
                   <option value="OTHER">
                     Other - enter below
                   </option>
-                  <option value="NOTSPECIFIED">
-                    Not specified
-                  </option>
                 </select>
               </div>
               <!--end form-group-->
 
+
+              <!-- Other countries should only be shown when selected from the drop-down list above, so hiding it here=-->
+              <!--<div class="form-group">
+            <fieldset >
+            <legend></legend>
+
+            <label class="form-label-bold" id="PSCForm.Notification.PSC.CountryOfResidence_label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidence" >Other Country/State </label>
+            <input type="text" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidence" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.CountryOfResidence" class="form-control" value="" maxlength="50">
+
+            </fieldset>
+            </div>-->
+              <!--end form-group-->
+
               <div class="form-group">
-                <legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country" id="PSCForm.Notification.PSC.ServiceAddress.Country_label">Other Country</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country" type="text" value="">
+                <legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Nationality" id="PSCForm.Notification.PSC.Nationality_label">Nationality</label>
+                <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Nationality" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.Nationality" type="text" value="">
               </div>
               <!--end form-group-->
 
-
-
-  					</div>
-  					<!-- end js-hidden-->
-          </fieldset>
-
-            <fieldset>
-
-  					<h2 class="heading-medium" id="PSCForm.Notification.PSC.ResidentialAddress.residentialAddress1_heading">
-  						Residential address of the person with significant control
-  					</h2>
-
-  					<div class="notice">
-  						<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="ResidentialAddressInstruction">This address is the PSC's home/residential address. This will NOT be shown on the public record.</strong>
-  					</div>
-
-  					<div class="form-group">
+  						<div class="form-group">
   							<legend></legend>
+                <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.DOB" id="PSCForm.Notification.PSC.DOB_label">Date of Birth</label>
+                <span id="dob-hint" class="form-hint">For example, 31 3 1980</span>
+  							<div class="form-date">
+  								<div class="form-group form-group-day">
+  									<label class="form-label" for="dob-day">Day</label> <input aria-describedby="dob-hint" class="form-control" id="dob-day" max="31" min="0" name="dob-day" pattern="[0-9]*" type="number">
+  								</div>
 
-  							<p class="heading-small">
-  								Where is the residential address situated? (please select):
-  							</p>
-  							<legend></legend>
-  							 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_Y" id="PSCForm.Notification.PSC.SameAsServiceAddress_Y_label">The residential address is 'same as' the service address <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_Y" name="example-2" onclick="set_hide(!get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_N'), ['PSCForm.Notification.PSC.ResidentialAddress.RADisplayed', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Postcode', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Premise', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Street', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Thoroughfare', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.PostTown', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.County']); set_disable(get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList')!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country']);" onforminit="Y" type="radio" value="Y"></label> <!-- this code doesn't work with GDS "Conditionally revealing content" styles so commenting out-->
+  								<div class="form-group form-group-month">
+  									<label class="form-label" for="dob-month">Month</label> <input class="form-control" id="dob-month" max="12" min="0" name="dob-month" pattern="[0-9]*" type="number">
+  								</div>
 
-  							 <label class="block-label" data-target="residential-address-supplied" for="example-2"><input id="example-2" name="example-2" type="radio" value=""> The residential address is at the address supplied (select to display address fields)</label>
-  					</div>
-  					<!--end form-group-->
+  								<div class="form-group form-group-year">
+  									<label class="form-label" for="dob-year">Year</label> <input class="form-control" id="dob-year" max="2016" min="0" name="dob-year" pattern="[0-9]*" type="number">
+  								</div>
+  							</div>
+  						</div>
+  						<!--end form-group-->
 
-
-  				<div class="panel panel-border-narrow js-hidden" id="residential-address-supplied">
-
-
-
-  					<div class="form-group">
-  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Premise" id="PSCForm.Notification.PSC.ResidentialAddress.Premise_label">Building Name/No.</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Premise" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Premise" type="text" value="">
-  					</div>
-  					<!--end form-group-->
-
-  					<div class="form-group">
-  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Street" id="PSCForm.Notification.PSC.ResidentialAddress.Street_label">Address</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Street" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Street" type="text" value="">
-  					</div>
-  					<!--end form-group-->
-
-  					<div class="form-group">
-  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Thoroughfare" id="PSCForm.Notification.PSC.ResidentialAddress.Thoroughfare_label"></label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Thoroughfare" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Thoroughfare" type="text" value="">
-  					</div>
-  					<!--end form-group-->
-
-  					<div class="form-group">
-  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.PostTown" id="PSCForm.Notification.PSC.ResidentialAddress.PostTown_label">Post Town</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.PostTown" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.PostTown" type="text" value="">
-  					</div>
-  					<!--end form-group-->
+              <div class="form-group">
+                <legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Occupation" id="AP01.NaturalDirectorAppointment.NaturalDirector.Occupation_label">Business occupation  (optional)</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Occupation" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Occupation" type="text" value=""> <span></span>
+              </div>
+              <!--end form-group-->
+            </fieldset>
 
 
-  					<div class="form-group">
-  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Postcode" id="PSCForm.Notification.PSC.ResidentialAddress.Postcode_label">Postcode</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Postcode" maxlength="15" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Postcode" type="text" value=""> <!-- AS:WA000032 --><input alt="Expand postcode" class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.PostcodeLOOKUP" type="submit" value="Look up"><!-- AE:WA000032 -->
-  					</div>
-  					<!--end form-group-->
+              <fieldset>
+                <h2 class="heading-large" id="StatementOfConsentToActHeading_heading">
+                  Consent to act
+                </h2>
 
-  					<div class="form-group">
-  							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.County" id="PSCForm.Notification.PSC.ResidentialAddress.County_label">County/Region</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.County" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.County" type="text" value="">
-  					</div>
-  					<!--end form-group-->
+                <div class="panel panel-border-wide">
+                  <p>
+                    A statement of consent to act is required in the place of a signature.
+                  </p>
+                </div>
 
-
-              					<div class="form-group">
-              							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList" id="PSCForm.Notification.PSC.ResidentialAddress.CountryList_label">Country</label> <select class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList" onclick="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country'])" onforminit="" onkeyup="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country'])">
-              								<option value="">
-              									Please select
-              								</option>
-              								<option value="GBR">
-              									United Kingdom
-              								</option>
-              								<option value="GB-ENG">
-              									England
-              								</option>
-              								<option value="GB-WLS">
-              									Wales
-              								</option>
-              								<option value="GB-SCT">
-              									Scotland
-              								</option>
-              								<option value="GB-NIR">
-              									Northern Ireland
-              								</option>
-              								<option value="GBR">
-              									UK
-              								</option>
-              								<option value="GB-GBN">
-              									Great Britain
-              								</option>
-              								<option value="">
-              									-----------------
-              								</option>
-              								<option value="USA">
-              									USA
-              								</option>
-              								<option value="IRL">
-              									Ireland
-              								</option>
-              								<option value="DEU">
-              									Germany
-              								</option>
-              								<option value="FRA">
-              									France
-              								</option>
-              								<option value="ITA">
-              									Italy
-              								</option>
-              								<option value="ESP">
-              									Spain
-              								</option>
-              								<option value="PRT">
-              									Portugal
-              								</option>
-              								<option value="NLD">
-              									Netherlands
-              								</option>
-              								<option value="POL">
-              									Poland
-              								</option>
-              								<option value="BEL">
-              									Belgium
-              								</option>
-              								<option value="NOR">
-              									Norway
-              								</option>
-              								<option value="SWE">
-              									Sweden
-              								</option>
-              								<option value="DNK">
-              									Denmark
-              								</option>
-              								<option value="AUS">
-              									Australia
-              								</option>
-              								<option value="NZL">
-              									New Zealand
-              								</option>
-              								<option value="CAN">
-              									Canada
-              								</option>
-              								<option value="ZAF">
-              									South Africa
-              								</option>
-              								<option value="AUT">
-              									Austria
-              								</option>
-              								<option value="HRV">
-              									Croatia
-              								</option>
-              								<option value="CYP">
-              									Cyprus
-              								</option>
-              								<option value="CZE">
-              									Czech Republic
-              								</option>
-              								<option value="EST">
-              									Estonia
-              								</option>
-              								<option value="GRC">
-              									Greece
-              								</option>
-              								<option value="HUN">
-              									Hungary
-              								</option>
-              								<option value="LTU">
-              									Lithuania
-              								</option>
-              								<option value="OTHER">
-              									Other - enter below
-              								</option>
-              								<option value="NOTSPECIFIED">
-              									Not specified
-              								</option>
-              							</select>
-              					</div>
-              					<!--end form-group-->
-
-              					<div class="form-group">
-              							<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country" id="PSCForm.Notification.PSC.ResidentialAddress.Country_label">Other Country</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country" type="text" value="">
-              					</div>
-              					<!--end form-group-->
+                <div class="form-group">
+                  <!--<fieldset id="AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_fieldset">-->
+                  <legend></legend> <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y" id="AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y_label">The subscribers confirm that this person knows that their details are being supplied as part of this incorporation <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement" onclick="" onforminit="" type="checkbox" value="Y"></label>
+                </div>
+                <!--end form-group-->
+                <!--</fieldset>-->
+              </fieldset>
 
 
-  				</div>
-  				<!-- end js-hidden-->
-        </fieldset>
-
-
-  				<fieldset id="PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_fieldset">
-  					<legend></legend>
-  					<h3 class="heading-medium" id="PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_title">
-  						Disclosure exemptions (only complete if applicable)
-  					</h3>
-
-  					<div class="notice form-group">
-  						<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_description">The following exemptions only apply to people who, due to risk of harm, have restrictions in place against the sharing and disclosure of their information:</strong>
-  					</div>
-
-  					<div class="form-group">
-  						<legend></legend>
-              <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_Y" id="PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_Y_label">Only tick this box if you have made an application which grants exemption from disclosing the PSC’s residential address to credit reference agencies under section 790ZF of the Companies Act 2006. <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd_Y" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.SecureAddressInd" onclick="" onforminit="" type="checkbox" value="Y"></label> <legend></legend>
-  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.isSuperSecure_Y" id="PSCForm.Notification.PSC.isSuperSecure_Y_label">Only tick this box if you have made an application which grants exemption from disclosing the PSC’s identity on the public record under section 790ZG of the Companies Act 2006. <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.isSuperSecure_Y" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.isSuperSecure" onclick="" onforminit="" type="checkbox" value="Y"></label>
-  					</div>
-  					<!--end form-group-->
-  				</fieldset>
 
 
 
@@ -597,7 +228,7 @@
 
 
   				<div class="form-group">
-  					<input class="button" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.submit" type="submit" value="Continue to Nature of control">
+  					<input class="button" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.submit" type="submit" value="Submit">
             <input class="pseudo-link" name="Incorporation.incorporationNavigation.sectionContent.PSCForm.cancel" type="submit" value="Cancel">
   				</div><!--form-group-->
   			</form>
