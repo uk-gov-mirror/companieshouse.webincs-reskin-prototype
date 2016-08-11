@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Web Incorporation Service prototype
+  Create shares
 {% endblock %}
 
 {% block content %}
@@ -13,22 +13,15 @@
 			<form action="statement-of-capital" id="HPP" method="get" name="HPP">
         <a href="" class="link-back">Back</a>
 
-				<h1 class="form-title heading-large">
-					Add share capital
-				</h1>
+				<h1 class="form-title heading-large">Create shares</h1>
 
         <p class="lede">
-          Share capital is the number of shares a company has and their total value.
-        </p>
+        Company shares have a monetary value and ownership rights associated with them. They can also be made available in a wide range of currencies.</p>
 
-        <div class="panel panel-border-wide">
-          <span class="heading-small">Example</span><br />
-          <span class="form-hint">A company that issues 500 shares at &pound;1 each has a share capital of £500.</span>
-        </div>
 
         <div class="form-group">
-          <h3 class="heading-medium">Currency</h3>
-          <legend class="visuallyhidden">Currency</legend>
+          <h2 class="heading-medium">What currency will these shares be available in?</h2>
+          <legend class="visuallyhidden">What currency will these shares be available in?</legend>
           <label class="block-label" for="share-class-currency-pound" data-target="shares-currencies-pound-value">
             <input id="share-class-currency-pound" type="radio" name="radio-inline-group" value="British Pound">
             British pounds
@@ -62,10 +55,7 @@
             Other
           </label>
           <div class="panel panel-border-narrow js-hidden" id="shares-other">
-            <label class="block-label" for="share-class-preference">
-              <input id="share-class-preference" type="radio" name="shareClassOther" value="Preference">
-              Preference
-            </label>
+
             <label class="block-label" for="share-class-ordinary-a">
               <input id="share-class-ordinary-a" type="radio" name="shareClassOther" value="Ordinary A">
               Ordinary A
@@ -82,6 +72,22 @@
               <input id="share-class-deferred" type="radio" name="shareClassOther" value="Deferred">
               Deferred
             </label>
+            <label class="block-label" for="share-class-preference">
+              <input id="share-class-preference" type="radio" name="shareClassOther" value="Preference">
+              Preference
+            </label>
+            <label class="block-label" for="share-class-custom" data-target="share-class-custom-reveal">
+              <input id="share-class-custom" type="radio" name="shareClassOther" value="Custom">
+              Provide your own class of share
+            </label>
+
+            <div class="panel panel-border-narrow js-hidden" id="share-class-custom-reveal">
+              <label class="form-label-bold" for="share-class-custom-reveal-form">Enter your class of share</label>
+              <input class="form-control" id="share-class-custom-reveal-form" name="share-class-custom-reveal-form-group" type="text">
+            </div>
+
+
+
           </div>
         </div>
 
