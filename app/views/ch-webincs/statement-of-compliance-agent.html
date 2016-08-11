@@ -35,7 +35,7 @@ What I changed!
 					<legend></legend> <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.StatCompCtrl.agreeInd_Y">I confirm that the requirements of the Companies Act 2006 as to registration have been complied with. <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.StatCompCtrl.agreeInd_Y" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.StatCompCtrl.agreeInd" type="checkbox" value="Y"></label>
 				</fieldset>
 
-				<h2 class="heading-medium" id="AgentHeading_heading">
+				<h2 class="heading-large" id="AgentHeading_heading">
 					Agent Details
 				</h2>
 
@@ -86,163 +86,120 @@ What I changed!
 					Address
 				</h2>
 
-				<fieldset>
-					<div class="form-group">
-						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.CountryList" id="authoriserAgentForm.Authoriser.Address.CountryList_label">Country <!--<em><img src="/images/com/required.gif" alt="required"></em>--></label> <select class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.CountryList" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.CountryList" onclick="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Country'])" onforminit="Y" onkeyup="set_disable(this.value!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Country'])">
-							<option value="">
-								Please select
-							</option>
-							<option value="GBR">
-								United Kingdom
-							</option>
-							<option value="GB-ENG">
-								England
-							</option>
-							<option value="GB-WLS">
-								Wales
-							</option>
-							<option value="GB-SCT">
-								Scotland
-							</option>
-							<option value="GB-NIR">
-								Northern Ireland
-							</option>
-							<option value="GBR">
-								UK
-							</option>
-							<option value="GB-GBN">
-								Great Britain
-							</option>
-							<option value="">
-								-----------------
-							</option>
-							<option value="USA">
-								USA
-							</option>
-							<option value="IRL">
-								Ireland
-							</option>
-							<option value="DEU">
-								Germany
-							</option>
-							<option value="FRA">
-								France
-							</option>
-							<option value="ITA">
-								Italy
-							</option>
-							<option value="ESP">
-								Spain
-							</option>
-							<option value="PRT">
-								Portugal
-							</option>
-							<option value="NLD">
-								Netherlands
-							</option>
-							<option value="POL">
-								Poland
-							</option>
-							<option value="BEL">
-								Belgium
-							</option>
-							<option value="NOR">
-								Norway
-							</option>
-							<option value="SWE">
-								Sweden
-							</option>
-							<option value="DNK">
-								Denmark
-							</option>
-							<option value="AUS">
-								Australia
-							</option>
-							<option value="NZL">
-								New Zealand
-							</option>
-							<option value="CAN">
-								Canada
-							</option>
-							<option value="ZAF">
-								South Africa
-							</option>
-							<option value="AUT">
-								Austria
-							</option>
-							<option value="HRV">
-								Croatia
-							</option>
-							<option value="CYP">
-								Cyprus
-							</option>
-							<option value="CZE">
-								Czech Republic
-							</option>
-							<option value="EST">
-								Estonia
-							</option>
-							<option value="GRC">
-								Greece
-							</option>
-							<option value="HUN">
-								Hungary
-							</option>
-							<option value="LTU">
-								Lithuania
-							</option>
-							<option value="OTHER">
-								Other - enter below
-							</option>
-							<option value="NOTSPECIFIED">
-								Not specified
-							</option>
-						</select>
-					</div>
-					<!--end form-group-->
-					<!-- this should only be shown when user selects Other in the select box above
-<div class="form-group">
-  <fieldset >
-  <legend></legend>
 
-  <label class="form-label-bold" id="authoriserAgentForm.Authoriser.Address.Country_label" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Country" >Other Country </label>
-  <input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Country" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Country"  value="" maxlength="20" >
+                                      <fieldset>
 
-  </fieldset>
-</div>--><!--end form-group-->
 
-					<div class="form-group">
-						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Postcode" id="authoriserAgentForm.Authoriser.Address.Postcode_label">Postcode</label> <input class="form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Postcode" maxlength="15" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Postcode" type="text" value=""> <!-- AS:WA000032 --><input alt="Expand postcode" class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.PostcodeLookup" type="submit" value="Lookup"><!-- AE:WA000032 -->
-					</div>
-					<!--end form-group-->
+                                          <div class="form-group">
+                                            <legend></legend>
+                                            <label class="form-label-bold" id="nameAndAddressForm.newAddress.Postcode_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Postcode">Postcode </label>
+                                            <input class="form-control form-control-short" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Postcode" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Postcode" value="" maxlength="12" >
+                                            <input type="submit" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.PostcodeLookup" value="Lookup" class="button button-secondary" alt="Expand postcode" id="find-address-button" onclick="showAddress()"><!-- AE:WA000032 -->
+                                            <span></span>
+                                          </div><!-- end form-group-->
 
-					<div class="form-group">
-						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Premise" id="authoriserAgentForm.Authoriser.Address.Premise_label">Building Name/No. <!--<em><img src="/images/com/required.gif" alt="required"></em>--></label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Premise" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Premise" type="text" value="">
-					</div>
-					<!--end form-group-->
+                                          <div class="form-group">
+                                            <legend></legend>
+                                            <label class="form-label-bold" id="nameAndAddressForm.newAddress.Premise_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Premise">Building name or number</label>
+                                            <input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Premise" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Premise"  value="" maxlength="50" >
+                                            <span></span>
+                                          </div><!-- end form-group-->
 
-					<div class="form-group">
-						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Street" id="authoriserAgentForm.Authoriser.Address.Street_label">Address <!--<em><img src="/images/com/required.gif" alt="required"></em>--></label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Street" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Street" type="text" value="">
-					</div>
-					<!--end form-group-->
+                                          <div id="find-address-selection" style="display:none;">
+                                               <h1 class="form-title heading-medium">Select your company address</h1>
+                                               <fieldset>
+                                                   <div class="form-group">
+                                                       <label class="block-label" for="radio-inline-1-company-address-input" id="radio-inline-1-company-address">
+                                                           <input id="radio-inline-1-company-address-input" type="radio" name="radio-inline-group" value="add1"> 1 Addison Road, London, W17 9PQ
+                                                       </label>
+                                                       <label class="block-label" for="radio-inline-2-company-address-input" id="radio-inline-2-company-address">
+                                                           <input id="radio-inline-2-company-address-input" type="radio" name="radio-inline-group" value="addr2"> 2 Addison Road, London, W17 9PQ
+                                                       </label>
+                                                       <label class="block-label" for="radio-inline-3-company-address-input" id="radio-inline-3-company-address">
+                                                           <input id="radio-inline-3-company-address-input" type="radio" name="radio-inline-group" value="addr3"> 3 Addison Road, London, W17 9PQ
+                                                       </label>
+                                                       <label class="block-label" for="radio-inline-4-company-address-input" id="radio-inline-4-company-address">
+                                                           <input id="radio-inline-4-company-address-input" type="radio" name="radio-inline-group" value="addr4"> 4 Addison Road, London, W17 9PQ
+                                                       </label>
+                                                   </div>
+                                               </fieldset>
+                                           </div><!--find-address-selection-->
 
-					<div class="form-group">
-						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Thoroughfare" id="authoriserAgentForm.Authoriser.Address.Thoroughfare_label"></label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Thoroughfare" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.Thoroughfare" type="text" value="">
-					</div>
-					<!--end form-group-->
 
-					<div class="form-group">
-						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.PostTown" id="authoriserAgentForm.Authoriser.Address.PostTown_label">Post Town <!--<em><img src="/images/com/required.gif" alt="required"></em>--></label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.PostTown" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.PostTown" type="text" value="">
-					</div>
-					<!--end form-group-->
 
-					<div class="form-group">
-						<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.County" id="authoriserAgentForm.Authoriser.Address.County_label">County/Region</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.County" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.authoriserAgentForm.Authoriser.Address.County" type="text" value="">
-					</div>
-					<!--end form-group-->
-				</fieldset>
 
-				<h2 class="heading-medium" id="ConsentToActHeading_heading">
+                                          <details class="form-group">
+                                          <summary><span class="summary">Enter address manually</span></summary>
+                                          <div class="panel panel-border-narrow">
+
+                                                  <div class="form-group">
+                                                    <legend></legend>
+                                                    <label class="form-label-bold" id="nameAndAddressForm.newAddress.Street_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Street">Address Line 1 </label>
+                                                    <input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Street" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Street"  value="" maxlength="50" >
+                                                    <span></span>
+                                                  </div><!-- end form-group-->
+
+                                                  <div class="form-group">
+                                                    <legend></legend>
+                                                    <label class="form-label-bold" id="nameAndAddressForm.newAddress.Thoroughfare_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Thoroughfare">Address Line 2 </label>
+                                                    <input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Thoroughfare" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.Thoroughfare"  value="" maxlength="50" >
+                                                    <span></span>
+                                                  </div><!-- end form-group-->
+
+
+                                                  <div class="form-group">
+                                                    <legend></legend>
+                                                    <label class="form-label-bold" id="nameAndAddressForm.newAddress.PostTown_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.PostTown">Post Town </label>
+                                                    <input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.PostTown" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.PostTown"  value="" maxlength="50" >
+                                                    <span></span>
+                                                  </div><!-- end form-group-->
+
+                                                  <div class="form-group">
+                                                    <legend></legend>
+                                                    <label class="form-label-bold" id="nameAndAddressForm.newAddress.County_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.County">County/Region </label>
+                                                    <input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.County" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.County"  value="" maxlength="50" >
+                                                    <span></span>
+                                                  </div><!-- end form-group-->
+
+                                                  <div class="form-group">
+                                                    <legend></legend>
+                                                    <label class="form-label-bold" id="nameAndAddressForm.newAddress.CountryList_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.CountryList">Country </label>
+                                                    <select class="form-control" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.CountryList" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.CountryList" onforminit="" onclick="" onkeyup="">
+                                                      <option value="">Please select</option>
+                                                      <option value="GBR" selected="">United Kingdom</option>
+                                                      <option value="GB-ENG">England</option>
+                                                      <option value="GB-WLS">Wales</option>
+                                                      <option value="GB-SCT">Scotland</option>
+                                                      <option value="GB-NIR">Northern Ireland</option>
+                                                      <option value="GBR" selected="">UK</option>
+                                                      <option value="GB-GBN">Great Britain</option>
+                                                      <option value="NOTSPECIFIED">Not specified</option>
+                                                    </select>
+                                                    <span></span>
+                                                  </div><!-- end form-group-->
+
+                                                  <div class="form-group">
+                                                    <legend></legend>
+                                                    <label class="form-label-bold" id="nameAndAddressForm.newAddress.CareOfName_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.CareOfName">c/o (if part of address)</label>
+                                                    <span class="form-hint">Typically this c/o information consists of a person's name or the name of a company, partnership or firm whose property is being used as the correspondence address for the company officer(s).</span>
+                                                    <input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.CareOfName" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.CareOfName"  value="" maxlength="100" >
+                                                    <span></span>
+                                                  </div><!-- end form-group-->
+
+                                                  <div class="form-group">
+                                                    <legend></legend>
+                                                    <label class="form-label-bold" id="nameAndAddressForm.newAddress.PoBox_label" for="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.PoBox">PO Box No (if part of address) </label>
+                                                    <input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.PoBox" name="Incorporation.incorporationNavigation.sectionContent.nameAndAddressForm.newAddress.PoBox"  value="" maxlength="10" >
+                                                  <span></span>
+                                                  </div><!-- end form-group-->
+
+                                          </div><!--panel-->
+                                          </details>
+
+
+
+
+				<h2 class="heading-large" id="ConsentToActHeading_heading">
 					Authentication - Personal Information
 				</h2>
 
