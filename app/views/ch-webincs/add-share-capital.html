@@ -6,31 +6,19 @@
 
 {% block content %}
 
-<!--
-What I changed!
-# Heading is now a H1 with classes of .form-title .heading-large
-# Commented ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
-# Wrapped each form element in a div with a GDS class of .form-group
-# Gave each form label a GDS class of .form-label-bold
-# Gave each form input/select/text-area a GDS class of .form-control
-# Moved help under each label, all wrapped in spans with a GDS class of .form-hint
-# Cancel button has a (brand new) class of .pseudo-link to make it look like a GDS back link
-# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
-# De-capitalised content, eg BACK becomes Back
-# Added secondary class of .button-secondary to Select input
--->
-
 <main id="content" role="main">
 	{% include "includes/phase_banner_alpha.html" %}
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<form action="statement-of-capital" id="HPP" method="get" name="HPP">
+        <a href="" class="link-back">Back</a>
+
 				<h1 class="form-title heading-large">
-					Add share capital.
+					Add share capital
 				</h1>
 
         <p class="lede">
-          Share capital is the number of shares a company and their total value
+          Share capital is the number of shares a company has and their total value.
         </p>
 
         <div class="panel panel-border-wide">
@@ -39,19 +27,11 @@ What I changed!
         </div>
 
         <div class="form-group">
-          <h3 class="heading-medium">What currency will this share type be available in?</h3>
-          <legend class="visuallyhidden">What currency will this share type be available in?</legend>
+          <h3 class="heading-medium">Currency</h3>
+          <legend class="visuallyhidden">Currency</legend>
           <label class="block-label" for="share-class-currency-pound" data-target="shares-currencies-pound-value">
             <input id="share-class-currency-pound" type="radio" name="radio-inline-group" value="British Pound">
             British pounds
-          </label>
-          <label class="block-label" for="share-class-currency-dollar" data-target="shares-currencies-dollar-value">
-            <input id="share-class-currency-dollar" type="radio" name="radio-inline-group" value="US Dollars">
-            US Dollars
-          </label>
-          <label class="block-label" for="share-class-currency-euro" data-target="shares-currencies-euro-value">
-            <input id="share-class-currency-euro" type="radio" name="radio-inline-group" value="Euros">
-            Euros
           </label>
           <label class="block-label" for="share-class-currency-other" data-target="shares-currencies">
             <input id="share-class-currency-other" type="radio" name="radio-inline-group" value="other currencies">
@@ -59,6 +39,8 @@ What I changed!
           </label>
           <div class="panel panel-border-narrow js-hidden" id="shares-currencies">
             <select name="" id="" class="form-control">
+              <option value="">US Dollars</option>
+              <option value="">Euros</option>
               <option value="">Japanese Yen</option>
               <option value="">Australian Dollars</option>
               <option value="">Canadian Dollars</option>
@@ -70,21 +52,20 @@ What I changed!
 
         <div class="form-group">
           <h3 class="heading-medium">What type of shares would you like to create?</h3>
-          <p class="">Most new companies will start with Ordinary shares.</p>
           <legend class="visuallyhidden">What type of shares would you like to create?</legend>
           <label class="block-label" for="share-class-ordinary">
             <input id="share-class-ordinary" type="radio" name="shareClass" value="Ordinary">
             Ordinary
-          </label>
-          <label class="block-label" for="share-class-preference">
-            <input id="share-class-preference" type="radio" name="shareClass" value="Preference">
-            Preference
           </label>
           <label class="block-label" for="share-class-other" data-target="shares-other">
             <input id="share-class-other" type="radio" name="shareClass" value="Other">
             Other
           </label>
           <div class="panel panel-border-narrow js-hidden" id="shares-other">
+            <label class="block-label" for="share-class-preference">
+              <input id="share-class-preference" type="radio" name="shareClassOther" value="Preference">
+              Preference
+            </label>
             <label class="block-label" for="share-class-ordinary-a">
               <input id="share-class-ordinary-a" type="radio" name="shareClassOther" value="Ordinary A">
               Ordinary A
@@ -116,39 +97,37 @@ What I changed!
         </div>
 
 				<div class="form-group">
-						<label class="form-label-bold" for="share-class-total">Number of shares</label>
-            <span class="form-hint">This is the total number of shares of this class and currency that are available.</span>
+						<h3 class="heading-medium">How many shares would you like to allocate?</h3>
             <input id="share-class-total" class="form-control" name="shareClassTotal" type="text" value="">
 				</div>
 
 				<div class="form-group">
-					<label class="form-label-bold" for="share-class-total-value">Total share value</label>
-          <span class="form-hint">This is the total value of all the available shares in this currency and class.</span>
+					<h3 class="heading-medium">What is the total value of the shares?</h3>
           <input class="form-control" id="share-class-total-value" name="shareClassTotalValue" type="text" value="">
 				</div>
 
         <div class="form-group">
           <details>
-            <summary><span class="summary">How to calculate total share value</span></summary>
+            <summary><span class="summary">How is this calculated?</span></summary>
             <div class="panel panel-border-narrow">
               <p>
-                The total share value is calculated by multiplying the number of shares by the value of each individual share.
+                The total value of the shares is calculated by multiplying the number of shares by the nominal value (face value) of each share.
               </p>
             </div>
           </details>
         </div>
 
         <div class="form-group">
-          <h3 class="heading-medium">What rights does this share provide?</h3>
+          <h3 class="heading-medium">What rights would you like the shares to have?</h3>
           <p>Most shares will have full rights. Custom rights can be provided for specific purposes.</p>
-          <legend class="visuallyhidden">Would you like this share type to have:</legend>
+          <legend class="visuallyhidden">What rights would you like the shares to have?</legend>
           <label class="block-label" for="radio-inline-1">
             <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Full rights">
-            full rights including voting, dividends and distributions
+            Full rights including voting, dividends and distributions
           </label>
           <label class="block-label" for="radio-inline-2" data-target="shares-rights">
             <input id="radio-inline-2" type="radio" name="radio-inline-group" value="Custom">
-            custom rights
+            Custom rights
           </label>
           <div class="panel panel-border-narrow js-hidden" id="shares-rights">
             <label class="form-label" for="full-name-f1">Custom shareholder rights</label>
@@ -168,7 +147,6 @@ What I changed!
 
 				<div class="form-group">
 					<input class="button" name="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.submit" type="submit" value="Continue">
-          <input class="pseudo-link" name="Incorporation.incorporationNavigation.sectionContent.addStatementOfCapital.cancel" type="submit" value="Cancel">
 				</div>
 
 
