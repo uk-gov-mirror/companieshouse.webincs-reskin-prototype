@@ -21,14 +21,14 @@ What I changed!
 			{% include "includes/phase_banner_alpha.html" %}
 			<div class="grid-row">
 				<div class="column-two-thirds">
-					<form action="proposed-company-officers" id="" method="get" name="">
+					<form action="add-person-as-an-officer-dsa" id="" method="get" name="">
 						<h1 class="form-title heading-xlarge" id="DetailsOfNewDirectorInstruction_heading">
 							Details of new director
 						</h1>
 
 						<fieldset>
 							<div class="form-group">
-								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Title" id="AP01.NaturalDirectorAppointment.NaturalDirector.Title_label">Title</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Title" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Title" type="text" value=""> <span></span>
+								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Title" id="AP01.NaturalDirectorAppointment.NaturalDirector.Title_label">Title (optional)</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Title" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Title" type="text" value=""> <span></span>
 							</div>
 							<!--end form-group-->
 
@@ -38,7 +38,7 @@ What I changed!
 							<!--end form-group-->
 
 							<div class="form-group">
-								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" id="AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames_label">Other Forename (s)</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" type="text" value=""> <span></span>
+								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" id="AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames_label">Other Forename (s) (optional)</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" type="text" value=""> <span></span>
 							</div>
 							<!--end form-group-->
 
@@ -48,7 +48,7 @@ What I changed!
 							<!--end form-group-->
 
 							<div class="form-group">
-								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.CountryOfResidenceList" id="AP01.NaturalDirectorAppointment.NaturalDirector.CountryOfResidenceList_label">Country/State of residence</label>
+								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.CountryOfResidenceList" id="AP01.NaturalDirectorAppointment.NaturalDirector.CountryOfResidenceList_label">Country of residence</label>
 								<p class="form-hint">
 									The details entered here must correspond with the residential address.<!-- You can select a country from the list provided, or if it is not listed, select 'Other' and enter details in the 'Other' field.-->
 								</p>
@@ -176,7 +176,7 @@ What I changed!
 							<!--end form-group-->
 
 							<div class="form-group">
-								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.DOB" id="AP01.NaturalDirectorAppointment.NaturalDirector.DOB_label">Date of Birth (dd/mm/yyyy)</label> <span class="form-hint">Director must be at least 16 years of age.</span>
+								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.DOB" id="AP01.NaturalDirectorAppointment.NaturalDirector.DOB_label">Date of Birth</label> <span class="form-hint">Director must be at least 16 years of age.</span>
 								<div class="form-date">
 									<div class="form-group form-group-day">
 										<label class="form-label" for="dob-day">Day</label> <input aria-describedby="dob-hint" class="form-control" id="dob-day" max="31" min="0" name="dob-day" pattern="[0-9]*" type="number">
@@ -197,430 +197,53 @@ What I changed!
 							<!--end form-group-->
 
 							<div class="form-group">
-								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Occupation" id="AP01.NaturalDirectorAppointment.NaturalDirector.Occupation_label">Business Occupation</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Occupation" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Occupation" type="text" value=""> <span></span>
+								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Occupation" id="AP01.NaturalDirectorAppointment.NaturalDirector.Occupation_label">Business occupation  (optional)</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Occupation" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Occupation" type="text" value=""> <span></span>
 							</div>
 							<!--end form-group-->
 
-							<h2 class="heading-medium" id="PreviousNamesDividerInstruction_heading">
-								Former names
-							</h2>
+              <details class="form-group">
 
-							<div class="panel panel-border-wide">
-								<p>
-									You only need to provide former names which have been used for business purposes in the last 20 years.
-								</p>
-							</div>
+              <summary><span class="summary">Do you have any former names?</span></summary>
 
-							<div class="form-group">
-								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.PreviousNames.Forename" id="AP01.NaturalDirectorAppointment.PreviousNames.Forename_label">Former forename</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.PreviousNames.Forename" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.PreviousNames.Forename" type="text" value=""> <span></span>
-							</div>
-							<!--end form-group-->
+              <div class="panel panel-border-narrow">
 
-							<div class="form-group">
-								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.PreviousNames.Surname" id="AP01.NaturalDirectorAppointment.PreviousNames.Surname_label">Former surname</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.PreviousNames.Surname" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.PreviousNames.Surname" type="text" value=""> <span></span>
-							</div>
-							<!--end form-group-->
+                  <p>
+                    You only need to provide former names which have been used for business purposes in the last 20 years.
+                  </p>
+
+                <div class="form-group">
+                  <legend></legend>
+                  <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.PreviousNames.Forename" id="AP01.NaturalDirectorAppointment.PreviousNames.Forename_label">Former name</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.PreviousNames.Forename" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.PreviousNames.Forename" type="text" value=""> <span></span>
+                </div>
+                <!--end form-group-->
+
+
+
+              </div>
+
+            </details>
+
 						</fieldset>
 
-						<h2 class="heading-medium" id="ServiceAddressHeading1_heading">
-							Director's service address
-						</h2>
+            <fieldset>
+              <h2 class="heading-large" id="StatementOfConsentToActHeading_heading">
+                Consent to Act
+              </h2>
 
-						<div class="notice form-group">
-							<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="ServiceAddressInstruction2">This is the address that will appear on the public record.<span></span></strong>
-						</div>
+              <div class="panel panel-border-wide">
+                <p>
+                  A statement of consent to act is required in the place of a signature:
+                </p>
+              </div>
 
-						<fieldset>
-							<div class="form-group">
-								<p class="form-label-bold">
-									Where is the service address situated? (please select):
-								</p>
-								<!-- the original name for this form elements caused issues with GDS "Conditionally revealing content" styles, so changed it to example -->
-								<legend></legend> <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsRegisteredOffice_Y" id="AP01.NaturalDirectorAppointment.NaturalDirector.SameAsRegisteredOffice_Y_label">The service address is 'same as' the company's registered office <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsRegisteredOffice_Y" name="example" onclick="set_hide(!get_value(&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsRegisteredOffice_N&#39;), [&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.SADisplayed&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.CountryList&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Country&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Postcode&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.CareOfName&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.PoBox&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Premise&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Street&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Thoroughfare&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.PostTown&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.County&#39;,]); set_disable(get_value(&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsRegisteredOffice_Y&#39;), [&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_Y&#39;]); set_disable(get_value(&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.CountryList&#39;)!=&#39;OTHER&#39;, [&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Country&#39;]);" onforminit="Y" type="radio" value="Y"></label> <!-- this code doesn't work with GDS "Conditionally revealing content" styles so commenting out-->
-								 <!--<label class="block-label" id="AP01.NaturalDirectorAppointment.NaturalDirector.SameAsRegisteredOffice_N_label" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsRegisteredOffice_N">The service address is at the address supplied (select to display address fields)
-                        <input class="form-label-bold" type="radio" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsRegisteredOffice" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsRegisteredOffice_N" onforminit="" onclick="set_hide(false,[&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.SADisplayed&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.CountryList&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Country&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Postcode&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.CareOfName&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.PoBox&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Premise&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Street&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Thoroughfare&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.PostTown&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.County&#39;]);                                   set_disable(false,[&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_Y&#39;]);                                  set_disable(get_value(&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.CountryList&#39;)!=&#39;OTHER&#39;,                                                     [&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Country&#39;]);                                  set_mandatory_indicator([                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.CountryList&#39;,                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Premise&#39;,                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Street&#39;,                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.PostTown&#39;,                                  ]);" value="N" class="checkbox">
-          </label>-->
-								 <!-- this code is only for the prototype-->
-								 <label class="block-label" data-target="directors-service-address-supplied" for="example"><input id="example" name="example" type="radio" value=""> The service address is at the address supplied (select to display address fields)</label>
-							</div>
-							<!--end form-group-->
+              <div class="form-group">
+                <!--<fieldset id="AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_fieldset">-->
+                <legend></legend> <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y" id="AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y_label">The subscribers confirm that the person named has consented to act as a director <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement" onclick="" onforminit="" type="checkbox" value="Y"></label>
+              </div>
+              <!--end form-group-->
+              <!--</fieldset>-->
+            </fieldset>
 
-							<div class="panel panel-border-narrow js-hidden" id="directors-service-address-supplied">
-								<!--<p class=" disabledField" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.SADisplayed" style="display: none;">
-									Details entered below will only be submitted if the option '<strong>display address fields</strong>' is selected above. <span></span>
-								</p>-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.CountryList" id="AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.CountryList_label">Country</label>
-                  <select class= "form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.CountryList" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.CountryList" onclick="set_disable(this.value!=&#39;OTHER&#39;, [&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Country&#39;])" onforminit="" onkeyup="set_disable(this.value!=&#39;OTHER&#39;, [&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Country&#39;])">
-										<option value="">
-											Please select
-										</option>
-										<option value="GBR">
-											United Kingdom
-										</option>
-										<option value="GB-ENG">
-											England
-										</option>
-										<option value="GB-WLS">
-											Wales
-										</option>
-										<option value="GB-SCT">
-											Scotland
-										</option>
-										<option value="GB-NIR">
-											Northern Ireland
-										</option>
-										<option value="GBR">
-											UK
-										</option>
-										<option value="GB-GBN">
-											Great Britain
-										</option>
-										<option value="">
-											-----------------
-										</option>
-										<option value="USA">
-											USA
-										</option>
-										<option value="IRL">
-											Ireland
-										</option>
-										<option value="DEU">
-											Germany
-										</option>
-										<option value="FRA">
-											France
-										</option>
-										<option value="ITA">
-											Italy
-										</option>
-										<option value="ESP">
-											Spain
-										</option>
-										<option value="PRT">
-											Portugal
-										</option>
-										<option value="NLD">
-											Netherlands
-										</option>
-										<option value="POL">
-											Poland
-										</option>
-										<option value="BEL">
-											Belgium
-										</option>
-										<option value="NOR">
-											Norway
-										</option>
-										<option value="SWE">
-											Sweden
-										</option>
-										<option value="DNK">
-											Denmark
-										</option>
-										<option value="AUS">
-											Australia
-										</option>
-										<option value="NZL">
-											New Zealand
-										</option>
-										<option value="CAN">
-											Canada
-										</option>
-										<option value="ZAF">
-											South Africa
-										</option>
-										<option value="AUT">
-											Austria
-										</option>
-										<option value="HRV">
-											Croatia
-										</option>
-										<option value="CYP">
-											Cyprus
-										</option>
-										<option value="CZE">
-											Czech Republic
-										</option>
-										<option value="EST">
-											Estonia
-										</option>
-										<option value="GRC">
-											Greece
-										</option>
-										<option value="HUN">
-											Hungary
-										</option>
-										<option value="LTU">
-											Lithuania
-										</option>
-										<option value="OTHER">
-											Other - enter below
-										</option>
-									</select> <span></span>
-								</div>
-								<!--end form-group-->
-								<!-- this should be hidden until user selects Other-->
-								<!--<div class="form-group">
-                        <legend></legend>
-                        <label class="form-label-bold" id="AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Country_label" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Country">Other Country </label>
-                        <input class="form-control" type="text" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Country" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Country" class=" disabledField" value="" maxlength="50" disabled="">
-                        <span></span>
-                        </div>--><!--end form-group-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Postcode" id="AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Postcode_label">Postcode</label> <input class= "form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Postcode" maxlength="15" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Postcode" type="text" value=""> <!-- AS:WA000032 --><input alt="Expand postcode" class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.PostcodeLookup" type="submit" value="Lookup"><!-- AE:WA000032 -->
-									 <span></span>
-								</div>
-								<!--end form-group-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.CareOfName" id="AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.CareOfName_label">c/o details (only if applicable)</label> <span class="form-hint">Typically this c/o information consists of a person's name or the name of a company, partnership or firm whose property is being used as the service address for the company officer(s).</span> <input class= "form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.CareOfName" maxlength="100" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.CareOfName" type="text" value=""> <span></span>
-								</div>
-								<!--end form-group-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.PoBox" id="AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.PoBox_label">PO Box No</label> <input class= "form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.PoBox" maxlength="10" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.PoBox" type="text" value=""> <span></span>
-								</div>
-								<!--end form-group-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Premise" id="AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Premise_label">Building Name/No.</label> <input class= "form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Premise" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Premise" type="text" value=""> <span></span>
-								</div>
-								<!--end form-group-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Street" id="AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Street_label">Address</label> <input class= "form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Street" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Street" type="text" value=""> <span></span>
-								</div>
-								<!--end form-group-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Thoroughfare" id="AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Thoroughfare_label"></label> <input class= "form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Thoroughfare" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.Thoroughfare" type="text" value=""> <span></span>
-								</div>
-								<!--end form-group-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.PostTown" id="AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.PostTown_label">Post Town</label> <input class= "form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.PostTown" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.PostTown" type="text" value=""> <span></span>
-								</div>
-								<!--end form-group-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.County" id="AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.County_label">County/Region</label> <input class= "form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.County" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ServiceAddress.County" type="text" value=""> <span></span>
-								</div>
-								<!--end form-group-->
-							</div>
-							<!-- end js-hidden-->
-						</fieldset>
-
-						<h2 class="heading-medium" id="AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.residentialAddress1_heading">
-							Director's residential address
-						</h2>
-
-						<div class="notice form-group">
-							<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="ResidentialAddressInstruction">Details provided will NOT appear on the public record. <span></span></strong>
-						</div>
-
-						<fieldset>
-							<div class="form-group">
-								<legend></legend>
-								<p class="form-label-bold">
-									Where is the residential address situated? (please select):
-								</p>
-								<!-- the original name for this form elements caused issues with GDS "Conditionally revealing content" styles, so changed it to example-2 -->
-								<label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_Y" id="AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_Y_label">The residential address is 'same as' the service address <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_Y" name="example-2" onclick="set_hide(!get_value(&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_N&#39;),[&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.RADisplayed&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.CountryList&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Country&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Postcode&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Premise&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Street&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Thoroughfare&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.PostTown&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.County&#39;]); set_disable(get_value(&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.CountryList&#39;)!=&#39;OTHER&#39;, [&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Country&#39;]);" onforminit="Y" type="radio" value="Y"></label> <!-- this code doesn't work with GDS "Conditionally revealing content" styles so commenting out-->
-								 <!--<label class="block-label"" id="AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_N_label" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_N">The residential address is at the address supplied (select to display address fields)
-    <input type="radio" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_N" onforminit="" onclick="set_hide(false,[&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.RADisplayed&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.CountryList&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Country&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Postcode&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Premise&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Street&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Thoroughfare&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.PostTown&#39;,                                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.County&#39;]);                                   set_disable(get_value(&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.CountryList&#39;)!=&#39;OTHER&#39;,                                                     [&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Country&#39;]);                                                                                      set_mandatory_indicator([                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.CountryList&#39;,                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Premise&#39;,                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Street&#39;,                                     &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.PostTown&#39;,                                  ]);" value="N" class="checkbox">
-  </label>-->
-								 <!-- this code is only for the prototype-->
-								 <label class="block-label" data-target="directors-residential-address-supplied" for="example-2"><input id="example-2" name="example-2" type="radio" value=""> The residential address is at the address supplied (select to display address fields)</label>
-							</div>
-							<!--end form-group-->
-
-							<div class="panel panel-border-narrow js-hidden" id="directors-residential-address-supplied">
-								<!--<p class="heading-small" id="AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.RADisplayed">
-									Details entered below will only be submitted if the option 'display address fields' is selected above. <span></span>
-								</p>-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.CountryList" id="AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.CountryList_label">Country</label> <select class= "form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.CountryList" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.CountryList" onclick="set_disable(this.value!=&#39;OTHER&#39;, [&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Country&#39;])" onforminit="" onkeyup="set_disable(this.value!=&#39;OTHER&#39;, [&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Country&#39;])">
-										<option value="">
-											Please select
-										</option>
-										<option value="GBR">
-											United Kingdom
-										</option>
-										<option value="GB-ENG">
-											England
-										</option>
-										<option value="GB-WLS">
-											Wales
-										</option>
-										<option value="GB-SCT">
-											Scotland
-										</option>
-										<option value="GB-NIR">
-											Northern Ireland
-										</option>
-										<option value="GBR">
-											UK
-										</option>
-										<option value="GB-GBN">
-											Great Britain
-										</option>
-										<option value="">
-											-----------------
-										</option>
-										<option value="USA">
-											USA
-										</option>
-										<option value="IRL">
-											Ireland
-										</option>
-										<option value="DEU">
-											Germany
-										</option>
-										<option value="FRA">
-											France
-										</option>
-										<option value="ITA">
-											Italy
-										</option>
-										<option value="ESP">
-											Spain
-										</option>
-										<option value="PRT">
-											Portugal
-										</option>
-										<option value="NLD">
-											Netherlands
-										</option>
-										<option value="POL">
-											Poland
-										</option>
-										<option value="BEL">
-											Belgium
-										</option>
-										<option value="NOR">
-											Norway
-										</option>
-										<option value="SWE">
-											Sweden
-										</option>
-										<option value="DNK">
-											Denmark
-										</option>
-										<option value="AUS">
-											Australia
-										</option>
-										<option value="NZL">
-											New Zealand
-										</option>
-										<option value="CAN">
-											Canada
-										</option>
-										<option value="ZAF">
-											South Africa
-										</option>
-										<option value="AUT">
-											Austria
-										</option>
-										<option value="HRV">
-											Croatia
-										</option>
-										<option value="CYP">
-											Cyprus
-										</option>
-										<option value="CZE">
-											Czech Republic
-										</option>
-										<option value="EST">
-											Estonia
-										</option>
-										<option value="GRC">
-											Greece
-										</option>
-										<option value="HUN">
-											Hungary
-										</option>
-										<option value="LTU">
-											Lithuania
-										</option>
-										<option value="OTHER">
-											Other - enter below
-										</option>
-									</select> <span></span>
-								</div>
-								<!--end form-group-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Country" id="AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Country_label">Other Country</label> <input class= "form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Country" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Country" type="text" value=""> <span></span>
-								</div>
-								<!--end form-group-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Postcode" id="AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Postcode_label">Postcode</label> <input class= "form-control form-control-short" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Postcode" maxlength="15" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Postcode" type="text" value=""> <!-- AS:WA000032 --><input alt="Expand postcode" class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.PostcodeLookup" type="submit" value="Lookup"><!-- AE:WA000032 -->
-									 <span></span>
-								</div>
-								<!--end form-group-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Premise" id="AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Premise_label">Building Name/No.</label> <input class= "form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Premise" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Premise" type="text" value=""> <span></span>
-								</div>
-								<!--end form-group-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Street" id="AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Street_label">Address</label> <input class= "form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Street" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Street" type="text" value=""> <span></span>
-								</div>
-								<!--end form-group-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Thoroughfare" id="AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Thoroughfare_label"></label> <input class= "form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Thoroughfare" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Thoroughfare" type="text" value=""> <span></span>
-								</div>
-								<!--end form-group-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.PostTown" id="AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.PostTown_label">Post Town</label> <input class= "form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.PostTown" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.PostTown" type="text" value=""> <span></span>
-								</div>
-								<!--end form-group-->
-
-								<div class="form-group">
-									<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.County" id="AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.County_label">County/Region</label> <input class= "form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.County" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.County" type="text" value=""> <span></span>
-								</div>
-								<!--end form-group-->
-							</div>
-							<!--end js-hidden-->
-						</fieldset>
-
-						<fieldset>
-							<!--<fieldset id="AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.SecureAddressInd_fieldset">-->
-
-							<div class="form-group">
-								<legend></legend>
-								<h2 class="heading-medium">Disclosure exemption (only complete if applicable)</h2>
-								<span class="form-hint">Individuals who are currently subject to (or in the process of applying for) a disclosure exemption should indicate this by ticking the box. For an individual to be granted a disclosure exemption, a separate application must be made under Section 243 of the Companies Act 2006. See HELP for more information.</span> <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.SecureAddressInd_Y" id="AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.SecureAddressInd_Y_label">Only tick this box if you are in the process of applying for, or have been granted exemption from disclosing your residential address to credit reference agencies under section 243 of the Companies Act 2006. <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.SecureAddressInd_Y" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.SecureAddressInd" onclick="" onforminit="" type="checkbox" value="Y"></label>
-							</div>
-							<!--end form-group-->
-						</fieldset>
-
-						<fieldset>
-							<h2 class="heading-medium" id="StatementOfConsentToActHeading_heading">
-								Consent to Act
-							</h2>
-
-							<div class="panel panel-border-wide">
-								<p>
-									A statement of consent to act is required in the place of a signature:
-								</p>
-							</div>
-
-							<div class="form-group">
-								<!--<fieldset id="AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_fieldset">-->
-								<legend></legend> <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y" id="AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y_label">The subscribers confirm that the person named has consented to act as a director <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement" onclick="" onforminit="" type="checkbox" value="Y"></label>
-							</div>
-							<!--end form-group-->
-							<!--</fieldset>-->
-						</fieldset>
 
 						<div class="form-group">
 							<input class="button" name="Incorporation.incorporationNavigation.sectionContent.AP01.submit" type="submit" value="Submit"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.sectionContent.AP01.cancel" type="submit" value="Cancel">
