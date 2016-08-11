@@ -26,7 +26,7 @@ What I changed!
 	<div class="grid-row">
 		<div class="column-two-thirds">
 			<form action="registers-change" id="HPP" method="get" name="HPP">
-				<h1 class="form-title heading-large" id="page-title">Where do you want to keep your company registers?</h1>
+				<h1 class="form-title heading-xlarge" id="page-title">Where do you want to keep your company registers?</h1>
 
 				<p>Company registers are records of:</p>
 
@@ -39,13 +39,12 @@ What I changed!
 
 				<p>You can keep them at your company’s registered address or on the public record at Companies House.</p>
 
-				<div class="notice">
+				<div class="notice form-group">
 					<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="info-date-of-birth">Information such as a director’s date of birth will be available to the public if you choose to keep your registers on the public record.</strong>
 				</div>
 
-				<p>&nbsp;</p><!-- prototype only, need to add a style for spacing here!-->
 
-				<table>
+        <table class="check-your-answers form-group">
 					<caption class="visuallyhidden">Location of company registers</caption><!-- needed for accessibility-->
 					<thead>
 						<tr>
@@ -58,17 +57,16 @@ What I changed!
 						<tr>
 							<td>Register of directors</td>
 							<td>Registered office</td>
-							<td><input class="button button-secondary" id="Incorporation.incorporationNavigation.sectionContent.registersControl.btnChangeRegisterOfDirectorsLocation" name="Incorporation.incorporationNavigation.sectionContent.registersControl.btnChangeRegisterOfDirectorsLocation" textid="W0017348" type="submit" value="Change"></td>
+              <td class="change-answer"><a href="registers-change">Change <span class="visuallyhidden">Register of directors</span></a></td>
 						</tr>
 						<tr>
 							<td>Register of directors’ residential addresses</td>
 							<td>Registered office</td>
-							<td><input class="button button-secondary" id="Incorporation.incorporationNavigation.sectionContent.registersControl.btnChangeRegisterOfDirectorsURALocation" name="Incorporation.incorporationNavigation.sectionContent.registersControl.btnChangeRegisterOfDirectorsURALocation" textid="W0017348" type="submit" value="Change"></td>
+              <td class="change-answer"><a href="#">Change <span class="visuallyhidden">Register of directors’ residential addresses</span></a></td>
 						</tr>
 					</tbody>
 				</table>
 
-				<p>&nbsp;</p><!--temporary style for prototype, not for production-->
 
 				<div class="form-group">
 					<input class="button" name="Incorporation.incorporationNavigation.next" textid="Incorporation.incorporationNavigation.W0013674" type="submit" value="Next"> <input class="pseudo-link" name="Incorporation.incorporationNavigation.previous" textid="Incorporation.incorporationNavigation.W0013673" type="submit" value="Previous">

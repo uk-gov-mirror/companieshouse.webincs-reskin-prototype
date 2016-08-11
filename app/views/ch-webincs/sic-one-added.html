@@ -25,27 +25,25 @@ What I changed!
 			<form action="add-person-as-an-officer" id="HPP" method="get" name="HPP">
 				<h1 class="form-title heading-xlarge" id="page-title">What will your company be doing?</h1>
 
-				<div class="form-group">
-					<table>
+        <table class="check-your-answers form-group">
 						<caption class="visuallyhidden">Principal business activities</caption><!-- this hidden caption is needed for accessibility-->
 						<thead>
 							<tr>
 								<th>Code</th>
-								<th>Description</th>
-								<th>
-								</th>
+								<th colspan="3">Description</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>07100</td>
 								<td>Mining of iron ores</td>
-								<td><input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.SICDisplay.sicCodeListCtrl.displaySicCodeCtrl_1.removesic" textid="Incorporation.incorporationNavigation.sectionContent.SICDisplay.sicCodeListCtrl.displaySicCodeCtrl_1.WA000047" type="submit" value="Remove"></td>
+                <td class="change-answer"><a href="#">Change <span class="visuallyhidden">Mining of iron ores</span></a></td>
+                <td class="change-answer"><a href="#">Remove <span class="visuallyhidden">Mining of iron ores</span></a></td>
+
 							</tr>
 						</tbody>
 					</table>
-				</div>
-				<!--end form-group-->
+
 
 				<div class="form-group">
 					<input class="button button-secondary" name="Incorporation.incorporationNavigation.sectionContent.SICDisplay.btnAddSic" textid="Incorporation.incorporationNavigation.sectionContent.SICDisplay.W0011112" type="submit" value="Add new code">
