@@ -132,3 +132,47 @@ $(document).ready(function() {
   });
 
 });
+
+//Nature of control (Person)
+
+$("#significant-influence-or-control").hide();
+$("#additional-controls-regarding").hide();
+$("#person-have-control-over-that").hide();
+$(".nones").click(function(){
+   var checkeo = 1;
+   $( ".nones" ).each(function( index ) {
+      if($(this).is(":checked") === false)
+      {
+          checkeo = 0;
+      }
+    });
+    if(checkeo){
+        $("#nope").hide();
+        $("#significant-influence-or-control").show();
+    }
+});
+$("input[name$='significant-influence']").click(function(){
+  var radio_value = $(this).val();
+
+  if(radio_value=='No') {
+    $("#additional-controls-regarding").show();
+  }
+  if(radio_value=='Yes') {
+    $("#additional-controls-regarding").show();
+  }
+});
+$("input[name$='right-remove-directors']").click(function(){
+  var radio_value = $(this).val();
+
+  if(radio_value=='right-remove-directors-yes') {
+    $("#additional-controls-regarding").show();
+  }
+});
+$("input[name$='additional-controls']").click(function(){
+  var radio_value = $(this).val();
+
+  if(radio_value=='Yes') {
+    $("#person-have-control-over-that").show();
+  }
+
+});
