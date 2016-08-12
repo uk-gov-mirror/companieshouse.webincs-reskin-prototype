@@ -189,11 +189,18 @@
         <label class="block-label" for="additional-controls-yes">
           <input id="additional-controls-yes" type="radio" name="additional-controls" value="Yes">
           Yes</label>
-        <label class="block-label" for="additional-controls-no">
+        <label class="block-label"  data-target="no-additional-controls" for="additional-controls-no">
           <input id="additional-controls-no" type="radio" name="additional-controls" value="No">
           No</label>
 
         </fieldset>
+
+        <div class="panel panel-border-narrow js-hidden" id="no-additional-controls">
+
+          <fieldset>
+            <p>Based on your answers, you don't need to provide any further information for this particular PSC.</p>
+          </fieldset>
+        </div><!--panel-->
 
         <div id="person-have-control-over-that">
             <h3 class="heading-small">Does this person have control over that firm and/or trust?</h3>
@@ -202,7 +209,7 @@
 
             <legend class="visuallyhidden">Does this person have control over that firm and/or trust?</legend>
 
-            <label class="block-label"  data-target="additional-controls-reveal" for="additional-controls2-yes">
+            <label class="block-label" data-target="additional-controls-reveal" for="additional-controls2-yes">
               <input id="additional-controls2-yes" type="radio" name="additional-controls2" value="Yes">
               Yes</label>
             <label class="block-label"  data-target="additional-controls-none" for="additional-controls2-no">
