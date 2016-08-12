@@ -41,11 +41,26 @@ What I changed!
 
 
 				<div class="form-group">
-					<fieldset class="inline">
+					<fieldset class="">
 						<legend></legend>
 
 						<p class="checkbox heading-medium">Does the company have at least one PSC?</p>
-						<legend></legend> <label class="block-label" data-target="psc-yes" for="yes">Yes <input id="yes" name="psc-yes-no" type="radio" value="N"></label> <legend></legend> <label class="block-label" data-target="psc-no" for="no">No <input id="no" name="psc-yes-no" type="radio" value="Y"></label>
+            <div class="notice form-group">
+            <i class="icon icon-important">
+              <span class="visuallyhidden">Warning</span>
+            </i>
+            <strong class="bold-small">
+                These statements will appear on the public record.
+            </strong>
+            </div>
+						<legend></legend>
+            <label class="block-label" for="yes"><span class="heading-small">Yes</span><br>
+              There is a registrable person or registrable relevant legal entity in relation to the company.
+              <input id="yes" name="psc-yes-no" type="radio" value="N"></label>
+              <label class="block-label" for="no"><span class="heading-small">No</span><br>
+                The company knows or has reasonable cause to believe that there is no registrable person or registrable relevant legal entity in relation to the company.
+                <input id="no" name="psc-yes-no" type="radio" value="Y">
+              </label>
 					</fieldset>
 				</div>
 				<!--end form-group-->

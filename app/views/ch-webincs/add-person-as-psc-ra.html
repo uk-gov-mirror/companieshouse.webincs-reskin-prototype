@@ -157,20 +157,40 @@
 
 
 
-          <details class="form-group">
+          <h2 class="heading-medium">Does this PSC have a disclosure exemption?</h2>
 
-          <summary><span class="summary">Does this PSC have a disclosure exemption?</span></summary>
-          <div class="panel panel-border-narrow">
-            <p>A disclosure exemption is only granted to people who, due to risk of harm, have restrictions in place against the sharing of their information with credit reference agencies.</p>
+          <fieldset>
 
+            <legend class="visuallyhidden">Does this PSC have a disclosure exemption?</legend>
+            <p class="form-hint">A disclosure exemption is only granted to people who, due to risk of harm, have restrictions in place against the sharing of their information with credit reference agencies.</p>
+
+            <div class="form-group">
+
+              <label class="block-label" data-target="exemption-yes-reveal" for="exemption-yes">
+                <input id="exemption-yes" type="radio" name="exemption" value="Yes">
+                Yes
+              </label>
+              <div class="panel panel-border-narrow js-hidden" id="exemption-yes-reveal">
                 <label for="consent-to-act" class="block-label">
                     <input type="checkbox" value="consent-true" name="consent-to-act" id="consent-to-act">This PSC has an exemption from sharing their residential address with credit reference agencies under section 790ZF of the Companies Act 2006
                     <p><strong class="bold-small" id="">If this PSC has NOT applied for a disclosure exemption then ticking this box will mean your incorporation will be rejected</strong></p>
                 </label>
                 <p>Read the guidance on <a href="https://www.gov.uk/government/publications/restricting-the-disclosure-of-your-psc-information">restricting the disclosure of your information</a>.</p>
 
-          </div>
-          </details>
+              </div>
+
+              <label class="block-label" for="exemption-no">
+                <input id="exemption-no" type="radio" name="exemption" value="No">
+                No
+              </label>
+
+
+            </div>
+
+          </fieldset>
+
+
+
 
 
 
