@@ -1,28 +1,10 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Web Incorporation Service prototype
+  Where will the company keep its register of directors?
 {% endblock %}
 
 {% block content %}
-
-
-<!--
-What I changed!
-# Heading is now a H1 with classes of .form-title .heading-large
-# Commented ALL old div content out, so the only divs on the page are the grid row and column ones from the GDS stuff (saying that, I also added GDS .form-control divs, see next note)
-# Put help in a GDS column-third div, with class of .form-hint (and new styling to reduce font-size)
-# Brand new styles can be seen in public/stylesheets/ch-webincs-gds-prototype.css
-# De-capitalised content, eg BACK becomes Back
-# Added secondary class of .button-secondary to some of the inputs
-# Added notice class to the note about public record (gives black exclamation mark icon)
-# Added thead, tbody and th tags to tables
-# Cancel/Back inputs have a class of .pseudo-link to make them look like links (to mirror GDS styling)
-# Cheated and added space via <p>&nbsp;<p> - will sort all these spacing issues at a later date
-# Commented out the required asterisk marker
-# Fixed radio buttons/checkboxes -  the input should be wrapped by the label like this  <label class="block-label"><input></label
-
--->
 
 <main id="content" role="main">
 	{% include "includes/phase_banner_alpha.html" %}
@@ -31,13 +13,13 @@ What I changed!
 			<form action="registers" id="" method="get" name="">
         <a href="registers" class="link-back">Back</a>
 
-				<h2 class="form-title heading-xlarge" id="registerHeader_heading">Where the company will keep its register of directors?</h2>
+				<h2 class="form-title heading-xlarge" id="registerHeader_heading">Where will the company keep its register of directors?</h2>
 
 				<fieldset>
 
 
 					<div class="form-group">
-						<legend class="visuallyhidden">Where the company will keep its register of directors?</legend>
+						<legend class="visuallyhidden">Where will the company keep its register of directors?</legend>
               <label class="block-label" for="at-office" id="">At the company's registered office address
               <input class="checkbox" id="at-office" name="location-choose" type="radio" value="N"></label>
               <label class="block-label" data-target="public-record" for="at-companies-house" id="">On the public record at Companies House
@@ -46,24 +28,29 @@ What I changed!
 					<!--end form-group-->
 				</fieldset>
 
-				<div class="panel panel-border-narrow js-hidden" id="public-record">
-					<div class="notice form-group">
-						<i class="icon icon-important"><!--- alignment out when inside a .panel, needs styled added-->
-						 <span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="info-keep-at-ch">If you keep your Register of Directors updated on the public record then the full date of birth will be available to the public (in addition to information already available).</strong>
-					</div>
-					<!--end notice-->
 
-					<div class="form-group">
-						<fieldset id="registersControl.declaration_fieldset">
-							<legend></legend>
-								To elect to keep your Register of Directors updated on the public record you must confirm the following statement:
-  							<label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.registersControl.declaration_Y" id="registersControl.declaration_Y_label">I confirm the company will keep its Register of Directors updated on the public record (at Companies House).
+        <div class="panel panel-border-narrow js-hidden" id="public-record">
+          <div class="notice form-group">
+          <i class="icon icon-important" style="top:1em;"> <!-- temporary CSS, not for production-->
+            <span class="visuallyhidden">Warning</span>
+          </i>
+          <strong class="bold-small">Information such as a director’s date of birth will be available to the public if you choose to keep your registers on the public record.</strong>
+          </div>
+
+          <div class="form-group">
+            <fieldset id="registersControl.declaration_fieldset">
+              <legend></legend>
+                <p>Tick this box to confirm that the company will keep its register of directors updated on the public record.</p>
+                <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.registersControl.declaration_Y" id="registersControl.declaration_Y_label">I confirm the company will keep its register of directors updated on the public record at Companies House 
                 <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.registersControl.declaration_Y" name="Incorporation.incorporationNavigation.sectionContent.registersControl.declaration" onclick="" onforminit="" type="checkbox" value="Y"></label>
-						</fieldset>
-					</div>
-					<!--end form-group-->
-				</div>
-				<!--end js-hidden-->
+            </fieldset>
+          </div>
+          <!--end form-group-->
+
+        </div><!--public-record-->
+
+
+
 
 				<div class="form-group">
 					<input class="button" name="Incorporation.incorporationNavigation.sectionContent.registersControl.submit" type="submit" value="Next">

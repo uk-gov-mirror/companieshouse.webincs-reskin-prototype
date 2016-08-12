@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Web Incorporation Service prototype
+  Have all the shares been paid for?
 {% endblock %}
 
 {% block content %}
@@ -14,10 +14,8 @@
 			<form action="subscriber-details" id="HPP" method="get" name="HPP">
         <a href="statement-of-capital" class="link-back">Back</a>
 
-				<h1 class="form-title heading-xlarge">Outstanding capital</h1>
-        <p class="lede">
-          Complete your statement of capital by telling us the total value of any unpaid share capital.
-        </p>
+				<h1 class="form-title heading-xlarge">Have all the shares been paid for?</h1>
+
 
 				<div class="form-group inline">
           <h2 class="heading-large">British pounds</h2>
@@ -34,24 +32,24 @@
 							</tr>
 						</tbody>
 					</table>
-          <h3 class="heading-medium">Have all these shares been paid for?</h3>
-          <legend class="visuallyhidden">Have all these shares been paid for?</legend>
-          <label class="block-label" for="amount-outstanding-gbp-yes">
+          <h3 class="heading-medium">Is there an outstanding amount owed for these shares?</h3>
+          <legend class="visuallyhidden">Is there an outstanding amount owed for these shares?</legend>
+          <label class="block-label" for="amount-outstanding-gbp-yes"  data-target="amount-outstanding-panel-gbp">
             <input id="amount-outstanding-gbp-yes" type="radio" name="amountOutstandingCheckGBP" value="Yes">
             Yes
           </label>
-          <label class="block-label" for="amount-outstanding-gbp-no" data-target="amount-outstanding-panel-gbp">
+          <label class="block-label" for="amount-outstanding-gbp-no">
             <input id="amount-outstanding-gbp-no" type="radio" name="amountOutstandingCheckGBP" value="No">
             No
           </label>
           <div class="panel panel-border-narrow js-hidden" id="amount-outstanding-panel-gbp">
-            <label for="amount-outstanding-gbp" class="form-label">Amount outstanding</label>
+            <label for="amount-outstanding-gbp" class="form-label-bold">Outstanding amount owed</label>
             &pound; <input id="amount-outstanding-gbp" type="text" name="amountOutstandingGBP" class="form-control">
           </div>
         </div>
 
 				<div class="form-group">
-					<input class="button" name="Incorporation.incorporationNavigation.next" textid="Incorporation.incorporationNavigation.W0013674" type="submit" value="Next"
+					<input class="button" name="Incorporation.incorporationNavigation.next" textid="Incorporation.incorporationNavigation.W0013674" type="submit" value="Next">
 				</div>
 
 			</form>
