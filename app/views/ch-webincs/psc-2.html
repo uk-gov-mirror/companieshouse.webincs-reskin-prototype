@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Web Incorporation Service prototype
+  Initial statement of significant control
 {% endblock %}
 
 {% block content %}
@@ -29,7 +29,7 @@ What I changed!
 			<form action="add-person-as-psc" id="" method="get" name="">
         <a href="psc-1" class="link-back">Back</a>
 
-				<h1 class="form-title heading-xlarge" id="page-title">People with significant control (PSC)</h1>
+				<h1 class="form-title heading-xlarge" id="page-title">Initial statement of significant control</h1>
 
 
 
@@ -38,7 +38,7 @@ What I changed!
             <thead>
               <tr>
                 <th colspan="2">
-                  <h2 class="heading-medium">Initial statement of significant control</h2>
+                  <h2 class="visuallyhidden">Initial statement of significant control</h2>
                 </th>
                 <th>
                 </th>
@@ -63,9 +63,6 @@ What I changed!
 
 				<h2 class="heading-medium">Who are the people with significant control (PSC)?</h2>
 
-
-				<p>Select the type of PSC from one of the following:</p>
-
         <fieldset>
 
         <legend class="visuallyhidden">Select the type of PSC from one of the following:</legend>
@@ -79,14 +76,13 @@ What I changed!
 
             <label class="block-label" for="psc-legal-entity">
             <input id="psc-legal-entity" type="radio" name="psc-type" value="psc-legal-entity-yes">
-            A relevant legal entity
-            <span class="form-hint">Such as a corporate body (for example, a company or firm)</span>
+            A company or firm
             </label>
 
             <label class="block-label" data-target="contact-by-text" for="example-contact-by-text">
             <input id="example-contact-by-text" type="radio" name="psc-type" value="No">
-            A legal person
-            <span class="form-hint">Such as a corporation sole, government department, international organisation or local authority (for example, the Archbishop of Canterbury or The City of Cardiff Council)</span>
+            A 'legal person'
+            <span class="form-hint">Such as a government department, international organisation or local authority</span>
             </label>
 
           </div><!--form-group-->

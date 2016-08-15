@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  PSC's correspondence address
+  What is the PSC’s correspondence address?
 {% endblock %}
 
 {% block content %}
@@ -17,12 +17,11 @@
 
 
 
-  					<h1 class="heading-xlarge form-title" id="ServiceAddressHeading1_heading">
-  						PSC's correspondence address
-  					</h1>
+  					<h1 class="heading-xlarge form-title" id="ServiceAddressHeading1_heading">What is the PSC’s correspondence address?
+</h1>
 
   					<div class="notice">
-  						<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="ServiceAddressInstruction2">The PSC's correspondence address will appear on the public record and be available online.</strong>
+  						<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="ServiceAddressInstruction2">This address will appear on the public record and be available online.</strong>
   					</div>
 
             <fieldset>
@@ -32,9 +31,11 @@
   						<p class="heading-medium">
   							What is the PSC's correspondence address?</p>
   						<legend></legend>
-  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_Y" id="PSCForm.Notification.PSC.SameAsRegisteredOffice_Y_label">The correspondence address is the 'same as' the company's registered office <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_Y" name="example" onclick="set_hide(!get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_N'), ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.SADisplayed', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Postcode', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PoBox', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Premise', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Street', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Thoroughfare', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PostTown', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.County',]); set_disable(get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_Y'), ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_Y']); set_disable(get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList')!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country']);" onforminit="Y" type="radio" value="Y"></label> <!-- this code doesn't work with GDS "Conditionally revealing content" styles so commenting out-->
+  						 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_Y" id="PSCForm.Notification.PSC.SameAsRegisteredOffice_Y_label">
+                 The same as the company's registered office <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_Y" name="example" onclick="set_hide(!get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_N'), ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.SADisplayed', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Postcode', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PoBox', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Premise', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Street', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Thoroughfare', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.PostTown', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.County',]); set_disable(get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsRegisteredOffice_Y'), ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_Y']); set_disable(get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.CountryList')!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ServiceAddress.Country']);" onforminit="Y" type="radio" value="Y"></label> <!-- this code doesn't work with GDS "Conditionally revealing content" styles so commenting out-->
 
-  						 <label class="block-label" data-target="correspondence-address-supplied" for="example"><input id="example" name="example" type="radio" value=""> The correspondence address is at the address supplied (select to display address fields)</label>
+  						 <label class="block-label" data-target="correspondence-address-supplied" for="example"><input id="example" name="example" type="radio" value="">
+              A different address</label>
   					</div>
   					<!--end form-group-->
 
