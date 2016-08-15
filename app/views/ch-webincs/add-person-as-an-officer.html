@@ -28,6 +28,25 @@ What I changed!
 							Details of new director
 						</h1>
 
+            <fieldset>
+              <div class="form-group">
+
+
+              <div class="panel panel-border-wide">
+                <p>You are required to agree to this statement in the place of a signature.</p>
+              </div>
+
+
+                <!--<fieldset id="AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_fieldset">-->
+                <legend></legend>
+                <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y" id="AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y_label">
+                  The subscribers confirm that this person has consented to act as a director
+                  <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement" onclick="" onforminit="" type="checkbox" value="Y"></label>
+              </div>
+              <!--end form-group-->
+              <!--</fieldset>-->
+            </fieldset>
+
 						<fieldset>
 							<div class="form-group">
 								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Title" id="AP01.NaturalDirectorAppointment.NaturalDirector.Title_label">Title (optional)</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Title" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Title" type="text" value=""> <span></span>
@@ -35,12 +54,12 @@ What I changed!
 							<!--end form-group-->
 
 							<div class="form-group">
-								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Forename" id="AP01.NaturalDirectorAppointment.NaturalDirector.Forename_label">Forename</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Forename" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Forename" type="text" value=""> <span></span>
+								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Forename" id="AP01.NaturalDirectorAppointment.NaturalDirector.Forename_label">First name</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Forename" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Forename" type="text" value=""> <span></span>
 							</div>
 							<!--end form-group-->
 
 							<div class="form-group">
-								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" id="AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames_label">Other forename (s) (optional)</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" type="text" value=""> <span></span>
+								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" id="AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames_label">Middle name(s) (optional)</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.OtherForenames" type="text" value=""> <span></span>
 							</div>
 							<!--end form-group-->
 
@@ -48,6 +67,40 @@ What I changed!
 								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Surname" id="AP01.NaturalDirectorAppointment.NaturalDirector.Surname_label">Surname</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Surname" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.Surname" type="text" value=""> <span></span>
 							</div>
 							<!--end form-group-->
+
+              <fieldset class="inline">
+                <h2 class="form-label-bold">Do you have any former names?</h2>
+                 <legend class="visuallyhidden">Do you have any former names?</legend>
+
+                 <div class="form-group">
+
+                   <label class="block-label" data-target="former-names-yes-reveal" for="former-names-yes">
+                     <input id="former-names-yes" type="radio" name="former-names" value="Yes">
+                     Yes
+                   </label>
+
+
+                   <label class="block-label" for="former-names-no">
+                     <input id="former-names-no" type="radio" name="former-names" value="No">
+                     No
+                   </label>
+
+                   <div class="panel panel-border-narrow js-hidden" id="former-names-yes-reveal">
+                     <p>
+                       You only need to provide former names which have been used for business purposes in the last 20 years.
+                     </p>
+
+                   <div class="form-group">
+                     <legend></legend>
+                     <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.PreviousNames.Forename" id="AP01.NaturalDirectorAppointment.PreviousNames.Forename_label">Former name</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.PreviousNames.Forename" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.PreviousNames.Forename" type="text" value=""> <span></span>
+                   </div>
+                   <!--end form-group-->
+                   </div>
+
+
+                 </div>
+
+               </fieldset>
 
 							<div class="form-group">
 								<legend></legend> <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.CountryOfResidenceList" id="AP01.NaturalDirectorAppointment.NaturalDirector.CountryOfResidenceList_label">Country of residence</label>
@@ -206,46 +259,11 @@ What I changed!
 							</div>
 							<!--end form-group-->
 
-              <details class="form-group">
 
-              <summary><span class="summary">Do you have any former names?</span></summary>
-
-              <div class="panel panel-border-narrow">
-
-                  <p>
-                    You only need to provide former names which have been used for business purposes in the last 20 years.
-                  </p>
-
-                <div class="form-group">
-                  <legend></legend>
-                  <label class="form-label-bold" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.PreviousNames.Forename" id="AP01.NaturalDirectorAppointment.PreviousNames.Forename_label">Former name</label> <input class="form-control" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.PreviousNames.Forename" maxlength="50" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.PreviousNames.Forename" type="text" value=""> <span></span>
-                </div>
-                <!--end form-group-->
-
-
-
-              </div>
-
-            </details>
 
 						</fieldset>
 
-            <fieldset>
-              <h2 class="heading-large" id="StatementOfConsentToActHeading_heading">
-                Consent to act
-              </h2>
 
-              <div class="panel panel-border-wide">
-                <p>A statement of consent to act is required in the place of a signature.</p>
-              </div>
-
-              <div class="form-group">
-                <!--<fieldset id="AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_fieldset">-->
-                <legend></legend> <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y" id="AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y_label">The subscribers confirm that this person has consented to act as a director <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement_Y" name="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.StatementOfConsentToAct.statement" onclick="" onforminit="" type="checkbox" value="Y"></label>
-              </div>
-              <!--end form-group-->
-              <!--</fieldset>-->
-            </fieldset>
 
 
 						<div class="form-group">

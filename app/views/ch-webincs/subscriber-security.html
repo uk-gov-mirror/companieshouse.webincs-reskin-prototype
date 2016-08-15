@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Web Incorporation Service prototype
+  Shareholder security for John Smith
 {% endblock %}
 
 {% block content %}
@@ -13,7 +13,7 @@
 			<form action="initial-shareholdings" id="HPP" method="get" name="subscriberSecurity">
         <a href="subscriber-shares" class="link-back">Back</a>
 
-				<h1 class="form-title heading-xlarge">Shareholder security</h1>
+				<h1 class="form-title heading-xlarge">Shareholder security for John Smith</h1>
 
         <p class="lede">
           We'll use the answers provided below to check the identity of the shareholder in future communication.
@@ -39,18 +39,6 @@
           <input class="form-control form-control-short" id="birth-town" type="text" name="birthTown" maxlength="3">
         </div>
         <div class="form-group">
-          <label class="form-label" for="tele-number">Last 3 digits of their telephone number</label>
-          <input class="form-control form-control-short" id="tele-number" type="text" name="teleNumber" maxlength="3">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="ni-number">Last 3 characters of their National Insurance number</label>
-          <input class="form-control form-control-short" id="ni-number" type="text" name="niNumber" maxlength="3">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="passport-number">Last 3 digits of their passport number</label>
-          <input class="form-control form-control-short" id="passport-number" type="text" name="passportNumber" maxlength="3">
-        </div>
-        <div class="form-group">
           <label class="form-label" for="maiden-name">First 3 letters of their mother's maiden name</label>
           <input class="form-control form-control-short" id="maiden-name" type="text" name="maidenName" maxlength="3">
         </div>
@@ -61,6 +49,18 @@
         <div class="form-group">
           <label class="form-label" for="fathers-name">First 3 letters of their father's first name</label>
           <input class="form-control form-control-short" id="fathers-name" type="text" name="fathersName" maxlength="3">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="tele-number">Last 3 digits of their telephone number</label>
+          <input class="form-control form-control-short" id="tele-number" type="text" name="teleNumber" maxlength="3">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="ni-number">Last 3 characters of their National Insurance number</label>
+          <input class="form-control form-control-short" id="ni-number" type="text" name="niNumber" maxlength="3">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="passport-number">Last 3 digits of their passport number</label>
+          <input class="form-control form-control-short" id="passport-number" type="text" name="passportNumber" maxlength="3">
         </div>
 
 				<!--end form-group-->

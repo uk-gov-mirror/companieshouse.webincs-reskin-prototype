@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Residential address of the person with significant control
+	What is the PSC’s residential address?
 {% endblock %}
 
 {% block content %}
@@ -19,11 +19,11 @@
 
 
   					<h1 class="heading-xlarge form-title" id="PSCForm.Notification.PSC.ResidentialAddress.residentialAddress1_heading">
-  						PSC's residential address
+  						What is the PSC’s residential address?
   					</h1>
 
   					<div class="notice">
-  						<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="ResidentialAddressInstruction">The PSC's residential address will not appear on the public record.</strong>
+  						<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="ResidentialAddressInstruction">This address will not appear on the public record.</strong>
   					</div>
 
   					<div class="form-group">
@@ -33,9 +33,9 @@
   								What is the PSC's residential address?
   							</p>
   							<legend></legend>
-  							 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_Y" id="PSCForm.Notification.PSC.SameAsServiceAddress_Y_label">The residential address is 'same as' the service address <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_Y" name="example-2" onclick="set_hide(!get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_N'), ['PSCForm.Notification.PSC.ResidentialAddress.RADisplayed', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Postcode', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Premise', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Street', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Thoroughfare', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.PostTown', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.County']); set_disable(get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList')!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country']);" onforminit="Y" type="radio" value="Y"></label> <!-- this code doesn't work with GDS "Conditionally revealing content" styles so commenting out-->
+  							 <label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_Y" id="PSCForm.Notification.PSC.SameAsServiceAddress_Y_label">The same as the company's service address <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_Y" name="example-2" onclick="set_hide(!get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.SameAsServiceAddress_N'), ['PSCForm.Notification.PSC.ResidentialAddress.RADisplayed', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Postcode', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Premise', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Street', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Thoroughfare', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.PostTown', 'Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.County']); set_disable(get_value('Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.CountryList')!='OTHER', ['Incorporation.incorporationNavigation.sectionContent.PSCForm.Notification.PSC.ResidentialAddress.Country']);" onforminit="Y" type="radio" value="Y"></label> <!-- this code doesn't work with GDS "Conditionally revealing content" styles so commenting out-->
 
-  							 <label class="block-label" data-target="residential-address-supplied" for="example-2"><input id="example-2" name="example-2" type="radio" value=""> The residential address is at the address supplied (select to display address fields)</label>
+  							 <label class="block-label" data-target="residential-address-supplied" for="example-2"><input id="example-2" name="example-2" type="radio" value="">A different address</label>
   					</div>
   					<!--end form-group-->
 
@@ -159,7 +159,7 @@
 
           <h2 class="heading-medium">Does this PSC have a disclosure exemption?</h2>
 
-          <fieldset>
+          <fieldset class="inline">
 
             <legend class="visuallyhidden">Does this PSC have a disclosure exemption?</legend>
             <p class="form-hint">A disclosure exemption is only granted to people who, due to risk of harm, have restrictions in place against the sharing of their information with credit reference agencies.</p>
@@ -170,6 +170,13 @@
                 <input id="exemption-yes" type="radio" name="exemption" value="Yes">
                 Yes
               </label>
+
+
+              <label class="block-label" for="exemption-no">
+                <input id="exemption-no" type="radio" name="exemption" value="No">
+                No
+              </label>
+
               <div class="panel panel-border-narrow js-hidden" id="exemption-yes-reveal">
                 <label for="consent-to-act" class="block-label">
                     <input type="checkbox" value="consent-true" name="consent-to-act" id="consent-to-act">This PSC has an exemption from sharing their residential address with credit reference agencies under section 790ZF of the Companies Act 2006
@@ -178,12 +185,6 @@
                 <p>Read the guidance on <a href="https://www.gov.uk/government/publications/restricting-the-disclosure-of-your-psc-information">restricting the disclosure of your information</a>.</p>
 
               </div>
-
-              <label class="block-label" for="exemption-no">
-                <input id="exemption-no" type="radio" name="exemption" value="No">
-                No
-              </label>
-
 
             </div>
 

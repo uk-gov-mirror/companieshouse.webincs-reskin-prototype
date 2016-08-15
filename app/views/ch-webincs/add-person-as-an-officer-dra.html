@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Director's residential address
+  	What is the director’s residential address?
 {% endblock %}
 
 {% block content %}
@@ -26,26 +26,26 @@ What I changed!
 
 
 						<h1 class="heading-xlarge form-title" id="AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.residentialAddress1_heading">
-							Director's residential address
+							What is the director’s residential address?
 						</h1>
 
 						<div class="notice form-group">
-							<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="ResidentialAddressInstruction">The director's residential address will not appear on the public record.</strong>
+							<i class="icon icon-important"><span class="visuallyhidden">Warning</span></i> <strong class="bold-small" id="ResidentialAddressInstruction">This address will not appear on the public record.</strong>
 						</div>
 
 						<fieldset>
 							<div class="form-group">
 								<legend></legend>
 								<h2 class="heading-medium">What is the director's residential address?</h2>
-								<label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_Y" id="AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_Y_label">The residential address is 'same as' the service address <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_Y" name="example-2" onclick="set_hide(!get_value(&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_N&#39;),[&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.RADisplayed&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.CountryList&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Country&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Postcode&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Premise&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Street&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Thoroughfare&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.PostTown&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.County&#39;]); set_disable(get_value(&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.CountryList&#39;)!=&#39;OTHER&#39;, [&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Country&#39;]);" onforminit="Y" type="radio" value="Y"></label> <!-- this code doesn't work with GDS "Conditionally revealing content" styles so commenting out-->
+								<label class="block-label" for="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_Y" id="AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_Y_label">The same as the company's service address  <input class="checkbox" id="Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_Y" name="example-2" onclick="set_hide(!get_value(&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.SameAsServiceAddress_N&#39;),[&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.RADisplayed&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.CountryList&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Country&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Postcode&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Premise&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Street&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Thoroughfare&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.PostTown&#39;, &#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.County&#39;]); set_disable(get_value(&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.CountryList&#39;)!=&#39;OTHER&#39;, [&#39;Incorporation.incorporationNavigation.sectionContent.AP01.NaturalDirectorAppointment.NaturalDirector.ResidentialAddress.Country&#39;]);" onforminit="Y" type="radio" value="Y"></label> <!-- this code doesn't work with GDS "Conditionally revealing content" styles so commenting out-->
 
-								 <label class="block-label" data-target="directors-residential-address-supplied" for="example-2"><input id="example-2" name="example-2" type="radio" value=""> The residential address is at the address supplied (select to display address fields)</label>
+								 <label class="block-label" data-target="directors-residential-address-supplied" for="example-2"><input id="example-2" name="example-2" type="radio" value="">A differnt address</label>
 							</div>
 							<!--end form-group-->
 
 							<div class="panel panel-border-narrow js-hidden" id="directors-residential-address-supplied">
 
-                                <fieldset>
+                                <fieldset class="inline">
 
 
                                     <div class="form-group">
@@ -159,24 +159,42 @@ What I changed!
 							<!--end js-hidden-->
 
 
+              <h2 class="heading-medium">Does this director have a disclosure exemption?</h2>
+
+              <fieldset class="inline">
+
+                <legend class="visuallyhidden">Does this director have a disclosure exemption?</legend>
+                <p class="form-hint">A disclosure exemption is only granted to people who, due to risk of harm, have restrictions in place against the sharing of their information with credit reference agencies.</p>
+
+                <div class="form-group">
+
+                  <label class="block-label" data-target="exemption-yes-reveal" for="exemption-yes">
+                    <input id="exemption-yes" type="radio" name="exemption" value="Yes">
+                    Yes
+                  </label>
 
 
+                  <label class="block-label" for="exemption-no">
+                    <input id="exemption-no" type="radio" name="exemption" value="No">
+                    No
+                  </label>
 
+                  <div class="panel panel-border-narrow js-hidden" id="exemption-yes-reveal">
+                    <label for="consent-to-act" class="block-label">
+                        <input type="checkbox" value="consent-true" name="consent-to-act" id="consent-to-act">This director has an exemption from sharing their residential address with credit reference agencies under section 790ZF of the Companies Act 2006
+                        <p><strong class="bold-small" id="">If this director has NOT applied for a disclosure exemption then ticking this box will mean your incorporation will be rejected</strong></p>
+                    </label>
+                    <p>Read the guidance on <a href="https://www.gov.uk/government/publications/restricting-the-disclosure-of-your-psc-information">restricting the disclosure of your information</a>.</p>
 
-                <details class="form-group">
-
-                <summary><span class="summary">Does this director have a disclosure exemption?</span></summary>
-                <div class="panel panel-border-narrow">
-                  <p>A disclosure exemption is only granted to people who, due to risk of harm, have restrictions in place against the sharing of their information with credit reference agencies.</p>
-
-                      <label for="consent-to-act" class="block-label">
-                          <input type="checkbox" value="consent-true" name="consent-to-act" id="consent-to-act">I have a exemption from my residential address being disclosed to credit reference agencies under section 790ZF of the Companies Act 2006
-                          <p><strong class="bold-small" id="">If you have NOT applied for a disclosure exemption then ticking this box will mean your incorporation will be rejected</strong></p>
-                      </label>
-                      <p>Read the guidance on <a href="https://www.gov.uk/government/publications/restricting-the-disclosure-of-your-psc-information">restricting the disclosure of your information</a>.</p>
+                  </div>
 
                 </div>
-                </details>
+
+              </fieldset>
+
+
+
+              
 
           </fieldset>
 
