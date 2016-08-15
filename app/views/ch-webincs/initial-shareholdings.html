@@ -9,15 +9,15 @@
 <main id="content" role="main">
 	{% include "includes/phase_banner_alpha.html" %}
 
-	<div class="grid-row">
-		<div class="column-two-thirds">
+
 			<form action="psc-1" id="" method="get" name="">
         <a href="subscriber-security" class="link-back">Back</a>
 
+        <div class="text">
 				<h1 class="form-title heading-xlarge">Statement of initial shareholdings</h1>
-
         <h2 class="heading-large">John Smith</h2>
-
+        </div>
+        
         <table class="check-your-answers form-group">
 					<caption class="visuallyhidden">Initial Shareholdings for John Smith</caption><!-- needed for accessibility-->
 					<thead>
@@ -54,7 +54,6 @@
 				</div>
 				<input class="button" name="Incorporation.incorporationNavigation.next" type="submit" value="Next">
 			</form>
-		</div>
-	</div>
+
 </main>
 {% endblock %}
